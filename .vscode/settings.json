@@ -1,0 +1,13 @@
+// Workspace settings
+{
+    // The following will hide following files in the editor
+    "files.exclude": {
+        "**/LICENSE.md": true,
+        "**/README.md": true,
+        "**/.hugo_build.lock": true,
+        "public/": true,
+        "i18n/": true,
+        "data/": true
+
+    }
+}

@@ -1,0 +1,272 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <!-- <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script> -->
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@200,200..900&display=swap" rel="stylesheet">
+    <style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
+
+    <style amp-custom>
+
+.card__text {
+  padding: 0 0.938rem;
+}
+.card__text .h4 {
+  text-align: left;
+  margin-bottom: 10px;
+  color: #232323;
+  font-size: 1.45em;
+  font-weight: bold;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  row-gap: 10px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+.www-header h1 {
+  
+  font-size: 3.625rem;
+  line-height: 100%;
+  font-weight: 900;
+}
+
+.www-header {
+  
+  background-image: url(/img/bg-desktop.jpg);
+}
+
+
+.text-container  p {
+    display: block;
+  margin: 0;
+  line-height: 140%;
+  font-size: 1.125rem;
+  color: black;
+}
+
+.text-container  h2 { 
+
+color: #232323;
+line-height: 100%;
+margin-bottom: 20px;
+text-transform: none;
+font-weight: 800;
+}
+
+
+.beige-bg {background-image: linear-gradient(rgba(243, 240, 237, 1), rgba(243, 240, 237, 1));
+  background-position: left top ;
+  background-size: auto ;
+  background-repeat: no-repeat ; border-top: solid 0.188rem black;
+}
+
+
+.row-fluid-wrapper {  
+border-top: solid 0.188rem black; 
+}
+
+
+.row-fluid {
+  padding-top: 100px;
+padding-bottom: 100px; padding-left: 40px;
+padding-right: 40px;  max-width: 1400px ;
+  margin-left: auto ;
+  margin-right: auto ; 
+  width: 100%;
+  flex-wrap: nowrap;
+    justify-content: space-between;
+    column-gap: 8rem;
+}  
+
+.row-wrapper {
+
+  z-index: 5;
+  position: relative; width: 53.75rem;
+}
+
+.heading-container {
+  display: flex;
+ margin: 10px auto;
+ flex-direction: column;
+ word-wrap: break-word;
+}
+
+.heading-container h3 {font-size: 1.8em;
+  color: #232323;
+  line-height: 100%;
+  margin-bottom: 20px;
+  text-transform: none;
+  font-weight: 800; text-align: left;
+}
+
+/* List */
+.card__text {
+  padding: 0 0.938rem;
+}
+.card__text .h4 {
+  text-align: left;
+  margin-bottom: 10px;
+  color: #232323;
+  font-size: 1.45em;
+  font-weight: bold;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  row-gap: 10px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+
+/* List--end */
+
+
+/* Post Single */
+
+
+.post-hero {
+  background-image: none;
+  color:black;
+  border-bottom: 3px solid black;
+ 
+}
+
+.post-body__content {
+  padding-top: 3.75rem;
+}
+
+
+.www-header h1 {
+  
+  font-size: 3.625rem;
+  line-height: 100%;
+  font-weight: 900;
+  color:red;
+}
+
+
+.post-body__content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 140%;
+}
+
+amp-img.contain img {
+    object-fit: contain;
+  }
+
+  amp-img.fill img {
+    object-fit: fill;
+  }
+
+  .img-60 {
+    max-width:60%;
+    margin: auto;
+  }
+  .img-80 {
+    max-width:80%;
+    margin: auto;
+  }
+
+/* Post Single--end */
+    </style>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+    <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4" style="border-bottom: 3px solid black;">
+        <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide pr2">☰</div>
+        <a href="/" class="my0 mx-auto">
+          
+            <amp-img src="/img/logo.webp" width="150" height="92" class="" layout="fixed" alt="{{ .Title }}"></amp-img> 
+           
+        </a>
+        <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
+            <ul class="list-reset m0 p0 flex justify-center nowrap">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+                <li class="ampstart-nav-item abe-nav-list{{if $currentPage.HasMenuCurrent "main" . }} www-current-page{{end}}"><a href="/" class="text-decoration-none block">{{ .Name }}</a>
+                <div class="abe-list-container">
+                    <div class="abe-list-shadow"></div>
+                    <ul class="list-reset m0 p0">
+                      {{ range .Children }}
+                        <li><a href="{{.URL}}">{{ .Name }}</a></li>
+                      {{end}}
+                    </ul>
+                </div>
+                </li>
+              {{else}}
+                <li class="ampstart-nav-item{{if $currentPage.IsMenuCurrent "main" . }} www-current-page{{end}}"><a href="{{.URL}}" class="text-decoration-none block">{{ .Name }}</a></li>
+              {{end}}
+            {{end}}
+            </ul>
+        </nav>
+    </header>
+    <!-- Start Sidebar -->
+    <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" layout="nodisplay">
+        <div class="flex justify-start items-center ampstart-sidebar-header"><a href="#" on="tap:header-sidebar.toggle" class="ampstart-navbar-trigger items-start">✕</a></div>
+        <nav class="ampstart-sidebar-nav ampstart-nav">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <ul class="list-reset m0 p0 caps h5">
+                <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+                    <!-- Start Dropdown-inline -->
+                    <amp-accordion layout="container" disable-session-states class="ampstart-dropdown">
+                        <section>
+                            <header>{{ .Name }}</header>
+                            <ul class="ampstart-dropdown-items list-reset m0 p0">
+                            {{ range .Children }}
+                                <li class="ampstart-dropdown-item"><a href="{{.URL}}" class="text-decoration-none">{{ .Name }}</a></li>
+                            {{end}}
+                            </ul>
+                        </section>
+                    </amp-accordion>
+                    <!-- End Dropdown-inline -->
+                </li>
+            </ul>
+            {{else}}
+                <a href="{{.URL}}" class="block caps h5 py1 abe-primary">{{ .Name }}</a>
+            {{end}}
+          {{end}}
+        </nav>
+    </amp-sidebar>
+    <!-- End Sidebar -->
+    <!-- End Navbar -->
