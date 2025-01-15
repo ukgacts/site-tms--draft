@@ -1,21 +1,12 @@
     <!-- Start Footer -->
 
-    <div class=" flex flex-column items-center pxy3 row-fluid " style="padding-top: 60px;
-    padding-bottom: 40px;
+    <div class="heading-container flex flex-column items-center pxy3 row-fluid ">
 
-    max-width: 53.75rem;
-  margin-left: auto;
-  margin-right: auto; text-align: center;">
-
-<h2 style="color: black;
-font-size: 3rem;
-text-transform: uppercase;
-line-height: 80%;
-font-weight: 900; margin-bottom: 20px;"> Welcome to storytelling innovation space</h2>
+<h2> Welcome to storytelling innovation space</h2>
 
 <h4>
 
-    We combine the best of both worlds—the familiarity of social media stories with the SEO strength of Google.  Whether you're promoting music, events, or products, our platform integrates seamlessly with your digital ecosystem, helping you stay ahead with innovative content. 
+We combine the best of both worlds—the familiarity of social media stories with the SEO strength of Google.  Whether you're promoting music, events, or products, our platform integrates seamlessly with your digital ecosystem, helping you stay ahead with innovative content. 
 
 <br>
 
@@ -35,11 +26,7 @@ At present, our primary focus is on Google Web Stories—a cutting-edge content 
 <div class="row-fluid flex flex-wrap ">  
 
 
-    <div class="text-container col-12 md-col-8" style="display: flex;
-    margin-top: 30px;
-    justify-content: flex-start;
-    text-align: LEFT;
-    padding-bottom: 20px;">
+    <div class="text-container col-12 md-col-8" >
 
       <div>
 
@@ -160,22 +147,20 @@ At present, our primary focus is on Google Web Stories—a cutting-edge content 
 
 </section>
 
-<section class="row-fluid-wrapper "  style=" border-top: solid 0.188rem black;">
+<section class="grid-textbox row-fluid-wrapper "  style=" border-top: solid 0.188rem black;">
 
 
-    <div class=" flex flex-column items-center row-fluid" >
+    <div class="row-fluid flex flex-column items-center " >
 
 
 
    <div class="row-wrapper">
 
- <div class="heading-container" >
-
-  <h3 > The Unfair Advantage!</h3>
 
 
+  <h2 > The Unfair Advantage!</h2>
 
- </div>
+
 
 
 
@@ -381,7 +366,7 @@ background-repeat: no-repeat ;">
 <div > 
     {{- range .Data.Pages }}
       {{ .Render "hp-li" }} 
-
+      <a href="{{ .Permalink }}"></a>
     {{- end }}
 
     

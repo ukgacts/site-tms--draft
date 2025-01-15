@@ -20,6 +20,69 @@
 
     <style amp-custom>
 
+
+.ampstart-headerbar {
+ border-bottom: 3px solid black; max-height: 3.5rem; 
+ padding: 0 2.5rem;
+
+}
+
+
+@media screen and (max-width: 767px) {
+  .ampstart-headerbar {
+    flex-flow: row-reverse;
+    padding: 0;
+  
+
+}}
+
+.ampstart-headerbar-nav {
+
+  font-weight: 500;
+  line-height: 125%;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+
+
+
+header .button-container {
+        background: pink;
+      
+        border-right: 3px solid black;
+        height: calc(3.5rem - 3px);
+        padding: 0 2.5rem;
+        border-left: 3px solid black;
+       
+}
+
+@media screen and (max-width: 767px) {
+  header .button-container {
+
+        padding: 0 0.75rem;
+}
+
+}
+
+.logo {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+  margin-top: 0;
+}
+
+}
+
+/* Header--end */
+
+@media (max-width: 767px) {
+  h2, .h2 {
+    font-size: 1.875rem;
+  }
+}
+
 .card__text {
   padding: 0 0.938rem;
 }
@@ -61,22 +124,6 @@
 }
 
 
-.text-container  p {
-    display: block;
-  margin: 0;
-  line-height: 140%;
-  font-size: 1.125rem;
-  color: black;
-}
-
-.text-container  h2 { 
-
-color: #232323;
-line-height: 100%;
-margin-bottom: 20px;
-text-transform: none;
-font-weight: 800;
-}
 
 
 .beige-bg {background-image: linear-gradient(rgba(243, 240, 237, 1), rgba(243, 240, 237, 1));
@@ -93,7 +140,8 @@ border-top: solid 0.188rem black;
 
 .row-fluid {
   padding-top: 100px;
-padding-bottom: 100px; padding-left: 40px;
+padding-bottom: 100px; 
+padding-left: 40px;
 padding-right: 40px;  max-width: 1400px ;
   margin-left: auto ;
   margin-right: auto ; 
@@ -101,13 +149,25 @@ padding-right: 40px;  max-width: 1400px ;
   flex-wrap: nowrap;
     justify-content: space-between;
     column-gap: 8rem;
-}  
+} 
 
-.row-wrapper {
+@media (max-width: 767px) {
+  .row-fluid {
+    padding-top: 20px;
+    padding-bottom: 60px ;
+    padding-left: 20px;
+    padding-right: 20px ;
+    padding-top: 20px;
+    flex-direction: column;
 
-  z-index: 5;
-  position: relative; width: 53.75rem;
+  }
+
+
 }
+
+
+
+
 
 .heading-container {
   display: flex;
@@ -125,9 +185,167 @@ padding-right: 40px;  max-width: 1400px ;
 }
 
 /* List */
+
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+
+/* List--end */
+/* Index Page */
+
+.row-wrapper {
+  z-index: 5;
+  position: relative; 
+  max-width: 53.75rem;
+}
+
+
+
+
+.heading-container{
+padding-top: 60px;
+    padding-bottom: 40px;
+
+    max-width: 53.75rem;
+  margin-left: auto;
+  margin-right: auto; text-align: center;
+
+}
+
+
+@media (max-width: 767px) {
+  .heading-container {
+    align-items: center;
+    justify-content: flex-start;
+    text-align: LEFT;
+    margin-bottom: 20px;
+    padding-top: 30px;
+  padding-bottom: 20px;
+  }
+}
+
+.heading-container h2 {  
+color: black;
+font-size: 3rem;
+text-transform: uppercase;
+line-height: 80%;
+font-weight: 900; margin-bottom: 20px;
+
+}
+
+@media (max-width: 767px) {
+  .heading-container h2  {
+    font-size: 1.875rem;
+    letter-spacing: 0.9px;
+  }
+}
+
+
+.heading-container h4 {  
+  margin: 0;
+  line-height: 140%;
+
+}
+
+
+@media (max-width: 767px) {
+  .heading-container h4  {
+    font-size: 0.875rem;
+    
+  }
+}
+
+.text-container { 
+
+display: flex;
+    margin-top: 30px;
+    justify-content: flex-start;
+    text-align: LEFT;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 767px) {
+
+    .text-container { 
+
+
+    margin-top: 20px;
+
+  }
+
+  }
+
+
+
+.text-container  h2 { 
+
+color: #232323;
+line-height: 100%;
+margin-bottom: 20px;
+text-transform: none;
+font-weight: 800;
+font-size: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .text-container  h2 { 
+
+
+font-size: 1.25rem;
+margin-bottom: 10px;
+}
+
+}
+
+
+.text-container  p {
+    display: block;
+  margin: 0;
+  line-height: 140%;
+  font-size: 1.125rem;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .text-container  p {
+
+  font-size: 0.875rem;
+
+}
+
+}
+
+.grid-textbox h2 {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  color: black;
+  text-transform: uppercase;
+  line-height: 80%;
+  letter-spacing: 0.9px;
+  font-weight: 800;
+}
+
+
 .card__text {
   padding: 0 0.938rem;
 }
+
+@media (max-width: 767px) {
+  .card__text {
+  padding: 0;
+
+
+}
+}
+
+
 .card__text .h4 {
   text-align: left;
   margin-bottom: 10px;
@@ -144,20 +362,12 @@ padding-right: 40px;  max-width: 1400px ;
   justify-content: space-between;
 }
 
-@media (min-width: 768px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-  }
-}
 
-
-/* List--end */
-
+/* Index Page--end */
 
 /* Post Single */
+
+
 
 
 .post-hero {
@@ -165,6 +375,65 @@ padding-right: 40px;  max-width: 1400px ;
   color:black;
   border-bottom: 3px solid black;
  
+}
+
+
+@media (max-width: 767px) {
+
+}
+
+
+
+.post-hero .container  {column-gap: 2.5rem;
+display: flex;
+justify-content: space-between;
+ width: 100%; padding: 0 2.5rem; 
+}
+
+@media (max-width: 767px) {
+  .post-hero .container  {
+    padding: 0; 
+    flex-direction: column;
+}
+}
+
+.post-hero__content {display: flex;
+        flex-basis: 50%;
+        flex-direction: column;
+        padding-bottom: 3.125rem;
+        padding-top: 3.125rem; 
+}
+
+@media (max-width: 767px) {
+  .post-hero__content {
+  
+    flex-basis: 100%;
+    padding: 2.5rem 1.25rem 0;
+}
+
+}
+
+
+.post-hero__content h2 {
+color: black; font-size:3rem; font-weight: 800; margin-bottom: 20px; text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+
+  .post-hero__content h2 {
+    font-size: 2.375rem;
+}
+}
+
+
+.post-hero__image {flex-basis: 50%;  width: 40%;
+}
+
+@media (max-width: 767px) {
+  .post-hero__image { width: 100%;
+    flex-basis: 100%;
+  }
+  
 }
 
 .post-body__content {
@@ -194,7 +463,10 @@ amp-img.contain img {
   amp-img.fill img {
     object-fit: fill;
   }
-
+  .img-40 {
+    max-width:40%;
+    margin: auto;
+  }
   .img-60 {
     max-width:60%;
     margin: auto;
@@ -204,21 +476,45 @@ amp-img.contain img {
     margin: auto;
   }
 
+  figure amp-img {
+    border: solid 3px black;
+  }
+
+  figcaption {
+  text-align: LEFT;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
 /* Post Single--end */
     </style>
 </head>
 
 <body>
     <!-- Start Navbar -->
-    <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4" style="border-bottom: 3px solid black;">
-        <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide pr2">☰</div>
-        <a href="/" class="my0 mx-auto">
+
+
+
+
+    <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 "   
+    >
+       
+    
+  
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide pr2"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+    
+    
+    
+    </div>
+        <a href="/" class="logo my0 mx-auto left-1" >
           
-            <amp-img src="/img/logo.webp" width="150" height="92" class="" layout="fixed" alt="{{ .Title }}"></amp-img> 
-           
+            <amp-img src="/img/logo.webp" media="(max-width: 980px)" width="70" height="42" layout="fixed" alt="{{ .Title }}"></amp-img> 
+            <amp-img src="/img/logo.webp" media="(min-width: 980px)" width="150" height="92" layout="fixed" alt="{{ .Title }}"></amp-img> 
         </a>
         <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
-            <ul class="list-reset m0 p0 flex justify-center nowrap">
+            <ul class="list-reset m0 p0 flex justify-end nowrap">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
               {{ if .HasChildren }}
@@ -229,6 +525,7 @@ amp-img.contain img {
                       {{ range .Children }}
                         <li><a href="{{.URL}}">{{ .Name }}</a></li>
                       {{end}}
+
                     </ul>
                 </div>
                 </li>
@@ -236,9 +533,35 @@ amp-img.contain img {
                 <li class="ampstart-nav-item{{if $currentPage.IsMenuCurrent "main" . }} www-current-page{{end}}"><a href="{{.URL}}" class="text-decoration-none block">{{ .Name }}</a></li>
               {{end}}
             {{end}}
+
+
+            
+            <li class="ampstart-nav-item abe-nav-list">
+              
+              <a href="/" class="text-decoration-none block">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#464646"><path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/></svg></li>
+           
+
+
+              </a>
+              
+              
+           
             </ul>
         </nav>
+      
+        <div class="button-container" >
+
+
+
+<a style="top: 12px;  position: relative; cursor: pointer;
+  text-decoration: none;"  href="/post"  >BLOG</a>
+        </div>
+    
     </header>
+
+
     <!-- Start Sidebar -->
     <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" layout="nodisplay">
         <div class="flex justify-start items-center ampstart-sidebar-header"><a href="#" on="tap:header-sidebar.toggle" class="ampstart-navbar-trigger items-start">✕</a></div>
