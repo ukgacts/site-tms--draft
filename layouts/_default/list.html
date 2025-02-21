@@ -1,12 +1,30 @@
 {{ partial "header.html" . }}
-    <header class="www-header">
-        <h1 class="mb4 px2 col-12 sm-col-8 mx-auto">{{ .Title }}</h1>
-
-        <!-- <span class="h3 block mb4 px2 col-12 sm-col-8 mx-auto">{{ .Site.Params.description }}</span> -->
+<div class=" flex" > 
+    <aside class="col-2 xs-hide"></aside> 
+    <header class="www-header col-8  flex-auto list">
+       
 
         </header>
+        <aside class="col-2 xs-hide"></aside> 
+        
+
+          
+         
+    
+
+
+        </div>
+
+       
+
+
     <amp-selector layout="container">
-        <main class="flex pl2" style="padding-top: 60px;">
+
+  
+        <main class="flex" style="padding-top: 60px; padding: 10px 1.6%;">
+
+          
+            
 <!--
             <aside class="www-components-sec-nav col-2 xs-hide sm-hide relative">
                 <ul class="www-component-anchors list-reset m0 pt0 pb3 px1 caps">
@@ -17,15 +35,24 @@
                 </ul>
             </aside>
 -->
-            <article class="www-components flex-auto col-8">
-                <section class="www-component-desc" id="samples_templates">
+
+<aside class="col-2 xs-hide"></aside>
+
+            <article class=" flex-auto col-8">
+            
+                <section class="" id="samples_templates">
+                    <h2 style="font-size: 1.8em;
+                    color: #232323;
+                    line-height: 1.4;
+                    font-weight: 600;
+                    margin-bottom: 20px; text-align: center;"> ♻ Blog</h2>
 <!--
                     <h2 class="www-heading pb4 mb2 relative">Samples &amp; Templates</h2>
                     <div class="mb4">
                         <p>Templates and metadata samples for different kinds of AMPs.</p>
                     </div>
 -->
-                    <div class="abe-examples flex flex-wrap">
+                    <div class=" flex flex-wrap">
                       {{- range .Data.Pages }}
                         {{ .Render "li" }}
                       {{- end }}
@@ -33,6 +60,10 @@
                 </section>
 
             </article>
+
+            <aside class="col-2 xs-hide"></aside>
         </main>
     </amp-selector>
+
+    <aside class="col-2 xs-hide"></aside> 
 {{ partial "footer.html" . }}

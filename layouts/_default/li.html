@@ -1,8 +1,8 @@
-                        <div class="ampstart-card abe-sample-card flex flex-column flex-auto p1 mb1">
-                            <h3 class="caps" style="font-size: 2rem; margin:0;
-  font-weight: 800; margin-bottom: 0.938rem; display: -webkit-box;">{{ .Title }}<i class=""></i></h3>
+                        <div class="ampstart-card abe-sample-card flex flex-column flex-auto  mb1">
+                            <h3  style=" margin:0; font-size: 1.4em; 
+  font-weight: 600; ">{{ .Title }}<i class=""></i></h3>
                             {{if gt (len .Summary) 200}}
-                                <p class="mb1" style="margin: 0;">{{slicestr .Summary 3 200 }}</p>
+                                <p class="mb1" >{{slicestr .Summary 3 200 }}</p>
                             {{else}}
                                 <p class="mb1" style="margin: 0;">{{ .Summary }}</p>
                             {{end}}

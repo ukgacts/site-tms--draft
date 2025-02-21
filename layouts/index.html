@@ -1,9 +1,16 @@
 {{ partial "header.html" . }}
-    <header class="www-header" style="min-height: 320px;">
+
+<div class="flex"> 
+<aside class="col-2 xs-hide"></aside>
+    <header class="www-header home col-8  flex-auto" style="min-height: 320px;">
        
       
 
         </header>
+
+        <aside class="col-2 xs-hide"></aside> 
+        
+    </div>
     <amp-selector layout="container">
         <main class="flex ">
 <!--
@@ -16,6 +23,7 @@
                 </ul>
             </aside>
 -->
+<aside class="col-2 xs-hide"></aside>
             <article class=" flex-auto col-8">
                 <section  id="home_page">
 
@@ -31,6 +39,8 @@
                  
                 </section>
             </article>
+
+<aside class="col-2 xs-hide"></aside>
         </main>
     </amp-selector>
 {{ partial "footer.html" . }}

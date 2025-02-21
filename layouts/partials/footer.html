@@ -1,28 +1,28 @@
     <!-- Start Footer -->
     <footer class="ampstart-footer flex   pxy3"
-    
-    style="padding: 4.5rem 0;
-    background-color: black;
-    color: white;
-    position: relative;
-    font-size: 1rem;
-"
-    
+
     >
      
  
 
 
-    <aside class="col-1 xs-hide">j</aside>
+    <aside class="col-2 xs-hide"></aside>
 
 
 
-        <nav class="ampstart-footer-nav flex-auto col-10" style="padding: 0 10px; ">
+        <nav class="ampstart-footer-nav flex-auto col-8" style="padding: 0 10px; ">
             <ul class="list-reset flex flex-wrap mb3 " style="flex-direction: row;
             justify-content: space-between;
             align-items: center;
             column-gap: 4rem; margin: 0;">
-                <li class="px1">
+                <li  style="color: #c71d1a;
+                text-decoration: none;
+                font-size: 0.95em;
+              ">
+
+                    <b>© <a href="/" >2025 Tell Me Something  </a></b>
+
+                    <!--  
                     <div class="wrapper_footer_logo" style="width: 170px;">
                         <amp-img media="(max-width: 980px)" src="/img/logocolor.webp" width="300" height="187" layout="responsive" >
                         </amp-img>
@@ -31,29 +31,22 @@
                  
                    
                       </div>
+
+                      -->
                     
             </li>
-                <li class="footer__column--right" style="max-width: calc(8.5rem * 3);
+                <li class="footer__column--right" style="
     text-align: left;">
 
-                    <p>
-                        At Tel Me Something, we create engaging web stories that bring your brand to life. Our platform combines captivating visuals and interactive elements, helping businesses connect meaningfully with their audiences. Join us to transform how you share your message!
-                     
-                     
-                     
-                      </p>
+<span><i>Powered by</i> <a href="https://ethercycle.com" title="Responsive Web Design Firm"><b>Hugo</b></a></span>&nbsp|&nbsp
+
+<span><i>Art by</i> <a href="https://ethercycle.com" title="Responsive Web Design Firm"><b>Dan Holmes</b></a></span>
+                 
 
 
                 </li>
 
-                <li>
-                <p>  {{ .Site.Copyright | safeHTML }} Powered by <a href="http://gohugo.io" target="_blank">hugo</a> and AMP designed by <a href="http://pdevty.github.io" target="_blank">pdevty</a>
-                        art by Dan Holmes
-                     
-                   
-                        <small>     © 2025 Tell Me Something    </small>
-                    </p>  
-                </li>
+                
                 
             </ul>
 
@@ -65,7 +58,7 @@
 
 
         
-    <aside class="col-1 xs-hide">j</aside>
+    <aside class="col-2 xs-hide"></aside>
     </footer>
     <!-- End Footer -->
     {{if ne .Site.Params.googleanalytics nil}}

@@ -17,6 +17,7 @@ homepage = "https://github.com/pdevty/amp/"
 tags = ["blog", "portfolio", "AMP", "Material Design"]
 features = ["AMP","Material Design","Google Analytics","Menu","Tags","Categories","Social links"]
 min_version = 0.20
+cleanDestinationDir = true
 
 [author]
   name = "pdevty"
@@ -24,12 +25,21 @@ min_version = 0.20
 
 
 [[menu.main]]
-  name = "Why Web Stories?"
-  url = "/about"
+  name = "Web Stories"
+  weight = 100
+  hasChildren = true
+  identifier = "stories"
 
+[[menu.main]]
+name = "What are Web Stories?"
+parent = "stories"
+url = "/post/whatarewebstories"
 
 
 [[menu.main]]
-  name = "Blog"
-  url = "/post"
+  name = "Video"
+  url = "/about"
 
+[[menu.main]]
+  name = "Audio"
+  url = "/about"

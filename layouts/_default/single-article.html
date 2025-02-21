@@ -1,0 +1,106 @@
+ 
+
+
+{{ partial "header.html" . }}
+<div class=" flex" >
+
+<aside class="col-2 xs-hide"></aside> 
+
+
+
+
+    <div class="post-hero col-8 article flex flex-auto " style="padding: 100px 0; margin-top: 0;
+    
+    clip-path: polygon(100% 100%,100% 0,-400% 0);">
+        <aside class="col-3 xs-hide"></aside>
+<div class="container flex "  > 
+        <div class="post-hero__content">  
+
+<div class="fixed-height-container"> 
+    {{ with .Params.heroImage }}
+    <amp-img  src="{{ index . 0 }}"
+    layout="fill" class="cover" style="z-index: -1;"
+             >
+    </amp-img>   
+    {{ end }}    
+
+</div>
+          <h1 class="h1 article"      
+          >{{ .Title }}</h1>
+
+
+   
+          <br>
+          {{ with .Params.lead }}
+          <div class="lead" 
+         >
+              <p>  
+             {{ . }} 
+          </p>
+          </div>
+          {{ end }}
+
+  </div>
+
+    </div>
+
+</div>
+
+<aside class="col-2 xs-hide"></aside>
+</div>
+
+
+
+    <amp-selector layout="container">
+        <main class="flex single-article">
+<!--
+            <aside class="www-components-sec-nav col-3 xs-hide sm-hide relative">
+                <ul class="www-component-anchors list-reset m0 p0 px1 caps">
+                    <li class="clearfix mb3"><a href="#introduction" class="www-component-anchor text-decoration-none left" option="introduction">Introduction</a></li>
+                    <li class="clearfix mb3"><a href="#head" class="www-component-anchor text-decoration-none left" option="head">Head</a></li>
+                    <li class="clearfix mb3"><a href="#body" class="www-component-anchor text-decoration-none left" option="body">Body</a></li>
+                </ul>
+            </aside>
+-->
+            <aside class="col-3 xs-hide"></aside>
+
+            <article class="post-body__content  flex-auto col-10">
+                <section class="" style="margin-bottom: 50px;
+  padding-bottom: 100px;">
+                  
+                {{ .Content }}
+                </section>
+<!--
+                <section class="www-component-desc">
+                    <h2 id="introduction" class="www-heading pb4 mb2 relative h3">Introduction</h2>
+                    <p class="mb2 px1">An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. AMP HTML is entirely built on existing web technologies. It achieves reliable performance by restricting some parts of HTML, CSS and JavaScript. To make up for those limitations AMP HTML defines a set of custom elements for rich content beyond basic HTML. This samples shows what&#39;s necessary to create a valid AMP HTML file.</p>
+                </section>
+                <section class="www-component-desc">
+                    <p class="mb2 px1">Doctype declaration is required.</p>
+                    <div class="abe-code-container">
+                        <div class="abe-code-preview ampstart-card mb1">
+                            <div class="abe-code fit px1 pb1 p1"><pre class="hljs html p0 m0"><span class="hljs-meta">&lt;!doctype html&gt;</span></pre></div>
+                        </div>
+                    </div>
+                </section>
+-->
+
+
+{{ with .Params.references }}
+<h1> References</h1>
+<span style="font-size: 0.75rem;
+font-weight: 700;
+line-height: 125%;
+text-transform: uppercase;
+margin-bottom: 0.625rem;
+display: inline-block;">&nbsp{{ . }}</span>
+{{ end }}
+
+            </article>
+
+            <aside class="col-3 xs-hide"></aside>
+        </main>
+    </amp-selector>
+{{ partial "footer.html" . }}
+
+

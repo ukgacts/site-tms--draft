@@ -1,11 +1,14 @@
-    <!-- Start Footer -->
+    
 
-    <div class="heading-container flex flex-column items-center pxy3 row-fluid ">
-
+    <div class="flex flex-column items-center pxy3 " style="padding-top: 15px; padding-bottom:40px; ">
+<div class="heading-container "> 
 <h2> Welcome to storytelling innovation space</h2>
+</div>
+<p>At Tel Me Something, we create engaging web stories that bring your brand to life. Our platform combines captivating visuals and interactive elements, helping businesses connect meaningfully with their audiences. Join us to transform how you share your message!</p>
+<p>
 
-<h4>
-
+  tep into a world where creativity meets innovation. Welcome to the storytelling space where new ideas come to life through cutting-edge techniques and formats. Here, we push the boundaries of traditional storytelling, bringing you fresh, engaging experiences that captivate and inspire. Get ready to explore a new era of narrative possibilities.
+  Google Web Stories are an innovative visual content format that allows creators to quickly and effortlessly craft short, engaging videos, images, or animations.
 We combine the best of both worlds—the familiarity of social media stories with the SEO strength of Google.  Whether you're promoting music, events, or products, our platform integrates seamlessly with your digital ecosystem, helping you stay ahead with innovative content. 
 
 <br>
@@ -15,22 +18,24 @@ At present, our primary focus is on Google Web Stories—a cutting-edge content 
 
 
 
-</h4>
+</p>
 
 
 
 </div>
 
-<section class="row-fluid-wrapper beige-bg">
+<section class="row-fluid-wrapper">
 
-<div class="row-fluid flex flex-wrap ">  
+<div class="row-fluid pt flex flex-wrap ">  
 
 
     <div class="text-container col-12 md-col-8" >
 
       <div>
-
+<div class="heading-container"> 
 <h2>What Are Web Stories?</h2>
+
+</div>
         <p>Web Stories, is a new web-based format that allows content creators to craft engaging visual narratives  for the open web. </p>
          <br>
             <p> 
@@ -78,9 +83,9 @@ At present, our primary focus is on Google Web Stories—a cutting-edge content 
           </div>
           
           </div>
-
-<h4 style="text-transform: uppercase;
-  line-height: 110%; color: #000000; font-weight: 800; margin-bottom: 8px; margin-top: 20px;">   Why Web Stories Matter?  </h4>
+<br>
+<h4 style="margin-bottom: 1em;
+  font-size: 1.4em;" >   Why Web Stories Matter?  </h4>
 
       <p>Web Stories bring significant advantages to businesses. First, they improve your visibility on Google Search, helping you reach new audiences. 
         <br>
@@ -147,10 +152,10 @@ At present, our primary focus is on Google Web Stories—a cutting-edge content 
 
 </section>
 
-<section class="grid-textbox row-fluid-wrapper "  style=" border-top: solid 0.188rem black;">
+<section class="grid-textbox row-fluid-wrapper "  >
 
 
-    <div class="row-fluid flex flex-column items-center " >
+    <div class="row-fluid pt flex flex-column items-center " >
 
 
 
@@ -345,17 +350,14 @@ At present, our primary focus is on Google Web Stories—a cutting-edge content 
 
 
 <section class="row-fluid-wrapper "  style=" 
-background-image: url('https://hyperisland.com/hubfs/BT%20website/Background%20Energizer%2002.png') ;
-background-position: center center ;
-background-size: cover ;
-background-repeat: no-repeat ;">   
-<div class=" row-fluid text-container " >
+background-color: honeydew; border: 1px dotted lightgreen;">  
 
-<h2 style="text-align: CENTER; font-size:3rem; margin-bottom: 45px; font-weight: 800;
-  color: black;">
-    OUR BLOG
+<div class="  section-centering  column text-container "  >
+<div class="heading-container" style="padding-bottom: 0;"> 
+<h2 >
+   ♻ Our Blog
 </h2>
-
+</div>
 
   <p style="text-align: CENTER;  margin-bottom: 30px;">
  
@@ -365,8 +367,28 @@ background-repeat: no-repeat ;">
   </p>
 <div > 
     {{- range .Data.Pages }}
-      {{ .Render "hp-li" }} 
-      <a href="{{ .Permalink }}"></a>
+    <div class="  flex flex-column flex-auto  button-container" style="display: flex;
+    align-items: center;
+    justify-content: flex-start;">
+      <a class="button--primary  text-decoration-none inline-block" href="{{ .Permalink }}" 
+      style="font-weight: 600;
+      font-style: normal;
+      display: block;
+      width: 285px;
+      padding: 15px 5px;
+      border-radius: 6px;
+      margin: auto;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.1em;
+      line-height: .8em;
+      background-color: #b82c28;">
+      Blog
+      
+  
+      </a>
+    </div>
     {{- end }}
 
     
@@ -386,26 +408,20 @@ background-repeat: no-repeat ;">
 
 <section class="row-fluid-wrapper">
 
-    <div class="row-fluid flex flex-wrap " style="max-width: 53.75rem ;
-    margin-left: auto ;
-    margin-right: auto ;">  
+    <div class="flex flex-wrap row-fluid  " style=" border-top: none;">  
     
     
-        <div class="text-container col-12 md-col-8" style="display: flex;
+        <div class=" col-12 md-col-8" style="display: flex;
         margin-top: 30px;
         justify-content: flex-start;
         text-align: LEFT;
         padding-bottom: 20px;">
     
-          <div>
+          <div class="heading-container">
     
-            <h6 class="h7" style="font-size: 2.5rem;
-            line-height: 100%;
-            text-transform: none;
-            font-weight: 800;
-            color: black; margin-bottom: 15px;">
+            <h2 >
                 Need some guidance?
-              </h6>
+              </h2>
 
 
             <p>Our admissions team is here to help you find the right program for you. Book a call with our admissions team today.
@@ -440,7 +456,7 @@ background-repeat: no-repeat ;">
         justify-content: center;
         align-items: center;">
           <div class="fixed-height-container" style="position: relative;
-          width: 320px;
+          width: 220px;
           height: auto;"> 
     
     <img class="image" src="https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=300&amp;height=174&amp;name=HI_Icon_Team-4.png" alt="HI_Icon_Team-4" loading="lazy" width="300" height="174" style="max-width: 100%; height: auto;" srcset="https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=150&amp;height=87&amp;name=HI_Icon_Team-4.png 150w, https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=300&amp;height=174&amp;name=HI_Icon_Team-4.png 300w, https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=450&amp;height=261&amp;name=HI_Icon_Team-4.png 450w, https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=600&amp;height=348&amp;name=HI_Icon_Team-4.png 600w, https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=750&amp;height=435&amp;name=HI_Icon_Team-4.png 750w, https://hyperisland.com/hs-fs/hubfs/HI_Icon_Team-4.png?width=900&amp;height=522&amp;name=HI_Icon_Team-4.png 900w" sizes="(max-width: 300px) 100vw, 300px">
