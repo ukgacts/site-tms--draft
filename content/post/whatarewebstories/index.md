@@ -10,6 +10,8 @@ _build:
 menu:
   main:
     parent: Web Stories
+heroVideo:
+  - images/hero-comp.mp4
 
 ---
 
