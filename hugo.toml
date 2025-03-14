@@ -35,6 +35,11 @@ name = "What are Web Stories?"
 parent = "stories"
 url = "/post/whatarewebstories"
 
+[[menu.main]]
+name = "Key Differences"
+parent = "stories"
+url = "/post/differences"
+
 
 [[menu.main]]
   name = "Video"

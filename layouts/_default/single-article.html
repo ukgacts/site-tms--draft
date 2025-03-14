@@ -2,17 +2,18 @@
 
 
 {{ partial "header.html" . }}
-<div class=" flex" >
+<div class="single-article flex" >
 
 <aside class="col-2 xs-hide"></aside> 
 
 
 
 
-    <div class="post-hero col-8 article flex flex-auto " style="padding: 100px 0; margin-top: 0;
-    
-    clip-path: polygon(100% 100%,100% 0,-400% 0);">
-        <aside class="col-3 xs-hide"></aside>
+    <div class="post-hero col-8 article flex flex-auto " style="padding: 70px 4.3%;
+    margin-top: 0;
+    clip-path: polygon(100% 100%,100% 0,-400% 0);
+    min-height: 320px;">
+       
 <div class="container flex "  > 
         <div class="post-hero__content">  
 
@@ -32,19 +33,23 @@
 
 </div>
           <h1 class="h1 article"      
-          >{{ .Title }}</h1>
-
-
-   
+          >{{ .Title }}
+        
           <br>
           {{ with .Params.lead }}
           <div class="lead" 
          >
-              <p>  
+             
              {{ . }} 
-          </p>
+        
           </div>
           {{ end }}
+        
+        </h1>
+
+
+   
+        
 
   </div>
 
@@ -72,7 +77,7 @@
 
             <article class="post-body__content  flex-auto col-10">
                 <section class="" style="margin-bottom: 50px;
-  padding-bottom: 100px;">
+  ">
                   
                 {{ .Content }}
                 </section>

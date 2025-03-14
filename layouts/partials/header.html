@@ -139,7 +139,7 @@ header .button-container {
   text-align: left;
   margin-bottom: 10px;
   color: #232323;
-  font-size: 1.45em;
+  
   font-weight: bold;
 }
 .card {
@@ -186,6 +186,31 @@ header .button-container {
 
 #home_page .heading-container {
   padding-top: 0;
+}
+
+#home_page h3 {
+  padding-top: 30px;
+  font-size: 1.8em;
+  color: #232323;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.fragment-top h2 {
+  font-size: 2.5em;
+  color: #232323;
+  font-weight: 600;
+  line-height: 26px;
+  padding-bottom: 20px;
+
+}
+
+.fragment-top p {
+  line-height: 26px;
+  font-size: 15.8px;
+  color: #5e5e5e;
+  font-weight: 600;
 }
 
 .beige-bg {background-image: linear-gradient(rgba(243, 240, 237, 1), rgba(243, 240, 237, 1));
@@ -292,11 +317,11 @@ padding-top: 30px;
 }
 
 .heading-container h2 {  
-  font-size: 1.8em;
-  color: #232323;
-
-  line-height: 1.4;
-font-weight: 600; margin-bottom: 20px;
+  font-size: 36px;
+  line-height: 45px;
+  color: #3c4043;
+  font-weight: 500;
+ margin-bottom: 20px;
 
 }
 
@@ -410,10 +435,12 @@ display: flex;
 .card__text .h4 {
   text-align: left;
   margin-bottom: 10px;
-  color: #232323;
-  font-size: 0.95em;
+  color: #1f1f1f;
+  font-size: 1rem;
+ 
+  line-height: 1.5rem;
   font-weight: bold;
-  line-height: 1.4;
+  
 }
 .card {
   display: flex;
@@ -522,12 +549,7 @@ justify-content: space-between;
   color: #232323;
 }
 
-.lead{ 
-          font-size: 1rem;
-          margin-bottom: 10px;
-  line-height: 140%;
-          
-        }
+
 
 .post-hero__image {flex-basis: 50%;  width: 40%;
 }
@@ -640,18 +662,27 @@ amp-img.contain img {
 
   figure.fixed-height-container {
      position: relative;
-     width: 46%;
+     margin-top: 30px;
+    
     
    }
 
+   figure.width-80{
+    width: 80%;
+   }
 
    @media (max-width: 767px) {
-    figure.fixed-height-container {
+    figure.width-80 {
      
      width: 100%;
     
    }
   }
+
+
+  figure.width-40{
+    width: 30%;
+   }
 
   .fixed-height-container.left {
   margin-right: 30px;
@@ -663,12 +694,15 @@ amp-img.contain img {
   }
 
   figcaption {
-  text-align: LEFT;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  color: #999999;
-  font-size: 0.875rem;
-  line-height: 1.4;
+    line-height: 1.4;
+  color: #999;
+  font-size: .68em;
+  font-weight: 300;
+  padding-top: 5px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+
 }
 
 @media (max-width: 767px) {
@@ -687,9 +721,11 @@ border-bottom: 1px solid #c5c5c5;
   padding-bottom: 40px;
 }
 
-.single-article {
-  padding: 10px 1.6%;
+.single-article .post-hero__content {
+  
+  padding: 0;
 }
+
 
 .abe-sample-card >p {
 
@@ -698,12 +734,17 @@ border-bottom: 1px solid #c5c5c5;
  
 }
 .h1.article {
-  font-size: 1.8em;
+  
+  font-weight: 400;
+
   color: #232323;
  
-  line-height: 80%;
   margin-bottom: 40px;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 3px;
+  padding-top: 5px;
 
 }
 
@@ -721,10 +762,12 @@ border-bottom: 1px solid #c5c5c5;
 
 
 .article .post-hero__content .lead {
-  font-size: 1.25rem;
-
-  line-height: 140%;
-  color: white;
+ 
+  color: #5e5e5e;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {
@@ -745,9 +788,9 @@ border-bottom: 1px solid #c5c5c5;
   display: flex;
   align-items: center;
   letter-spacing: 0.42px;
-  font-size: 0.95em;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.4;
+  height: 20px;
 }
 
 
@@ -766,13 +809,17 @@ amp-carousel {
     }
     .carousel-caption {
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-40%);
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      padding: 5px 10px;
-      font-size: 16px;
+      padding: 10px 10px 15px;
+      font-size: .68em;
+     
+      word-wrap: break-word;
+  white-space: normal;
+  width: 300px;
     }
 
 
@@ -899,7 +946,8 @@ amp-carousel {
 
 
 
-          <a style="top: 9px;  position: relative; cursor: pointer;
+          <a style="top: 11px;  position: relative; cursor: pointer; height: 20px;
+          display: inline-block;
             text-decoration: none;"  href="/post"  >
             
             <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#4a4a4a"><path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/></svg></li>
@@ -914,7 +962,7 @@ amp-carousel {
 
 
 
-<a style="top: 10px;  position: relative; cursor: pointer; color: #c71d1a;
+<a style="top: 10px;  position: relative; cursor: pointer; color: #c71d1a; letter-spacing: 0.42px;
   text-decoration: none;"  href="/post"  >  ♻  Blog</a>
         </div>
 
