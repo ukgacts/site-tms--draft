@@ -10,7 +10,9 @@ lead:  By leveraging Google
  elevate their online presence.
 heroImage:
   - images/bg.webp
-
+_build:
+ list: false
+ render: true
 layout: single-article
 ---
 

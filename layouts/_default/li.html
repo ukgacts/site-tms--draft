@@ -1,16 +1,29 @@
+<a class="" 
+style="
+text-decoration:
+none;"
+
+
+href="{{ .Permalink }}">
+                        
+                        
+                        
                         <div class="ampstart-card abe-sample-card flex flex-column flex-auto  mb1">
-                            <h3  style=" margin:0; font-size: 1.4em; 
-  font-weight: 600; ">{{ .Title }}<i class=""></i></h3>
+                            <h3  >{{ .Title }}<i class=""></i></h3>
                             {{if gt (len .Summary) 200}}
                                 <p class="mb1" >{{slicestr .Summary 3 200 }}</p>
                             {{else}}
                                 <p class="mb1" style="margin: 0;">{{ .Summary }}</p>
                             {{end}}
                             <div class="abe-sample-card-actions">
-                            <!-- <a class="ampstart-btn ampstart-btn-secondary caps text-decoration-none inline-block" href="{{ .Permalink }}">Read More…</a> -->
-                            <a class="  inline-block" 
-                            style="font-size: 0.75rem; font-weight: 800;"
+                                <div class="article-meta__published glue-label " >
+    
+                                    <span> 
+                                    {{ .Date.Format "Mon, Jan 2, 2006" }}
+                                </span>
+                                </div>
                             
                             
-                            href="{{ .Permalink }}">Read More…</a></div>
+                            </div>
                         </div>
+                    </a>

@@ -1,0 +1,136 @@
+{{ partial "head.html" . }}
+
+{{ partial "header-article.html" . }}
+<div class="layout-centered flex" style="flex-direction: column; margin:auto; position: relative;"> 
+<div class="article-cover--centered flex">
+
+    <aside class="col-2 xs-hide"></aside> 
+    <div class="post-hero col-8 flex p12" style="flex-direction:column;">
+       
+
+
+
+        <div class="post-hero__content   container flex">  
+
+            {{ range .Params.tags }}
+            <span class=" glue-label" >&nbsp{{ . }}</span>
+        {{ end }}
+
+  
+
+            <h2 class="mb1"      
+            >{{ .Title }}</h2>
+
+
+ 
+<div class="article-meta__published glue-label " >
+    
+    <span> 
+    {{ .Date.Format "Mon, Jan 2, 2006" }}
+</span>
+</div>
+
+<div class="categories">
+    {{ range .Params.categories }} 
+       <span class="category"> 
+         <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"
+          style=" "
+          
+          
+          >{{ . }}</a> &nbsp</span>
+       
+    {{ end }}
+</div>
+
+
+
+    </div>
+
+
+   
+        {{ with .Params.heroImage }}
+        <amp-img  src="{{ index . 0 }}" style="border-radius: 8px;"
+        layout="responsive" width="3" height="2"
+                 >
+        </amp-img>   
+        {{ end }}    
+  
+
+
+
+
+</div>
+<aside class="col-2 xs-hide"></aside> 
+</div>
+
+
+
+   
+
+
+<main class="single-post flex">
+
+
+    
+
+            <aside class="col-3 xs-hide"></aside>
+
+            <article class="post-body__content  flex-auto col-6">
+
+               
+              
+                  
+
+                   
+                        {{ with .Params.lead }}
+                        <div class="lead__layout-centered"  >
+                          
+                           {{ . }} 
+                        
+                        </div>
+                        {{ end }}
+                  
+                   
+                {{ .Content }}
+
+                <div class="www-index-header-action " >
+                    {{ range .Params.categories }} 
+                       <span class="tag">  <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"
+                          style=" "
+                          
+                          
+                          >{{ . }}</a> &nbsp</span>
+                       
+                    {{ end }}
+               
+                   
+                </div>
+                
+               
+<!--
+                <section class="www-component-desc">
+                    <h2 id="introduction" class="www-heading pb4 mb2 relative h3">Introduction</h2>
+                    <p class="mb2 px1">An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. AMP HTML is entirely built on existing web technologies. It achieves reliable performance by restricting some parts of HTML, CSS and JavaScript. To make up for those limitations AMP HTML defines a set of custom elements for rich content beyond basic HTML. This samples shows what&#39;s necessary to create a valid AMP HTML file.</p>
+                </section>
+                <section class="www-component-desc">
+                    <p class="mb2 px1">Doctype declaration is required.</p>
+                    <div class="abe-code-container">
+                        <div class="abe-code-preview ampstart-card mb1">
+                            <div class="abe-code fit px1 pb1 p1"><pre class="hljs html p0 m0"><span class="hljs-meta">&lt;!doctype html&gt;</span></pre></div>
+                        </div>
+                    </div>
+                </section>
+-->
+
+
+
+
+            </article>
+
+            <aside class="col-3 xs-hide"></aside>
+
+</main>
+</div>
+{{ partial "footer.html" . }}
+
+
