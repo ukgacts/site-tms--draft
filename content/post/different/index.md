@@ -9,11 +9,11 @@ lead:  By leveraging Google
  create dynamic, interactive narratives that captivate audiences and
  elevate their online presence.
 heroImage:
-  - images/bg.webp
+  - images/hero.png
 _build:
  list: false
  render: true
-layout: single-article
+layout: twocolumns-header
 ---
 
 
