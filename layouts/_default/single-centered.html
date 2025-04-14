@@ -1,8 +1,8 @@
 {{ partial "head.html" . }}
 
 {{ partial "header-article.html" . }}
-<div class="layout-centered flex" style="flex-direction: column; margin:auto; position: relative;"> 
-<div class="article-cover--centered flex">
+<div class="layout-centered flex" > 
+<div class="article-cover--centered flex" >
 
     <aside class="col-2 xs-hide"></aside> 
     <div class="post-hero col-8 flex p12" style="flex-direction:column;">
@@ -49,7 +49,7 @@
 
    
         {{ with .Params.heroImage }}
-        <amp-img  src="{{ index . 0 }}" style="border-radius: 8px;"
+        <amp-img  src="{{ index . 0 }}" class="article-cover__image"  style="border-radius: 8px; margin: 16px 0;"
         layout="responsive" width="3" height="2"
                  >
         </amp-img>   
@@ -75,7 +75,7 @@
 
             <aside class="col-3 xs-hide"></aside>
 
-            <article class="post-body__content  flex-auto col-6">
+            <article class=" flex-auto col-6">
 
                
               
@@ -93,18 +93,7 @@
                    
                 {{ .Content }}
 
-                <div class="www-index-header-action " >
-                    {{ range .Params.categories }} 
-                       <span class="tag">  <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"
-                          style=" "
-                          
-                          
-                          >{{ . }}</a> &nbsp</span>
-                       
-                    {{ end }}
-               
-                   
-                </div>
+         
                 
                
 <!--
