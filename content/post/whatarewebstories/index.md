@@ -41,12 +41,7 @@ However,  the main advantage of visiflows isn’t just how information is presen
 
 
 
-  <h3 style="    font-size: 40px;
-  font-weight: 400;
-    letter-spacing: -.5px;
-    line-height: 1.1666666667;
-  color: #000;
-  margin-bottom: 36px;" > The Unfair Advantage!</h3>
+  <h3  > The Unfair Advantage!</h3>
 
 
 
@@ -167,7 +162,7 @@ However,  the main advantage of visiflows isn’t just how information is presen
 
      <div class="grid__item">
 
-       <div class="card " >
+       <div class="card " style="background-color: #ff8e59;">
 
     
    
