@@ -27,6 +27,60 @@
 
     <style amp-custom>
 
+
+/* ===== Vertical Panel ===== */
+
+.vertical-logo-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px; /* slightly slimmer */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+/* Top Half */
+.logo-top {
+  flex: 1;
+  background: #e53935; /* red */
+}
+
+/* Bottom Half */
+.logo-bottom {
+  flex: 1;
+  background: #efefef; /* soft grey */
+}
+
+/* Center Divider Line */
+.logo-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 65%;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Brand Text */
+.logo-brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #111;
+  font-family: "Google Sans", Arial, sans-serif;
+}
+
+/* Push content*
+
+
+
 html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
   font-family:Google Sans,Helvetica,Arial,sans-serif;
   box-sizing:border-box;
@@ -172,7 +226,7 @@ header .button-container {
 
 .www-header.home{
   
-  background-image: url(/img/bg-desktop.jpg);
+  background-image: url(/img/bg-desktop.png);
 }
 
 .www-header.list{
@@ -324,23 +378,31 @@ padding-bottom: 40px;
 }
 
 @supports (display: grid) {
-  @media (min-width: 1440px) {
+
+  @media (min-width: 768px) {
     .glue-grid .glue-grid__col--span-6 {
-      display: block;
+      grid-column-end: span 8;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .glue-grid .glue-grid__col--span-6 {
       grid-column-end: span 6;
     }
   }
-}
 
-
-@supports (display: grid) {
   @media (min-width: 1440px) {
     .glue-grid .glue-grid__col--span-6 {
-      display: block;
       grid-column-end: span 6;
+      display: block;
     }
   }
+
 }
+
+
+
+
 @media screen and (min-width: 768px) {
   .product-card-headline {
     font:
@@ -1138,8 +1200,14 @@ amp-carousel {
       }
 
 /* carousel--end */
+
+
+
+
     </style>
 </head>
 
 <body>
+
+  
     
