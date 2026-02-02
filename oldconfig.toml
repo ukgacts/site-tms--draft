@@ -31,7 +31,12 @@ cleanDestinationDir = true
   identifier = "stories"
 
 [[menu.main]]
-name = "What are Web Stories?"
+  name = "Blog"
+  url = "/blog"
+
+
+[[menu.main]]
+name = "What are Web Storighghes?"
 parent = "stories"
 url = "/post/whatarewebstories"
 

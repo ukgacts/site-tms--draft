@@ -1,63 +1,78 @@
  
+{{ partial "head.html" . }}
+
+{{ partial "header-centered.html" . }}
 
 
-{{ partial "header.html" . }}
-<div class="single-article flex" >
+<div class="hero flex"  >
 
-<aside class="col-2 xs-hide"></aside> 
-
+<aside class="col-1 xs-hide"></aside> 
 
 
 
-    <div class="post-hero col-8 article flex flex-auto " style="padding: 70px 4.3%;
-    margin-top: 0;
-    clip-path: polygon(100% 100%,100% 0,-400% 0);
-    min-height: 320px;">
+
+    <div class="col-10 flex flex-auto " >
        
-<div class="container flex "  > 
-        <div class="post-hero__content">  
+<div class="container flex" style="flex-direction: column; width:100%; flex-basis: 100%;" > 
+     <div class="intro__text" style="max-width: 80rem; text-align: center; display: flex;
+     flex-direction: column;  margin: auto;
+    
+ ">   
 
-<div class="fixed-height-container"> 
-    {{ with .Params.heroImage }}
-    <amp-img  src="{{ index . 0 }}"
-    layout="fill" class="cover" style="z-index: -1;"
-             >
-    </amp-img>   
-    {{ end }}  
-    {{ with .Params.heroVideo }}
-    <video  src="https://knowledge.hyperisland.com/hubfs/homepage-hero-orange.mp4"
-     class="cover" style="z-index: -1;"
-             >
-    </video>   
-    {{ end }}      
+<p class="cover__eyebrow ">Lab sessions</p>
+
+
+    <h1 class="h1"      
+    >{{ .Title }}
+
+</h1>
+    <dl class="cover__meta">
+      
+      
+      
+      
+        {{ with .Params.lead }}
+        <dd class="cover__lead"> 
+            {{ . }} </dd>
+        {{ end }}
+    </dl>
+  
+  
+   
+  
+  
+</div>
+<div class="intro__media" style="
+ "> 
+     
+  
+{{ with .Params.heroVideo }}
+<amp-video  
+width="16"
+height="9"
+layout="responsive" loop autoplay
+
+poster="/static/inline-examples/images/kitten-playing.png">       
+<source src="{{ index . 0 }}"
+type="video/mp4"
+/>  
+{{ end }}  
+
 
 </div>
-          <h1 class="h1 article"      
-          >{{ .Title }}
-        
-          <br>
-          {{ with .Params.lead }}
-          <div class="lead" 
-         >
-             
-             {{ . }} 
-        
-          </div>
-          {{ end }}
-        
-        </h1>
+
+
+       
 
 
    
-        
 
-  </div>
 
     </div>
 
 </div>
 
-<aside class="col-2 xs-hide"></aside>
+<aside class="col-1 xs-hide"></aside>
 </div>
 
 
@@ -75,7 +90,7 @@
 -->
             <aside class="col-3 xs-hide"></aside>
 
-            <article class="post-body__content  flex-auto col-10">
+            <article class="rich-text flex-auto col-10">
                 <section class="" style="margin-bottom: 50px;
   ">
                   

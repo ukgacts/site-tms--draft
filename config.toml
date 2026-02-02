@@ -1,0 +1,7 @@
+baseURL = 'https://site-tms--draft.pages.dev/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+
+[[menu.main]]
+  name = "Visiflows"
+  url = "/post/whatarewebstories/"
