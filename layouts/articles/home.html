@@ -1,0 +1,269 @@
+{{ partial "head-article.html" . }}
+
+  <!-- Start Navbar -->
+<header class="ampstart-headerbar">
+
+  <div role="button"
+       on="tap:header-sidebar.toggle"
+       tabindex="0"
+       class="ampstart-navbar-trigger md-hide lg-hide">
+    ☰
+  </div>
+
+  <a href="/" class="logo">
+    <amp-img src="/img/logo-tms.webp" media="(max-width: 980px)" width="64" height="39" layout="fixed" alt="{{ .Title }}"></amp-img> 
+        <amp-img src="/img/logo-tms.webp" media="(min-width: 980px)" width="100" height="61" layout="fixed" alt="{{ .Title }}"></amp-img> 
+   
+  </a>
+
+
+
+  <nav class="ampstart-headerbar-nav xs-hide sm-hide">
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <div class="header-cta xs-hide sm-hide">
+    <a href="/blog">Blog</a>
+  </div>
+
+</header>
+
+
+    <!-- Start Sidebar -->
+    <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" layout="nodisplay">
+        <div class="flex justify-start items-center ampstart-sidebar-header"><a href="#" on="tap:header-sidebar.toggle" class="ampstart-navbar-trigger items-start">✕</a></div>
+        <nav class="ampstart-sidebar-nav ampstart-nav">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <ul class="list-reset m0 p0 caps h5">
+                <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+                    <!-- Start Dropdown-inline -->
+                    <amp-accordion layout="container" disable-session-states class="ampstart-dropdown">
+                        <section>
+                            <header>{{ .Name }}</header>
+                            <ul class="ampstart-dropdown-items list-reset m0 p0">
+                            {{ range .Children }}
+                                <li class="ampstart-dropdown-item"><a href="{{.URL}}" class="text-decoration-none">{{ .Name }}</a></li>
+                            {{end}}
+                            <li>sskdjhfsk</li>
+                            </ul>
+                        </section>
+                    </amp-accordion>
+                    <!-- End Dropdown-inline -->
+                </li>
+            </ul>
+            {{else}}
+                <a href="{{.URL}}" class="block caps h5 py1 abe-primary">{{ .Name }}</a>
+            {{end}}
+          {{end}}
+        </nav>
+    </amp-sidebar>
+    <!-- End Sidebar -->
+    <!-- End Navbar -->
+
+
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">About Us</p>
+    <h1>
+      Founders <br />
+      Supporting <br />
+      Founders
+    </h1>
+    <p class="hero-sub">
+      We help leadership teams build companies worth loving.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="founder-section">
+  <div class="container">
+
+    <h1 class="founder-title">
+      The founder journey is<br>
+      incredibly lonely.
+    </h1>
+
+    <p class="founder-intro">
+      The founder journey is incredibly lonely; and we’re on your team.
+      There are risks everywhere. But which really matter? Who can you speak
+      to safely? And do they really know what they’re talking about?
+      There’s a myth in Silicon Valley that founders should be able to know
+      everything. That’s bullshit. There is no startup topic for which our
+      team is not experienced and well-versed. And yes, there is always a framework.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-col">
+        <h3>Fundraising</h3>
+        <p>
+          Fundraising narrative, pitch development, objection handling,
+          materials management, closing tactics
+        </p>
+      </div>
+
+      <div class="service-col">
+        <h3>Finance</h3>
+        <p>
+          Capital strategy, operating model, metric identification,
+          milestone development
+        </p>
+      </div>
+
+      <div class="service-col">
+        <h3>Go-to-Market</h3>
+        <p>
+          Ideal customer profile, sales playbook development,
+          business model testing, sales org development,
+          incentive programs, competitive strategy
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="founder-story">
+  <div class="container founder-grid">
+
+    <!-- LEFT -->
+    <div class="founder-media">
+      <img src="founder.jpg" alt="Ben Bilbrough" class="founder-image">
+
+      <div class="founder-company">addy</div>
+
+      <h3 class="founder-name">Ben Bilbrough</h3>
+      <p class="founder-role">CEO & Co-founder</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="founder-content">
+
+      <div class="eyebrow">Founder Story</div>
+
+      <blockquote class="founder-quote">
+        “It’s not news that being a startup founder/CEO is a lonely,
+        stressful job. But I don’t think I let myself acknowledge how
+        truly on-an-island I had been until I started working with
+        Jonathan and the Enjoy The Work team.”
+      </blockquote>
+
+      <div class="founder-meta">
+        <div>
+          <span class="meta-label">Sector</span>
+          <span class="meta-value">AdTech</span>
+        </div>
+        <div>
+          <span class="meta-label">Founder</span>
+          <span class="meta-value">Ben Bilbrough</span>
+        </div>
+        <div>
+          <span class="meta-label">Worked with ETW</span>
+          <span class="meta-value">2018 – 2021 (Exit)</span>
+        </div>
+        <div>
+          <span class="meta-label">Stage when began</span>
+          <span class="meta-value">Seed</span>
+        </div>
+      </div>
+
+      <p class="founder-body">
+        “With a group of people in your corner who are incomparably expert
+        across all the critical startup disciplines, you see anything is possible –
+        but more importantly, you realize that you don’t need to figure everything
+        out on your own..."
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+
+<div class="trent-grid">
+  <div class="square s1"></div>
+  <div class="square s2"></div>
+  <div class="square s3"></div>
+  <div class="square s4"></div>
+  <div class="square s5"></div>
+  <div class="square s6"></div>
+  <div class="square s7">jhkj</div>
+  <div class="square s8"></div>
+  <div class="square s9"></div>
+</div>
+
+
+<footer class="site-footer">
+
+  <div class="footer-inner container">
+
+    <!-- LEFT COLUMN -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="smiley">☺</div>
+        <div class="logo-text">
+          ENJOY<br>THE<br>WORK
+        </div>
+      </div>
+
+      <p class="footer-description">
+        Founded in 2015, Enjoy The Work is a San Francisco–based
+        startup advisory firm serving startup founders and CEOs worldwide.
+      </p>
+
+      <a href="#" class="footer-btn">Contact us</a>
+
+      <div class="footer-social">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
+
+      <div class="footer-legal">
+        © 2026 Enjoy The Work
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+
+    <!-- MIDDLE COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Venture Capital</a>
+      <a href="#">Smart Things</a>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Team</a>
+      <a href="#">Companies</a>
+      <a href="#">Playbooks</a>
+      <a href="#">Events</a>
+    </div>
+
+  </div>
+</footer>

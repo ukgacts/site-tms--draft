@@ -1,0 +1,277 @@
+{{ partial "head-article.html" . }}
+
+  <!-- Start Navbar -->
+<header class="ampstart-headerbar">
+
+  <div role="button"
+       on="tap:header-sidebar.toggle"
+       tabindex="0"
+       class="ampstart-navbar-trigger md-hide lg-hide">
+    ☰
+  </div>
+
+  <a href="/" class="logo">
+    <amp-img src="/img/logo-tms.webp" media="(max-width: 980px)" width="64" height="39" layout="fixed" alt="{{ .Title }}"></amp-img> 
+        <amp-img src="/img/logo-tms.webp" media="(min-width: 980px)" width="100" height="61" layout="fixed" alt="{{ .Title }}"></amp-img> 
+   
+  </a>
+
+
+
+  <nav class="ampstart-headerbar-nav xs-hide sm-hide">
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <div class="header-cta xs-hide sm-hide">
+    <a href="/blog">Blog</a>
+  </div>
+
+</header>
+
+
+    <!-- Start Sidebar -->
+    <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" layout="nodisplay">
+        <div class="flex justify-start items-center ampstart-sidebar-header"><a href="#" on="tap:header-sidebar.toggle" class="ampstart-navbar-trigger items-start">✕</a></div>
+        <nav class="ampstart-sidebar-nav ampstart-nav">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <ul class="list-reset m0 p0 caps h5">
+                <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+                    <!-- Start Dropdown-inline -->
+                    <amp-accordion layout="container" disable-session-states class="ampstart-dropdown">
+                        <section>
+                            <header>{{ .Name }}</header>
+                            <ul class="ampstart-dropdown-items list-reset m0 p0">
+                            {{ range .Children }}
+                                <li class="ampstart-dropdown-item"><a href="{{.URL}}" class="text-decoration-none">{{ .Name }}</a></li>
+                            {{end}}
+                            <li>sskdjhfsk</li>
+                            </ul>
+                        </section>
+                    </amp-accordion>
+                    <!-- End Dropdown-inline -->
+                </li>
+            </ul>
+            {{else}}
+                <a href="{{.URL}}" class="block caps h5 py1 abe-primary">{{ .Name }}</a>
+            {{end}}
+          {{end}}
+        </nav>
+    </amp-sidebar>
+    <!-- End Sidebar -->
+    <!-- End Navbar -->
+
+
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">About Us</p>
+    <h1>
+      ARTISTRY <br />
+      MEETS <br />
+      ARCHITECTURE
+    </h1>
+    <p class="hero-sub">
+      We help leadership teams build companies worth loving.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="founder-section">
+  <div class="container">
+<h2 class="block-heading">About Us</h2>
+    <h1 class="founder-title">
+      Design projects-<br>     brand, web,  <br> and product <br>design 
+    </h1>
+
+    <p class="founder-intro">
+   Sometimes we make stories, sometimes videos. we believe it is better to see 
+    than to hear. 
+    <br>
+    We use modern technologies to build digital content that doesn’t just look good — it works. If you need something that can live online without constant updates, remain SEO-friendly, and continue performing over time, we’re here to make it happen
+    </p>
+
+
+  </div>
+</section>
+
+
+<section class="founder-section">
+  <div class="container">
+<h2 class="block-heading">Services</h2>
+    <h1 class="founder-title">
+      We're particularly fluent in
+    </h1>
+
+    <p class="founder-intro">
+    Our  main focus on storytelling formats.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-col">
+        <h3>Video Production</h3>
+        <p>Have you ever noticed why some videos load almost instantly
+           while others take forever? It all comes down to optimization
+            for the web. We don’t just create unique videos—we engineer
+             them to load fast, no matter where they’re used, whether on a website, in a messenger, or across social platforms.
+             </p>
+        
+      </div>
+
+      <div class="service-col">
+        <h3>Web Architecture  and Visual Art</h3>
+        <p>
+          Capital strategy, operating model, metric identification,
+          milestone development
+        </p>
+      </div>
+
+      <div class="service-col">
+        <h3>Bringing Your Brand to the English-Speaking World</h3>
+        <p>
+          Ideal customer profile, sales playbook development,
+          business model testing, sales org development,
+          incentive programs, competitive strategy
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+  <div class="container">
+<h1 class="font-graphik" style="font-family: 'GraphikXXXCondensed', monospace !important;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 6rem ;
+  line-height: 1;">STORYTELLING</h1>
+
+<hr class="block-separator" style="border-bottom: .5px solid; opacity: 1; margin-bottom: 6rem;">
+    <h1 class="founder-title">
+      PulseFrames
+    </h1>
+
+    <p class="founder-intro">
+    Our  main focus on storytelling formats.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-col">
+        <h3>Fundraising</h3>
+        <p>
+          Fundraising narrative, pitch development, objection handling,
+          materials management, closing tactics
+        </p>
+      </div>
+
+      <div class="service-col">
+        <h3>Brand Manifestos</h3>
+        <p>
+          Capital strategy, operating model, metric identification,
+          milestone development
+        </p>
+      </div>
+
+      <div class="service-col">
+        <h3>Go-to-Market</h3>
+        <p>
+          Ideal customer profile, sales playbook development,
+          business model testing, sales org development,
+          incentive programs, competitive strategy
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="trent-grid">
+  <div class="square s1"></div>
+  <div class="square s2"></div>
+  <div class="square s3"></div>
+  <div class="square s4"></div>
+  <div class="square s5"></div>
+  <div class="square s6"></div>
+  <div class="square s7">jhkj</div>
+  <div class="square s8"></div>
+  <div class="square s9"></div>
+</div>
+
+
+<footer class="site-footer">
+
+  <div class="footer-inner container">
+
+    <!-- LEFT COLUMN -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+
+    <amp-img src="/img/logo-tms.webp" media="(max-width: 980px)" width="64" height="39" layout="fixed" alt="{{ .Title }}"></amp-img> 
+        <amp-img src="/img/logo-tms.webp" media="(min-width: 980px)" width="100" height="61" layout="fixed" alt="{{ .Title }}"></amp-img> 
+   
+
+
+
+        <div class="smiley">☺</div>
+        
+      </div>
+
+      <p class="footer-description">
+        Georgian  firm serving worldwide.
+      </p>
+
+      <a href="#" class="footer-btn">Contact us</a>
+
+  
+
+      <div class="footer-legal">
+        © 2026
+  
+      </div>
+    </div>
+
+    <!-- MIDDLE COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Venture Capital</a>
+      <a href="#">Smart Things</a>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Team</a>
+      <a href="#">Companies</a>
+      <a href="#">Playbooks</a>
+      <a href="#">Events</a>
+    </div>
+
+  </div>
+</footer>

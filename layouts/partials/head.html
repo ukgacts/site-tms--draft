@@ -27,57 +27,126 @@
 
     <style amp-custom>
 
+      /* Header Bar */
+.etw-header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: Arial, sans-serif;
+}
+
+/* Center content */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.etw-header .logo img {
+  display: block;
+  max-height: 40px;
+}
+
+/* Navigation */
+.etw-nav .nav-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.etw-nav .nav-list li a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+/* Hover/Active */
+.etw-nav .nav-list li a:hover,
+.etw-nav .nav-list li a:focus {
+  color: #0070f3;
+}
+
+/* Responsive: collapse to hamburger */
+@media (max-width: 900px) {
+  .etw-nav .nav-list {
+    display: none;
+  }
+}
+
+
 
 /* ===== Vertical Panel ===== */
-
 .vertical-logo-panel {
-  position: fixed;
-  top: 0;
+  position: absolute;   /* IMPORTANT */
+  top: 80px;
   left: 0;
-  width: 100px; /* slightly slimmer */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  width: 110px;
+  height: 90%;
   z-index: 10;
+  pointer-events: none; /* prevents blocking clicks */
+    min-height: 100vh;   /* important */
+    margin-bottom:40px;
 }
 
-/* Top Half */
-.logo-top {
-  flex: 1;
-  background: #e53935; /* red */
-}
-
-/* Bottom Half */
-.logo-bottom {
-  flex: 1;
-  background: #efefef; /* soft grey */
-}
-
-/* Center Divider Line */
-.logo-divider {
+/* TOP LINE */
+.vertical-line-top {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 1px;
-  height: 65%;
-  background: rgba(0,0,0,0.2);
+  width: 6px;
+  height: 20vh; /* stops where logo begins */
+  border: 1.5px solid #222;
+  border-radius: 100px;
+  background: transparent;
 }
 
-/* Brand Text */
-.logo-brand {
+/* LOGO */
+.vertical-logo {
   position: absolute;
-  top: 50%;
+  top: 20vh;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 6px;
-  color: #111;
-  font-family: "Google Sans", Arial, sans-serif;
+  transform: translateX(-50%) rotate(-90deg);
 }
 
-/* Push content*
+.vertical-logo img {
+  height: 55px;
+}
+
+/* BOTTOM LINE */
+.vertical-line-bottom {
+  position: absolute;
+  top: calc(20vh + 85px); /* logo + spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: calc(100% - (20vh + 85px));
+  border: 1.5px solid #222;
+  border-radius: 100px;
+  background: transparent;
+}
+
+
+
+body {
+position:relative;
+    margin-left: 100px;
+    height: 100%;;
+}
+
 
 
 
@@ -128,6 +197,10 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
 
 }
 
+.header-wrapper {
+  background: #ff594a;
+}
+
 .ampstart-headerbar {
  
   max-height: 3rem; 
@@ -135,8 +208,10 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
  padding-block:
 30px 23px;
   min-height: 64px;
-
+  background: #ff594a;
 }
+
+
 
 
 @media screen and (max-width: 767px) {

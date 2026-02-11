@@ -3,5 +3,15 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 [[menu.main]]
-  name = "Visiflows"
+  name = "PulseFrames"
   url = "/post/whatarewebstories/"
+
+  [[menu.main]]
+  name = "Case Studies"
+  weight = 100
+  hasChildren = true
+  identifier = "stories"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog"
