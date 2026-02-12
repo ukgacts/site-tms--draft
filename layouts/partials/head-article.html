@@ -18,14 +18,21 @@
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Product+Sans&family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Google+Sans+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Product+Sans&family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Google+Sans+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+   
     <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
 
     <style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
 
     <style amp-custom>
+
+      body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #111;
+}
 
 /* ===================================================== */
 /* HEADER                                                */
@@ -331,6 +338,13 @@
   background-position: center 30%;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 20px 60px;
+  }
+}
+
 /* Light overlay */
 .hero-overlay {
   position: absolute;
@@ -357,18 +371,36 @@
 
 /* Big headline */
 .hero h1 {
-  font-size: 64px;
-  line-height: 1.05;
-  font-weight: 700;
-  margin: 0 0 30px 0;
+  font-size: clamp(42px, 9vw, 110px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -2px;
 }
+@media (max-width: 768px) {
+ .hero h1 {
+    letter-spacing: -1px;
+  }
+}
+
+.hero h1 br {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .hero h1 br {
+    display: block;
+  }
+}
+
 
 /* Subtext */
 .hero-sub {
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 22px);
   line-height: 1.6;
+  margin-top: 24px;
+  max-width: 520px;
   color: #ddd;
-  max-width: 500px;
+  
 }
 
 
@@ -382,43 +414,137 @@
 
 
 
-.founder-section {
+.section {
   background: #f5f3f1; /* warm gray */
-  padding: 120px 20px 100px;
+
   color: #111;
 }
+.section > .container > *:first-child {
+  margin-top: 0;
+}
 
+.section > .container > *:last-child {
+  margin-bottom: 0;
+}
+
+.section-sm { padding: 32px 20px 64px 20px; }
+.section-md { padding: 96px 20px; }
+.section-lg { padding: 120px 20px 48px 20px; }
+
+
+@media (max-width: 768px) {
+  .section-lg {
+    padding: 80px 20px;
+  }
+
+  .section-sm {
+    padding: 48px 20px;
+  }
+}
+
+
+.section-light {
+  background: #f5f3f1;
+}
+
+.section-dark {
+  background: #0b0b0b;
+  color: white;
+}
 .container {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Large serif headline */
-.block-heading {
-
-font-family: "IBM Plex Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
+/* Small label above headline */
+.label-sm  {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #666;
 }
 
-.founder-title {
-  font-family: "Georgia", serif;
-  font-size: 72px;
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -0.5px;
-  margin-bottom: 40px;
+
+.headline {
+   font-family: Georgia, serif;
+  font-size: 88px;
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+
+   .headline em {
+      font-style: italic;
+    }
+
+ .section-title-condensed {
+   font-family: "Inter Tight", sans-serif;
+  font-size: 64px;
+  font-weight: 700; /* was too heavy */
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+
+
+
+}
+
+.section-title {
+  font-size: 56px;
+  font-weight: 700; /* not 800+ */
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 
 /* Intro paragraph */
-.founder-intro {
-  max-width: 850px;
+/* BODY PARAGRAPH */
+.section-text {
   font-size: 18px;
   line-height: 1.7;
+  margin-bottom: 48px;
   color: #333;
-  margin-bottom: 90px;
+}
+
+@media (max-width: 768px) {
+
+  .headline {
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .section-title-condensed {
+    font-size: 40px;
+  }
+
+  .section-text {
+    font-size: 16px;
+  }
+
+}
+
+.block-separator {
+  width: 80px;
+  height: 1px;
+  background: #000;
+  opacity: 0.2;
+  border: none;
+  margin: 40px 0 40px 0;
+}
+
+/* GRID SPACING */
+.services-grid {
+  margin-top: 40px;
+  gap: 48px;
 }
 
 /* 3 column grid */
@@ -426,6 +552,11 @@ font-family: "IBM Plex Mono", monospace;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
+   margin-top: 60px;
+}
+
+.founder-section + .founder-section {
+  margin-top: -60px;
 }
 
 /* Each column */
