@@ -1,0 +1,47 @@
+<svg width="650" height="475" viewBox="0 0 650 475" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="mix-blend-mode:multiply">
+<path d="M409 0H412.5C543.668 0 650 106.332 650 237.5V237.5C650 368.668 543.668 475 412.5 475H409V0Z" fill="#39099C"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M271 46H276.5C382.263 46 468 131.737 468 237.5V237.5C468 343.263 382.263 429 276.5 429H271V46Z" fill="#210E4C"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M158 81H161.5C247.933 81 318 151.067 318 237.5V237.5C318 323.933 247.933 394 161.5 394H158V81Z" fill="#9D18B2"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M69 115H73.5C141.155 115 196 169.845 196 237.5V237.5C196 305.155 141.155 360 73.5 360H69V115Z" fill="#CF1AA5"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M0 140H1.5C55.3478 140 99 183.652 99 237.5V237.5C99 291.348 55.3478 335 1.5 335H0V140Z" fill="#FC3296"/>
+</g>
+<g style="mix-blend-mode:color-burn">
+<mask id="mask0_296_19" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="-11" width="679" height="487">
+<g style="mix-blend-mode:color-burn" opacity="0.6">
+<rect width="487" height="679" transform="translate(679 -11) rotate(90)" fill="url(#pattern0_296_19)"/>
+</g>
+</mask>
+<g mask="url(#mask0_296_19)">
+<g style="mix-blend-mode:multiply">
+<path d="M409 0H412.5C543.667 0 650 106.332 650 237.5V237.5C650 368.668 543.667 475 412.5 475H409V0Z" fill="#39099C"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M271 46H276.499C382.262 46 468 131.737 468 237.5V237.5C468 343.263 382.262 429 276.499 429H271V46Z" fill="#210E4C"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M158 81H161.5C247.932 81 318 151.067 318 237.5V237.5C318 323.933 247.932 394 161.5 394H158V81Z" fill="#9D18B2"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M68.9995 115H73.4995C141.154 115 196 169.845 196 237.5V237.5C196 305.155 141.154 360 73.4995 360H68.9995V115Z" fill="#CF1AA5"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M-0.000488281 140H1.49951C55.3473 140 98.9995 183.652 98.9995 237.5V237.5C98.9995 291.348 55.3473 335 1.49951 335H-0.000488281V140Z" fill="#FC3296"/>
+</g>
+</g>
+</g>
+<defs>
+<pattern id="pattern0_296_19" patternContentUnits="objectBoundingBox" width="0.0144559" height="0.0103682">
+<use xlink:href="#image0_296_19" transform="matrix(-0.00180698 0 0 -0.00129602 0.0144559 0.0103682)"/>
+</pattern>
+<image id="image0_296_19" width="8" height="8" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAACZJREFUGBljYGBg+A/EuAA+OVx6CIiDjEQxlomABipJo9iJZuZ/AC8NBf1LtGs1AAAAAElFTkSuQmCC"/>
+</defs>
+</svg>
