@@ -8,9 +8,9 @@ title = 'My New Hugo Site'
 
   [[menu.main]]
   name = "Case Studies"
-  weight = 100
-  hasChildren = true
-  identifier = "stories"
+  url = "/articles/casestudies/"
+
+
 
 [[menu.main]]
   name = "Blog"

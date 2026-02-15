@@ -1,67 +1,57 @@
-    <!-- Start Footer -->
-    <footer class="ampstart-footer flex   pxy3"
-
-    >
-     
- 
-
-
-    <aside class="col-1 xs-hide"></aside>
+<footer class="site-footer">
 
 
 
-        <nav class="ampstart-footer-nav flex-auto col-10" style="padding: 24px 0; ">
-            <ul class="list-reset flex flex-wrap mb3 " style="flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            column-gap: 4rem; margin: 0;">
-                <li  style="
-               font-size: 10px;
-    font-weight: 500;
-    letter-spacing: normal;
-    line-height: 1.5;
-              ">
+  <div class="footer-inner container">
 
-                    <a href="/" >2025 Tell Me Something  </a>
+    <!-- LEFT COLUMN -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="smiley">☺</div>
+        <div class="logo-text">
+          ENJOY<br>THE<br>WORK
+        </div>
+      </div>
 
-                    <!--  
-                    <div class="wrapper_footer_logo" style="width: 170px;">
-                        <amp-img media="(max-width: 980px)" src="/img/logocolor.webp" width="300" height="187" layout="responsive" >
-                        </amp-img>
-                        <amp-img media="(min-width: 980px)" src="/img/logocolor.webp" width="300" height="187"  layout="responsive">
-                          </amp-img>
-                 
-                   
-                      </div>
+      <p class="footer-description">
+        Founded in 2015, Enjoy The Work is a San Francisco–based
+        startup advisory firm serving startup founders and CEOs worldwide.
+      </p>
 
-                      -->
-                    
-            </li>
-                <li class="footer__column--right" style="
-    text-align: left;">
+      <a href="#" class="footer-btn">Contact us</a>
 
-Powered by <a href="https://gohugo.io/" title="The world’s fastest framework for building websites">Hugo</a>
+      <div class="footer-social">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
 
+      <div class="footer-legal">
+        © 2026 Enjoy The Work
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
 
-                 
+    <!-- MIDDLE COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Venture Capital</a>
+      <a href="#">Smart Things</a>
+    </div>
 
+    <!-- RIGHT COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Team</a>
+      <a href="#">Companies</a>
+      <a href="#">Playbooks</a>
+      <a href="#">Events</a>
+    </div>
 
-                </li>
-
-                
-                
-            </ul>
-
-    
-        </nav>
-
-
-
-
-
-        
-    <aside class="col-1 xs-hide"></aside>
-    </footer>
+  </div>
+</footer>
     <!-- End Footer -->
     {{if ne .Site.Params.googleanalytics nil}}
     <amp-analytics type="googleanalytics" id="analytics">
