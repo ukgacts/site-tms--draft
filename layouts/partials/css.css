@@ -2989,3 +2989,169 @@ code {
 .abe-preview>section {
     padding: 1rem
 }
+
+
+
+
+
+/* SPLIT SECTION */
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Reverse layout (chess style) */
+.split-section.reverse {
+  direction: rtl;
+}
+
+.split-section.reverse > * {
+  direction: ltr;
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 20px;
+}
+.text-sm { 
+font-weight: 400;
+   font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.entry-title {
+  font-weight: 800;
+  line-height: 1.25;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.split-quote {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  line-height: 1.3;
+  font-weight: 500;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+.split-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 80px;
+  margin-bottom: 50px;
+}
+
+.meta-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.meta-value {
+  font-size: 16px;
+  color: #333;
+}
+
+.split-caption {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e4572e;
+  margin-bottom: 10px;
+}
+.split-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+.split-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .split-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .split-section.reverse {
+    direction: ltr;
+  }
+}
+/* SPLIT SECTION--end */
+
+/* ===== CTA SECTION ===== */
+
+.cta-section {
+  background: #e7e2db;
+  padding: 120px 80px 120px;
+  position: relative;
+}
+
+/* Torn edge attached to bottom */
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: url('/img/bg/edget.svg') repeat-x bottom;
+  background-size: 100% auto;
+  pointer-events: none;
+  z-index: 5;
+  
+}
+
+/* Inner content container */
+.cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Headline */
+.cta-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 6vw, 88px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  color: #0f172a;
+}
+
+/* Subtext */
+.cta-section p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 48px;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  padding: 18px 42px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #9333ea, #c026d3);
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.35);
+}
+
+
+
