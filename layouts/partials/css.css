@@ -531,10 +531,7 @@ _:-ms-lang(x) {
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1)
 }
 
-.ampstart-headerbar+:not(amp-sidebar),
-.ampstart-headerbar+amp-sidebar+* {
-    margin-top: 0
-}
+
 
 .ampstart-headerbar-nav .ampstart-nav-item {
     padding: 0 1.5rem;
@@ -2991,7 +2988,12 @@ code {
 }
 
 
-
+.section > .container > *:first-child {
+  margin-top: 0;
+}
+.section > .container > *:last-child {
+  margin-bottom: 0;
+}
 
 
 /* SPLIT SECTION */
