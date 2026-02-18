@@ -14,7 +14,7 @@
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
     <!-- <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script> -->
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,9 +53,9 @@
   background: #ffffff;
   display: flex;
   align-items: center;
-  padding: 0 80px;
+ padding: 0 0 0 80px;
   z-index: 1000;
- 
+  
     box-shadow: none;
   border-bottom: 1px solid #eee;
 }
@@ -79,16 +79,18 @@
 
 /* ================= NAVIGATION ================= */
 
-.ampstart-headerbar-nav {
-  margin-left: 80px;
-}
+
 
 .ampstart-headerbar-nav ul {
   display: flex;
-  gap: 40px;
+gap: 60px;
   list-style: none;
-  margin: 0;
+   margin-left: auto;
   padding: 0;
+
+  
+  justify-content: space-between;
+  width: 600px; /* fixed nav width */
 }
 
 .ampstart-headerbar-nav li {
@@ -162,7 +164,7 @@
   align-items: center;
 
   padding: 0 60px;
-
+margin-left: 40px;
   background: linear-gradient(135deg, #a855f7, #9333ea);
 }
 
@@ -326,9 +328,7 @@
 
 
 
-main {
-  padding-top: 90px; /* same as header height */
-}
+
 
 /* HERO SECTION */
 .hero {
@@ -337,18 +337,16 @@ main {
   justify-content: flex-end;
   align-items: flex-end;
 
-  min-height: 1000px;
-  height: 100vh;
+    padding: 0 80px 100px;
 
-
-  padding: 0 80px 100px;
-
-  background-image: url('/img/hero1.png');
+  background-image: url('/img/hero7.png');
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
   
   overflow: hidden;
+    height: 75vh;
+  min-height: 650px;
 }
 
 /* Mobile */
@@ -769,6 +767,96 @@ main {
 
 
 
+
+
+
+/* ================= SLIDES SECTION ================= */
+.slides {
+  padding: 100px 0;
+  background: #f5f5f5;
+}
+
+.slides-title {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+.slides-carousel {
+  max-width: 1200px;
+    margin-left: auto;
+  margin-right: 0;
+}
+
+.slide-group {
+  display: flex;
+  gap: 40px;
+}
+
+.slide-card {
+  flex: 1;
+  background: #fff;
+  padding: 40px;
+  border: 1px solid #ddd;
+    height: 100%;
+}
+
+
+
+.story-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.story-media {
+  margin-bottom: 20px;
+}
+
+.story-meta {
+  margin-bottom: 15px;
+}
+
+.story-label {
+  font-weight: 600;
+}
+
+.story-content {
+  flex-grow: 1;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.story-footer {
+  font-size: 14px;
+}
+
+.story-title {
+  display: block;
+  font-weight: 700;
+}
+
+.story-subtitle {
+  display: block;
+  color: #666;
+}
+
+
+
+.slides {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+/* Remove container limit for carousel */
+.slides-carousel {
+  width: 100%;
+}
+
+/* ================= SLIDES SECTION--end ================= */
 
 
 

@@ -657,45 +657,6 @@
   }
 
 
-/* SPLIT SECTION */
-
-
-.split-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: start;
-  max-width: 1100px;
-  margin: 0 auto;
-
-
-}
-
-/* Reverse layout (chess style) */
-.split-section.reverse {
-  direction: rtl;
-}
-
-.split-section.reverse > * {
-  direction: ltr;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .split-section {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .split-section.reverse {
-    direction: ltr;
-  }
-}
-
-/* SPLIT SECTION--end */
-
-
-
 
 
 
