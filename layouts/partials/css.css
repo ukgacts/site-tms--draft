@@ -1191,19 +1191,8 @@ h1,
   font-family: Georgia, "Times New Roman", serif;
 }
 
-h1 {
-  font-size: clamp(48px, 6vw, 90px);
-  line-height: 1.05;
-}
 
-.section h1 {
-  font-family: Georgia, serif;
-  font-size: 72px;
-  font-weight: 400;
-  letter-spacing: -1px;
-  line-height: 1.05;
-  margin-bottom: 40px;
-}
+
 
 h2 {
   font-size: clamp(36px, 4vw, 64px);
@@ -2286,26 +2275,14 @@ h6 {
     line-height: 1rem
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 400;
-     letter-spacing: -1px;
-}
+
 
 .www-component-desc h3,
 .www-heading {
     letter-spacing: inherit
 }
 
-a,
-a:active,
-a:visited {
-    color: inherit
-}
+
 
 .ampstart-btn,
 .ampstart-btn:visited {
@@ -2368,14 +2345,16 @@ a:visited {
     padding-left: 2rem
 }
 
-.www-header,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-      font-family: Georgia, "Times New Roman", Times, serif;
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: -0.02em; /* scalable */
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .ampstart-headerbar-nav .ampstart-nav-item {
@@ -3246,7 +3225,10 @@ display: grid;
 }
 
 
-
+.case-section {
+  position: relative;
+  overflow: visible; /* allow arrow outside */
+}
 
 /* ===== CTA SECTION ===== */
 
@@ -3296,22 +3278,48 @@ display: grid;
 }
 
 /* CTA Button */
+.cta-wrap {
+  display: inline-block;
+  position: relative;
+  margin-top: -10px;
+  
+}
+
+/* BUTTON */
 .cta-button {
   display: inline-block;
-  padding: 18px 42px;
+  padding: 18px 60px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, #9333ea, #c026d3);
-  border-radius: 4px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top:24px;
+  background: linear-gradient(135deg, #b026d3, #8b1fb3);
+  position: relative;
+  z-index: 1;
 }
 
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.35);
+/* TEAR EDGES */
+.cta-wrap::before,
+.cta-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background-image: url("/img/bg/tear-edge-vertical.svg");
+  background-repeat: repeat-y;
+  background-size: 20px auto;
+  z-index: 2;
+}
+
+
+.cta-wrap::before {
+  left: -8px;           /* push OUTSIDE */
+  transform: scaleX(-1); /* mirror */
+}
+
+.cta-wrap::after {
+  right: -20px;          /* push OUTSIDE */
 }
 
 
@@ -3319,3 +3327,33 @@ display: grid;
 
 
 
+
+.case-cta {
+  position: relative;
+  margin-top: 60px;
+
+  display: flex;
+  flex-direction: column;   /* stack items */
+  align-items: flex-start;  /* left align */
+  gap: 30px;                /* space between text + button */
+}
+
+
+
+
+.case-link {
+  position: relative;
+  
+  font-family: monospace;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.curved-arrow {
+position: absolute;
+  
+  top: 10px;
+  width: 80px;
+ 
+  left: -90px; 
+}

@@ -19,9 +19,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
 
@@ -400,7 +406,8 @@ margin-left: 40px;
 /* Headline */
 .hero h1 {
   font-weight: 800;
-  letter-spacing: -2px;
+font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
   font-size: clamp(48px, 6vw, 90px);
   line-height: 1.05;
   color: #fff;   /* FIXED */
@@ -524,41 +531,27 @@ margin-left: 40px;
 }
 
 
-h1, .headline, .section-title {
-  font-family: "Playfair Display", "Georgia", serif;
-  font-weight: 400;
-  letter-spacing: -1px;
-  line-height: 1.1;
+h1, .headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(72px, 9vw, 140px);
+  line-height: 0.95;      /* was 0.92 – tiny bit safer */
+  letter-spacing: -0.03em;
 }
 
    .headline em {
       font-style: italic;
     }
 
- .section-title-condensed {
-   font-family: "Inter Tight", sans-serif;
-  font-size: 64px;
-  font-weight: 700; /* was too heavy */
-  letter-spacing: 2px;
-  line-height: 1;
-  text-transform: uppercase;
-  margin: 0 0 24px 0;
-
-
-
-}
+ 
 
 .section-title {
+ font-family: 'Barlow Condensed', sans-serif;
   font-size: 64px;
-  line-height: 1.2;
+  line-height: 1.05;
+  font-weight: 500;     /* lighter */
+  letter-spacing: 0.5px; /* less tracking */
   margin-bottom: 24px;
-
-
-
-
-
-  font-weight: 600;
-  letter-spacing: -1px;
 }
 
 
@@ -650,7 +643,7 @@ h1, .headline, .section-title {
 }
 
 .container {
-  max-width: 1240px;
+max-width: 960px;
   margin: 0 auto;
 }
 
@@ -830,11 +823,7 @@ h1, .headline, .section-title {
   padding: 140px 0 120px;
   
 }
-.insights .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 0 60px;
-}
+
 
 /* Header */
 
@@ -869,8 +858,8 @@ h1, .headline, .section-title {
 .insights-grid {
   grid-column: 4 / 13; /* starts at col 4, ends at last */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 140px 60px;
+  grid-template-columns: repeat(3, 1fr);
+ gap: 3rem 1.5rem;
 }
 
 
@@ -886,9 +875,7 @@ h1, .headline, .section-title {
        transition: opacity 0.25s ease;
 }
 
-.insight-card:nth-child(odd) {
-  margin-top: 40px;
-}
+
 
 .insight-content {
   padding-top: 24px;
@@ -1057,6 +1044,70 @@ p.insight-excerpt {
   font-weight: 500;
 }
 
+
+
+
+
+
+
+
+/* 3 column grid */
+/* ===============================
+   In the drafts STATS SECTION with big numbers
+=================================*/
+
+.stats {
+  padding: 60px 0;
+  background: #f5f3f1;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Each stat */
+.stat {
+  flex: 1;
+  padding: 0 60px;
+  position: relative;
+}
+
+/* Vertical separators */
+.stat:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Label */
+.stat-label {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Value */
+.stat-value {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  display: inline-block;
+}
+
+
+
+/* ===============================
+   STATS SECTION with big numbers --end
+=================================*/
 
 
     </style>
