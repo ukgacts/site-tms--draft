@@ -530,7 +530,7 @@ _:-ms-lang(x) {
 }
 
 .ampstart-headerbar {
-    background-color: #fff;
+    background-color: black;
     color: #000;
     z-index: 999;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1)
@@ -1076,7 +1076,7 @@ button::-moz-focus-inner {
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring,
 button:-moz-focusring {
-    outline: ButtonText dotted 1px
+    outline: none
 }
 
 fieldset {
@@ -2208,7 +2208,8 @@ body {
 }
 
 body, p, button, small {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+ 
+   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0px;
@@ -3004,7 +3005,11 @@ code {
   padding: 100px 0;
 }
 
-
+.subtext {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 14px;
+}
 
 
 
@@ -3112,10 +3117,11 @@ code {
   margin-bottom: 100px;
 }
 
-.pulseframe-eyebrow {
-  font-size: 14px;
+.eyebrow {
+   font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
   opacity: 0.6;
   margin-bottom: 20px;
 }
@@ -3123,7 +3129,9 @@ code {
 .pulseframe-title {
   font-size: 48px;
   line-height: 1.1;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
+  
 }
 
 .pulseframe-block {
@@ -3279,51 +3287,56 @@ display: grid;
 
 /* CTA Button */
 .cta-wrap {
-  display: inline-block;
   position: relative;
-  margin-top: -10px;
-  
+  display: inline-block;
 }
 
-/* BUTTON */
 .cta-button {
-  display: inline-block;
-  padding: 18px 60px;
-  font-size: 18px;
-  font-weight: 500;
+  position: relative;
+ border: none;
   color: #fff;
   text-decoration: none;
   background: linear-gradient(135deg, #b026d3, #8b1fb3);
-  position: relative;
-  z-index: 1;
+  overflow: hidden;
+
+  line-height: 1.75rem;
+  font-weight: 400;
+
+    display: inline-block;
+  padding: 18px 42px;
+  font-size: 18px;
+  
 }
 
-/* TEAR EDGES */
-.cta-wrap::before,
-.cta-wrap::after {
+
+.cta-button::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  background-image: url("/img/bg/tear-edge-vertical.svg");
-  background-repeat: repeat-y;
-  background-size: 20px auto;
-  z-index: 2;
+  inset: 0;
+
+  background: url("/img/bg/pattern-dots.webp");
+  background-size: 8px 8px;
+
+  opacity: 0.04;  /* 🔥 was too high before */
+  mix-blend-mode: soft-light; /* better than overlay */
+  pointer-events: none;
 }
 
 
-.cta-wrap::before {
-  left: -8px;           /* push OUTSIDE */
-  transform: scaleX(-1); /* mirror */
+.cta-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("/img/bg/tear-edge-vertical.svg");
+  background-size: 8px 8px;
+
+  opacity: 0.04;  /* 🔥 was too high before */
+  mix-blend-mode: soft-light; /* better than overlay */
+  pointer-events: none;
 }
 
-.cta-wrap::after {
-  right: -20px;          /* push OUTSIDE */
-}
-
-
-
+/* CTA Button--end */
 
 
 
@@ -3336,17 +3349,18 @@ display: grid;
   flex-direction: column;   /* stack items */
   align-items: flex-start;  /* left align */
   gap: 30px;                /* space between text + button */
+ 
+  position: relative;
 }
 
 
 
 
-.case-link {
-  position: relative;
-  
-  font-family: monospace;
-  font-size: 18px;
-  line-height: 1.6;
+.case-label {
+    font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  margin-bottom: 18px;
+  display: inline-block;
 }
 
 .curved-arrow {
@@ -3356,4 +3370,55 @@ position: absolute;
   width: 80px;
  
   left: -90px; 
+}
+
+
+
+
+amp-lightbox {
+  background: rgba(0,0,0,0.75);
+}
+
+.modal-overlay {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Popup box */
+.modal-card {
+  position: relative;   /* 🔥 IMPORTANT */
+  width: 90%;
+  max-width: 1000px;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* Close button INSIDE popup */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 18px;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* iframe sizing */
+.modal-card amp-iframe {
+  width: 100%;
+  height: 80vh;
 }
