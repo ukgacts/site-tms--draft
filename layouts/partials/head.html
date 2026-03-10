@@ -12,40 +12,45 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-lightbox"
   src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  
 
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <!-- <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script> -->
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+
+
+
+
+
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
+
+
 
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
+<style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
 
     <style amp-custom>
 
 
    body {
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.6;
-  color: #111;
-    margin: 0;
+  color:#111;
 
   
 }
@@ -62,7 +67,7 @@
   left: 0;
   width: 100%;
   height: 90px;
-  background: black;
+  background: white;
   display: flex;
   align-items: center;
  padding: 0 0 0 80px;
@@ -344,98 +349,6 @@ margin-left: 40px;
 
 
 
-/* HERO SECTION */
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-    padding: 0 80px 100px;
-
-  background-image: url('/img/hero7.png');
-  background-size: cover;
-  background-position: left;
-  background-repeat: no-repeat;
-  
-  overflow: hidden;
-    height: 75vh;
-  min-height: 650px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 520px;
-    padding: 120px 20px 80px;
-    background-position: center;
-  }
-}
-
-/* Alternate hero */
-.hero.casestudies {
-  background-image: url('/img/hero3.png');
-}
-
-/* Overlay */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-  to top,
-  rgba(0,0,0,0.55) 0%,
-  rgba(0,0,0,0.25) 50%,
-  rgba(0,0,0,0.05) 80%,
-  transparent 100%
-);
-}
-
-/* Content container */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 650px;
-  margin-right: 40px;
-  color: #fff;   /* unified white text */
-}
-
-/* Eyebrow */
-.hero-eyebrow {
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #c084fc;
-}
-
-/* Headline */
-.hero h1 {
-  font-weight: 800;
-font-family: 'Anton', sans-serif;
-  letter-spacing: 1px;
-  font-size: clamp(48px, 6vw, 90px);
-  line-height: 1.05;
-  color: #fff;   /* FIXED */
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    letter-spacing: -1px;
-  }
-}
-
-/* Subtext */
-.hero-sub {
-  font-size: clamp(16px, 2.5vw, 22px);
-  line-height: 1.6;
-  margin-top: 24px;
-  max-width: 520px;
-  color: #ddd;
-}
-
 
 
 
@@ -485,6 +398,80 @@ font-family: 'Anton', sans-serif;
   overflow: hidden; /* hides extra overflow */
   background: #f5f3f1;
 }
+
+/* SCROLL LAYOUT */
+
+.layout-split{
+  display:flex;
+  align-items:center;
+}
+
+
+
+.layout-split .container{
+   display:flex;
+  gap:80px;
+  align-items:flex-start;
+}
+.scroll-box{
+  width:320px;
+  max-width:100%;
+  position:relative;
+  overflow:hidden;
+  flex-shrink:0;
+  
+}
+
+.scroll-box-vertical {
+  max-height: 300px;        /* limit total height */
+  overflow-y: auto;         /* vertical scrolling */
+  padding-right: 8px;       /* optional, prevent scrollbar overlap */
+  scrollbar-width: thin;    /* optional for Firefox */
+}
+
+.profile-slide{
+  width:85%;
+  margin-right:12px;
+    position: relative;
+overflow:hidden;
+  height: 100%;
+}
+
+
+
+.profile-slide amp-img {
+  object-fit: cover; /* ensures images fill without distortion */
+  display: block;
+}
+
+.carousel-dots{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px;
+}
+
+.carousel-dots span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .pulseframe {
   padding-top: 80px;
@@ -547,7 +534,8 @@ font-family: 'Anton', sans-serif;
 
 
 h1, .headline {
-  font-family: 'Cormorant Garamond', serif;
+font-family: 'Inter', sans-serif;
+  letter-spacing: -0.03em;
   font-weight: 500;
  
   line-height: 0.95;      
@@ -566,40 +554,40 @@ h2, .headline {
 
   
 
-
-    .headline-lg {
- font-size: clamp(72px, 9vw, 140px);
-   line-height: 0.9;
+/* HERO */
+.headline-lg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(72px, 9vw, 140px);
+  line-height: 0.9;
   letter-spacing: -0.035em;
-  
   margin-bottom: 48px;
 }
 
-
-
+/* SECTION HERO */
 .headline-md {
 
-  font-size: clamp(60px, 6.5vw, 96px);
+  font-size: clamp(48px, 6vw, 84px);
   line-height: 0.95;
   letter-spacing: -0.03em;
-
-  margin-bottom: 40px;
-
-
+  margin-bottom: 32px;
+    max-width:540px;
 }
 
+/* SUB HEADLINE */
 .headline-sm {
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
 }
- 
 
 .section-title {
- font-family: 'Barlow Condensed', sans-serif;
-  font-size: 64px;
-  line-height: 1.05;
-  font-weight: 500;     /* lighter */
-  letter-spacing: 0.5px; /* less tracking */
-  margin-bottom: 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
 }
 
 
@@ -810,16 +798,18 @@ max-width: 960px;
 
 /* TITLE */
 .services-grid-divided .service-title {
-  font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Inter', sans-serif;
+  letter-spacing: -0.03em;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 18px;
-  letter-spacing: 0;
+
 }
 
 /* BODY TEXT */
 .services-grid-divided .service p {
-  font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+  letter-spacing: -0.03em;
   font-size: 18px;
   line-height: 1.7;
   color: #222;
@@ -827,8 +817,9 @@ max-width: 960px;
 
 
 .service-col h3 {
-  font-size: 22px;
+   font-size: 22px;
   font-weight: 600;
+  line-height: 1.3;
   margin-bottom: 16px;
 }
 
@@ -1184,10 +1175,11 @@ p.insight-excerpt {
 
 /* Value */
 .stat-value {
-  font-family: "Playfair Display", serif;
+ font-family: 'Inter', sans-serif;
+  letter-spacing: -0.03em;
   font-size: 42px;
   font-weight: 500;
-  letter-spacing: -0.5px;
+
   display: inline-block;
 }
 
@@ -1198,6 +1190,317 @@ p.insight-excerpt {
 =================================*/
 
 
+
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+
+.card-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Card Stats */
+.card-stat .card-value {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+/* Card Feature Image */
+.card-feature .card-media {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-source {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+/* Large Image */
+.large{
+  grid-row: span 2;
+  padding:0;
+}
+
+.large img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.source{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  color:white;
+  font-size:12px;
+}
+
+/* Image grid */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:10px;
+}
+
+.grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* News */
+.news h4{
+  margin:0;
+  font-size:14px;
+}
+
+.news h3{
+  margin:5px 0;
+  font-size:16px;
+}
+
+.news p{
+  font-size:14px;
+}
+
+/* Small info cards */
+.small h2{
+  margin:10px 0;
+}
+
+/* Video */
+.video{
+  padding:0;
+}
+.video iframe{
+  border-radius:16px;
+}
+
+
+
+.story-container{
+  height:80vh;
+  aspect-ratio:9/16;
+  margin-left:auto;
+  border-radius:20px;
+overflow:hidden;
+box-shadow:
+0 30px 60px rgba(0,0,0,0.15);
+}
+
+.story-container iframe{
+  width:100%;
+  aspect-ratio:9/16;
+  border:none;
+}
+.story-container:hover{
+transform:translateY(-4px);
+transition:all .3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+
+  
+.hero{
+  position:relative;
+  height:750px;
+  background:#e9e3d7;
+  overflow:hidden;
+}
+
+/* TEAL TOP AREA */
+
+.hero-top{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:420px;
+  background:#1f8f8b;
+  z-index:1;
+}
+
+/* CONTENT */
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  padding:140px 80px 0 80px;
+}
+
+.tag{
+  font-size:18px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.hero h1{
+  font-size:260px;
+  font-weight:900;
+  line-height:.85;
+  color:#e9e3d7;
+  margin:0;
+  letter-spacing:-6px;
+}
+
+/* subtitle on the boundary */
+
+.subtitle{
+  position:absolute;
+  left:80px;
+  top:420px;
+  font-size:20px;
+}
+
+/* right text */
+
+.side-text{
+  position:absolute;
+  right:140px;
+  top:460px;
+  font-size:28px;
+  font-weight:700;
+  color:#111;
+  text-align:right;
+  line-height:1.1;
+}
+
+/* IMAGE */
+
+.hero-image{
+ position:absolute;
+    bottom:40px; 
+  left:50%;
+  transform:translateX(-50%);
+  width:min(900px, 70vw);
+  z-index:3;
+}
+
+.hero-image img{
+  object-fit: contain;
+}
+
+.barcode-image{
+  position:absolute;
+  right:120px;
+  bottom:40px;
+  width:160px;
+  z-index:4;
+}
+
+/* CIRCLES */
+.circle{
+  position:absolute;
+  border-radius:50%;
+  z-index:2;
+}
+.circle.big{
+  width:520px;
+  height:520px;
+  right:-260px;
+  top:-40px;
+  background:#4ab0ad;
+  opacity:.35;
+}
+
+.circle.mid{
+  width:380px;
+  height:380px;
+    right:-160px;
+  top:40px;
+  background:#7bc1be;
+  opacity:.5;
+}
+
+.circle.small{
+  width:260px;
+  height:260px;
+   right:-80px;
+  top:120px;
+  background:#0e4d4a;
+}
     </style>
 </head>
 
