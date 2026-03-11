@@ -1,25 +1,27 @@
 baseURL = 'https://site-tms--draft.pages.dev/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-
-[[menu.main]]
-  name = "PulseFrames"
-  url = "/post/whatarewebstories/"
+title = 'TMS'
 
   [[menu.main]]
-  name = "Case Studies"
+  name = "pulse frames"
+  url = "/articles/pulseframes/"
+
+      [[menu.main]]
+  name = "audio"
+  url = "/articles/Audio/"
+
+      [[menu.main]]
+  name = "video"
+  url = "/articles/video/"
+
+  [[menu.main]]
+  name = "case studies"
   url = "/articles/casestudies/"
 
 
 
-  [[menu.main]]
-  name = "PulseFrames"
-  url = "/articles/pulseframes/"
 
-    [[menu.main]]
-  name = "Video"
-  url = "/articles/video/"
 
-    [[menu.main]]
-  name = "Audio"
-  url = "/articles/Audio/"
+
+
+
