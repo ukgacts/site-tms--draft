@@ -49,7 +49,7 @@
 
   <div class="container-new ">
     <span class="case-label">Case Study</span>
- <h1 class="headline-md">Pori Jazz Festival</h1>
+ <h1 class="headline-lg">Pori Jazz Festival</h1>
 <p class="case-subtitle">Designing the Sound of the Brand</p>
 <hr class="case-divider">
    <div class="layout-split">  
@@ -82,21 +82,25 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 <div class="story-container">
  
+  <div class="story-frame">
   <iframe 
     src="https://bassscene.co.uk/porijazz/"
     loading="lazy"
     allowfullscreen>
   </iframe>
+    </div>
+<div class="story-meta">
 
-<a href="#work" class="arrow-btn"on="tap:storyLightbox.open">
-  See our work <span class="arrow" >↗  </span>
-</a>
+    <a href="#work" class="arrow-btn" on="tap:storyLightbox.open">
+      See our work <span class="arrow">↗</span>
+    </a>
 
-<div class="subtext">
-  <p>Just swipe right or see it  in a pop up window</p>
+    <p class="story-hint">
+      Swipe through the story or open it in a larger view
+    </p>
 
+  </div>
 
-</div>
 </div>
 
 
@@ -122,14 +126,23 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 
 
-<section class="section pulseframe section-lg">
+<section class="section pulseframe-section">
   <div class="container-new">
 
    
      
-      <h1 class="headline-md">
-        Inside Pulseframe
-      </h1>
+ <div class="pulseframe-intro">
+
+      <h2 class="headline-md">
+        Inside PulseFrame
+      </h2>
+
+      <p class="pulseframe-lead">
+        How storytelling, music, and visual rhythm translate the festival
+        experience into a digital campaign.
+      </p>
+
+    </div>
 
 
     <!-- BLOCK 1 -->
@@ -152,7 +165,7 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
   to translate the live experience digitally.
 </p>
       </div>
-
+<div class="bg-shape"></div>
       <div class="pulseframe-media">
         <amp-video
           width="270"
@@ -225,8 +238,8 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
           height="480"
           layout="responsive"
           controls
-          poster="/video/poster1.png">
-          <source src="/video/vid1--story.mp4" type="video/mp4">
+          poster="/video/poster3.png">
+          <source src="/video/vid2--story.mp4" type="video/mp4">
         </amp-video>
       </div>
     </div>
@@ -240,181 +253,182 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 
 
-<section class="section section-sm layout-split">
 
-  <div class="container">
 
-    <div class="content-block">
+<section class="story-system">
+<header class="section-header">
+<span class="section-label">07 — Story System</span>
+<h2 class="headline-md">Story Architecture</h2>
+</header>
+<div class="story-wrapper">
 
-      <header class="section-header">
-        <span class="section-label">04 — Inside the Slides</span>
-        <h3 class="section-title">Story Architecture</h3>
-      </header>
 
-      <div class="grid-dashboard">
 
-        <!-- Large Image Panel -->
-        <div class="card card-feature">
-          <img src="/img/illustrations/cover.png" class="card-media">
-          <span class="card-source">Source: IMDb</span>
-        </div>
 
-        <!-- Info Card -->
-        <div class="card card-info">
-          <p class="card-label">Sharing Options</p>
-          <h4 class="card-title">Finland Tech</h4>
-          <p class="card-text">A Web Story can be shared through social media platforms such as Instagram and Facebook, where it can appear as a link preview or be promoted alongside other visual content. It can also be shared directly through messaging applications, including Messenger and other chat platforms, allowing users to send the story to friends or groups with a simple link.</p>
-          <span class="card-meta">1 week ago</span>
-        </div>
 
-        <!-- Info Card -->
-        <div class="card card-info">
-          <p class="card-label">Messenger Preview</p>
-          <h4 class="card-title">Finland Tech</h4>
-          <p class="card-text">Was presented to Finnish Tech and got high mark</p>
-          <span class="card-meta">1 week ago</span>
-        </div>
+<div class="story-main">  
+<div class="scroll-box">
 
-        <!-- Small Stat Card -->
-        <div class="card card-stat">
-          <p class="card-label">Slides</p>
-          <p class="card-value">10 slides</p>
-          <p class="card-meta">Feb 13, 1974</p>
-        </div>
+  <!-- PHONE STORY / SLIDES -->
+  <div class="story-visual">
 
-        <!-- Small Stat Card -->
-        <div class="card card-stat">
-          <p class="card-label">Link Hub</p>
-          <p>Some links are included through attachments, which allow users to swipe up or tap to access additional information without interrupting the flow of the story. This method works well for resources that require more detailed exploration, such as accommodation listings or full ticket pages.
+    <amp-carousel
+      class="profile-carousel"
+      layout="fixed-height"
+      height="520"
+      type="carousel"
+      controls>
 
-Other links are placed directly on the slides as clickable elements. These links are visible while the user is viewing the slide and allow for quick access to specific pages, such as a restaurant, attraction, or booking option mentioned in the story.</p>
-        </div>
-
+      <div class="profile-slide">
+        <amp-img
+          src="/img/illustrations/slide3.png"
+          width="360"
+          height="640"
+          layout="responsive"
+          alt="Slide 1">
+        </amp-img>
       </div>
 
-      <p class="section-subtext">Better than any story you have seen</p>
-
-    </div>
-
-
-    <!-- Slide + Scroll Column -->
-
-   <div class="scroll-box">
-
-      <amp-carousel
-        class="profile-carousel"
-        layout="fixed-height"
-        height="480"
-        type="carousel"
-        controls>
-        
-        <div class="profile-slide">
-          <amp-img src="/img/illustrations/slide3.png"
-              width="360"
-      height="640"
-      layout="responsive"
-            alt="Slide 1 illustration">
-          </amp-img>
-        </div>
-
-        <div class="profile-slide">
-          <amp-img src="/img/illustrations/slide2.png"
-            width="360"
-      height="640"
-      layout="responsive"
-            alt="Slide 2 illustration">
-          </amp-img>
-        </div>
-
-        <div class="profile-slide">
-          <amp-img src="/img/illustrations/slide4.png"
-           width="360"
-      height="640"
-      layout="responsive"
-            alt="Slide 3 illustration">
-          </amp-img>
-        </div>
-
-      </amp-carousel>
-
-      <div class="carousel-dots">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="profile-slide">
+        <amp-img
+          src="/img/illustrations/slide2.png"
+          width="360"
+          height="640"
+          layout="responsive"
+          alt="Slide 2">
+        </amp-img>
       </div>
-<div class="scroll-box-vertical"><h3>Story Architecture</h3>
-<p>Our goal with Pulseframe was to transform practical information into an engaging story that helps visitors imagine their visit before they arrive.
 
- The story combines visual storytelling with practical guidance, making the journey from discovery to ticket purchase seamless.
+      <div class="profile-slide">
+        <amp-img
+          src="/img/illustrations/slide4.png"
+          width="360"
+          height="640"
+          layout="responsive"
+          alt="Slide 3">
+        </amp-img>
+      </div>
+
+    </amp-carousel>
+
+  </div>
 
 
+  <!-- SCROLLABLE TEXT PANEL -->
+  <div class="scroll-box-vertical">
+
+    <h3>Story Architecture</h3>
+<p>Slide 2</p>
+    <p>
+  ,nmnm,n,nm,
+    </p>
+<p>Slide 4</p>
+    <p>
+      The story combines visual storytelling with practical guidance,
+      making the journey from discovery to ticket purchase seamless.
+    </p>
+<p>Slide 4</p>
+    <p>
+      Within the Pulseframe, visitors can explore short video moments
+      that capture the atmosphere and energy of the festival.
+    </p>
+
+    <p>
+      The experience also provides direct links to relevant resources
+      such as accommodation and ticket pages.
+    </p>
+
+    <p>
+      Helpful travel information is included for international guests,
+      ensuring that planning a visit becomes easier.
+    </p>
+
+    <p>
+      The story also highlights the city of Pori, including attractions,
+      food, and local experiences visitors can enjoy during the festival.
+    </p>
+
+    <p>
+      This approach turns a simple information page into a visual
+      journey that guides users naturally from discovery to action.
+    </p>
+
+  </div>
+
+</div>
+</div>
+
+<!-- RIGHT COLUMN -->
+<div class="story-content">
+
+<div class="story-text">
+
+<h4>Designing the Story Experience</h4>
+
+<p>
+Pulseframe transforms practical information into a visual journey that helps visitors imagine their festival experience before they arrive.
 </p>
-<p>Within the Pulseframe, visitors can explore:
 
-Short video moments that capture the atmosphere and energy of the festival
-
-Direct links to relevant resources such as accommodation and ticket pages
-
-Helpful travel information for international guests
-
-Highlights of the city of Pori, including attractions, food, and local experiences
-
-
-
+<p>
+The story combines short video moments, travel guidance, and local highlights to guide users from discovery to ticket purchase.
 </p>
 
 </div>
 
+
+<div class="story-cards">
+
+<div class="card">
+<p class="card-label">Sharing</p>
+<h4>Social Distribution</h4>
+<p>Stories can be shared across Instagram, Facebook, and messaging apps where they appear as link previews.</p>
 </div>
 
-  </div>
+<div class="card">
+<p class="card-label">Messaging</p>
+<h4>Messenger Preview</h4>
+<p>The story can be sent directly in chat platforms, allowing users to quickly share it with friends.</p>
+</div>
 
-</section>
+</div>
 
-<section class="section section-sm">
-  <div class="container">
 
-    <h2 class="section-title">How does it look like?</h2>
+<div class="story-stats">
 
-    <div class="services-grid">
+<div class="stat">
+<span>Slides</span>
+<strong>10</strong>
+</div>
 
-      <div class="service-col">
-        <h3> Pulseframe preview on the messanger</h3>
+<div class="stat">
+<span>Links</span>
+<strong>15+</strong>
+</div>
 
-          <div class="insigght-media">
-            <amp-img
-              src="/img/illustrations/45.jpg"
-              width="250"
-              height="120"
-              layout="responsive"
-              alt="">
-            </amp-img>
-          </div>
+<div class="stat">
+<span>Media</span>
+<strong>Video + Photo</strong>
+</div>
 
-        <p>
-          Use short-form vertical video to communicate atmosphere,
-          legacy, and energy before arrival.
-        </p>
-      </div>
+</div>
 
-      <div class="service-col">
-        <h3>Links inside</h3>
-        <p>
-          Build a logical slide sequence answering
-          every international visitor’s key question.
-        </p>
-      </div>
+</div>
 
-      <div class="service-col">
-        <h3>3. Seamless Conversion Path</h3>
-        <p>
-          Integrate accommodation, travel guidance,
-          and direct ticket links inside the story experience.
-        </p>
-      </div>
 
-    </div>
-  </div>
+ <!-- Optional Circle Link / CTA -->
+  <a href="https://example.com" class="circle-link">
+    <amp-img
+      src="/img/barcode.png"
+      width="200"
+      height="200"
+      layout="responsive"
+      alt="Circle Image">
+    </amp-img>
+  </a>
+</div>
+
+ 
+
 </section>
 
 
