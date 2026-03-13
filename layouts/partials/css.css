@@ -3284,9 +3284,13 @@ font-size:36px;
 }
 
 .story-wrapper{
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+  position:relative;
+}
+
+.story-main{
+  display:flex;
+  gap:60px;
+  align-items:flex-start;
 }
 
 .section-header{
@@ -3309,17 +3313,17 @@ font-size:36px;
 }
 
 
-.story-main {
-  display: flex;
-  gap: 40px; /* space between scroll-box and story-content */
-  position: relative; /* circle will be positioned relative to this */
-}
+
 .story-layout{
  
   margin-top:60px;
 
     display: flex;
   gap: 40px; /* space between left and right columns */
+}
+
+.scroll-box{
+  width:320px;
 }
 
 .story-visual{
@@ -3376,12 +3380,15 @@ font-size:36px;
 }
 
 .story-content{
+  flex:1;
   display:flex;
   flex-direction:column;
   gap:40px;
-   position: relative; /* for the circle inside it */
-  flex: 1;
+   max-width: 620px;   /* adjust between 580–680px if needed */
+  width: 100%;
 }
+
+
 
 .story-text h4{
    font-size: 28px;
@@ -3454,17 +3461,55 @@ font-size:36px;
   color:#111;
 }
 
-.circle-link {
-  position: absolute;
-  top: 50%;
-  right: -100px; /* adjust distance from column */
-  transform: translateY(-50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 2;
+
+.story-circle {
+  position: relative;
+  width: 220px;
+  margin-left: auto;
+  text-align: center; /* centers the caption below */
 }
+
+.story-circle-bg {
+   position: absolute;
+  top: -15px;      /* move it up to make it bigger */
+  left: -15px;     /* move it left */
+  right: -15px;    /* expand width */
+  bottom: -15px;   /* expand height */
+  background: rgba(233, 230, 226, 0.3); /* transparent light background */
+  border-radius: 50%;
+  transition: transform .45s ease, background .45s ease;
+  pointer-events: none; /* so it doesn't block clicks */
+}
+
+.circle-link {
+  display: inline-block; /* keep it inline to allow caption under it */
+  text-decoration: none;
+  text-align: center;
+  transition: transform .3s ease;
+}
+
+.circle-media {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.circle-cta {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  margin-top: 10px; /* space between circle and caption */
+}
+
+.circle-link:hover{
+  transform:scale(1.05);
+  transition:transform .3s ease;
+}
+
+
+
+
+
 
 .circle-link amp-img img {
   object-fit: cover;
@@ -3484,6 +3529,21 @@ font-size:36px;
     display: none; /* hide on smaller screens to prevent overlap */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* RESPONSIVE */
 
