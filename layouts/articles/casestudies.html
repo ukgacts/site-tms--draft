@@ -3,51 +3,56 @@
 {{ partial "header.html" . }}
 
 
-<section class="hero">
+<section class="hero-base">
 
-<div class="hero-top"></div>
+<div class="hero-base-top"></div>
 
-<div class="container-new hero-inner">
-  <div class="hero-content ">
-    <p class="tag">ATMOSPHERE BY DESIGN</p>
-    <h1>BASE.</h1>
-    <p class="subtitle">THE SOUND OF THE BRAND</p>
-    <p class="side-text">ARTISTRY MEETS<br>ARCHITECTURE</p>
-  </div>
+<div class="hero-base-inner container-new">
+
+<p class="hero-base-tag">ATMOSPHERE BY DESIGN</p>
+
+<h1 class="hero-base-title">BASE.</h1>
+
+<p class="hero-base-subtitle">THE SOUND OF THE BRAND</p>
+
+<p class="hero-base-side">
+ARTISTRY MEETS<br>
+ARCHITECTURE
+</p>
+
 </div>
-<amp-img
-  src="/img/houses.png"
-  width="1348"
-  height="649"
-  layout="responsive"
-  class="hero-image"
-  alt="Buildings">
-</amp-img>
-
-  <div class="circle big"></div>
-  <div class="circle mid"></div>
-  <div class="circle small"></div>
-
-
 
 <amp-img
-  src="/img/barcode.png"
-  width="210"
-  height="113"
-  layout="responsive"
-  class="barcode-image"
-  alt="Buildings">
+src="/img/houses.png"
+width="1348"
+height="649"
+layout="responsive"
+class="hero-base-building"
+alt="Buildings">
 </amp-img>
 
+<div class="hero-base-circles">
+<div class="hero-base-circle hero-base-circle-big"></div>
+<div class="hero-base-circle hero-base-circle-mid"></div>
+<div class="hero-base-circle hero-base-circle-small"></div>
+</div>
 
-   
+<amp-img
+src="/img/barcode.png"
+width="210"
+height="113"
+layout="responsive"
+class="hero-base-barcode"
+alt="barcode">
+</amp-img>
+
 </section>
 
 
 <section class="section section-lg case-section ">
   
 
-  <div class="container-new ">
+  <div class="container ">
     <span class="case-label">Case Study</span>
  <h1 class="headline-lg">Pori Jazz Festival</h1>
 <p class="case-subtitle">Designing the Sound of the Brand</p>
@@ -127,7 +132,7 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 
 <section class="section pulseframe-section">
-  <div class="container-new">
+  <div class="container">
 
    
      
@@ -262,7 +267,7 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
     <h2 class="headline-md">Story Architecture</h2>
   </header>
 
-  <div class="story-wrapper">
+  <div class=" story-wrapper">
 
     <div class="story-main">
 
@@ -304,20 +309,37 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
         <div class="scroll-box-vertical">
           <h3>Story Architecture</h3>
 
-          <p>The story combines visual storytelling with practical guidance,
-          making the journey from discovery to ticket purchase seamless.</p>
+        Slide 1 (Cover)
+"Festival Highlights"
+We collected album covers from the artists performing at the festival to give a visual preview of the lineup.
 
-          <p>Visitors can explore short video moments capturing the
-          atmosphere and energy of the festival.</p>
+Slide 2
+"Explore the Festival Venue"
+We offered a guide to exploring the festival location, highlighting must-see areas and unique spots on site.
 
-          <p>The experience also provides direct links to relevant resources
-          such as accommodation and ticket pages.</p>
+Slide 3
+"Accommodation Options"
+We suggested several accommodation choices for visitors. Understanding that festival-goers often enjoy alternative stays, we focused on budget-friendly and comfortable options.
 
-          <p>Helpful travel information is included for international guests,
-          ensuring planning becomes easier.</p>
+Slide 4
+"Getting to Pori"
+Traveling from Helsinki to Pori is a long journey. We provided clear directions and tips on how to reach Pori easily.
 
-          <p>The story also highlights the city of Pori including attractions,
-          food and local experiences.</p>
+Slide 5
+"Discover Pori"
+Did you know Pori is a beautiful spa destination? Many international visitors are unaware, so we highlighted other attractions and activities to enjoy while there.
+
+Slide 6
+"Taste the Local Cuisine"
+Finnish cuisine is delicious! We recommended restaurants and eateries where visitors can enjoy authentic local dishes.
+
+Slide 7
+"English-Friendly for International Visitors"
+To ensure a welcoming experience for international guests, we highlighted locations and services where English is spoken.
+
+Slide 8
+"Get Your Tickets"
+Direct link to purchase festival tickets online for easy access.
 
         </div>
 
@@ -359,17 +381,17 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
           <div class="stat">
             <span>Slides</span>
-            <strong>10</strong>
+            <strong>14</strong>
           </div>
 
           <div class="stat">
             <span>Links</span>
-            <strong>15+</strong>
+            <strong>direct links to accommodation, restarants and ticket pages.</strong>
           </div>
 
           <div class="stat">
-            <span>Media</span>
-            <strong>Video + Photo</strong>
+            <span>Feedback</span>
+            <strong>Got a highly positive feedback from Finnish Tech Association</strong>
           </div>
 
         </div>
@@ -380,9 +402,12 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 
   </div>
+
+
+
 <div class="story-circle">
 
-  <div class="story-circle-bg"></div>
+  <div class="story-circle-ring"></div>
 
   <a class="circle-link arrow-btn"
      on="tap:storyLightbox2.open"
@@ -409,6 +434,36 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
   It is about UKG djs
 </div>
+
+
+
+<div class="story-circle-insta">
+
+  <div class="story-circle-ring"></div>
+
+  <a class="circle-link"
+     on="tap:storyLightbox2.open"
+     role="button">
+
+    <amp-img
+      src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+      width="160"
+      height="160"
+      layout="fixed"
+      alt="Open Story">
+    </amp-img>
+
+  </a>
+
+  <span class="circle-cta">
+    See another story <span class="arrow">↗</span>
+  </span>
+
+  <div class="circle-desc">
+    It is about UKG djs
+  </div>
+
+</div>
 </section>
 
 
@@ -423,5 +478,5 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 
 
-{{ partial "cta-section.html" . }}
-{{ partial "footer.html" . }}
+{{ partial "footer-cta.html" . }}
+

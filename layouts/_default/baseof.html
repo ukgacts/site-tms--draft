@@ -6,43 +6,50 @@
 <body>
 
   {{ partial "header.html" . }}
-<section class="hero">
 
-<div class="hero-top"></div>
+  <section class="hero-base">
 
-  <div class="hero-content">
-    <p class="tag">ATMOSPHERE BY DESIGN</p>
-    <h1>BASE.</h1>
-    <p class="subtitle">THE SOUND OF THE BRAND</p>
-    <p class="side-text">ARTISTRY MEETS<br>ARCHITECTURE</p>
-  </div>
+<div class="hero-base-top"></div>
 
-<amp-img
-  src="/img/houses.png"
-  width="1348"
-  height="649"
-  layout="responsive"
-  class="hero-image"
-  alt="Buildings">
-</amp-img>
+<div class="hero-base-inner container-new">
 
-  <div class="circle big"></div>
-  <div class="circle mid"></div>
-  <div class="circle small"></div>
+<p class="hero-base-tag">ATMOSPHERE BY DESIGN</p>
 
+<h1 class="hero-base-title">BASE.</h1>
 
+<p class="hero-base-subtitle">THE SOUND OF THE BRAND</p>
+
+<p class="hero-base-side">
+ARTISTRY MEETS<br>
+ARCHITECTURE
+</p>
+
+</div>
 
 <amp-img
-  src="/img/barcode.png"
-  width="210"
-  height="113"
-  layout="responsive"
-  class="barcode-image"
-  alt="Buildings">
+src="/img/houses.png"
+width="1348"
+height="649"
+layout="responsive"
+class="hero-base-building"
+alt="Buildings">
 </amp-img>
 
+<div class="hero-base-circles">
+<div class="hero-base-circle hero-base-circle-big"></div>
+<div class="hero-base-circle hero-base-circle-mid"></div>
+<div class="hero-base-circle hero-base-circle-small"></div>
+</div>
 
-   
+<amp-img
+src="/img/barcode.png"
+width="210"
+height="113"
+layout="responsive"
+class="hero-base-barcode"
+alt="barcode">
+</amp-img>
+
 </section>
 
   <main>

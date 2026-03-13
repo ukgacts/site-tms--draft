@@ -3348,7 +3348,7 @@ font-size:36px;
   max-height:160px;
   overflow-y:auto;
   padding-right:10px;
-  font-size:14px;
+  font-size:18px;
   line-height:1.7;
   color:#555;
 
@@ -3461,86 +3461,87 @@ font-size:36px;
   color:#111;
 }
 
-
-.story-circle {
-  position: relative;
-  width: 220px;
-  margin-left: auto;
-  text-align: center; /* centers the caption below */
+.story-circle-insta{
+  position:relative;
+  width:160px;
+  margin:auto;
+  text-align:center;
 }
 
-.story-circle-bg {
-   position: absolute;
-  top: -15px;      /* move it up to make it bigger */
-  left: -15px;     /* move it left */
-  right: -15px;    /* expand width */
-  bottom: -15px;   /* expand height */
-  background: rgba(233, 230, 226, 0.3); /* transparent light background */
-  border-radius: 50%;
-  transition: transform .45s ease, background .45s ease;
-  pointer-events: none; /* so it doesn't block clicks */
+/* clickable image */
+.story-circle-insta .circle-link{
+  display:block;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  z-index:2;
 }
 
-.circle-link {
-  display: inline-block; /* keep it inline to allow caption under it */
-  text-decoration: none;
-  text-align: center;
-  transition: transform .3s ease;
+/* round image */
+.story-circle-insta amp-img img{
+  border-radius:50%;
+  object-fit:cover;
 }
 
-.circle-media {
-  width: 140px;
-  margin-bottom: 10px;
+/* gradient ring */
+.story-circle-insta .story-circle-ring{
+  position:absolute;
+  top:-4px;
+  left:-4px;
+  width:168px;
+  height:168px;
+  border-radius:50%;
+  border:2px solid transparent;
+
+  background:conic-gradient(
+    #ff0066,
+    #ff7a00,
+    #ffd500,
+    #00c3ff,
+    #7a00ff,
+    #ff0066
+  );
+
+  animation:spinRing 8s linear infinite;
+
+  -webkit-mask:
+    radial-gradient(circle, transparent 72px, black 73px);
+  mask:
+    radial-gradient(circle, transparent 72px, black 73px);
+
+  pointer-events:none;
 }
 
-.circle-cta {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: #111;
-  margin-top: 10px; /* space between circle and caption */
+@keyframes spinRing{
+  to { transform:rotate(360deg); }
 }
 
-.circle-link:hover{
-  transform:scale(1.05);
+/* caption */
+.circle-cta{
+  display:block;
+  margin-top:14px;
+  font-size:14px;
+  font-weight:500;
+}
+
+/* description */
+.circle-desc{
+  font-size:13px;
+  color:#666;
+  margin-top:4px;
+}
+
+/* arrow animation */
+.arrow{
+  display:inline-block;
   transition:transform .3s ease;
 }
 
-
-
-
-
-
-.circle-link amp-img img {
-  object-fit: cover;
-  border-radius: 50%;
+.story-circle-insta:hover .arrow{
+  transform:translate(3px,-3px);
 }
-
-/* Responsive: hide on smaller screens */
-@media (max-width: 1000px) {
-  .circle-link {
-    display: none;
-  }
-}
-
-/* Responsive tweak */
-@media (max-width: 1000px) {
-  .circle-link {
-    display: none; /* hide on smaller screens to prevent overlap */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
