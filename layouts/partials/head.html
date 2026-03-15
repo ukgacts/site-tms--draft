@@ -1,5 +1,5 @@
 <!doctype html>
-<html ⚡>
+<html amp lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,6 +13,12 @@
     <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+<script async custom-element="amp-animation"
+src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+
+<script async custom-element="amp-position-observer"
+src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
     <script async custom-element="amp-lightbox"
   src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
   
@@ -34,12 +40,9 @@
 
 
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
 <style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
 
@@ -505,10 +508,15 @@ h2, .headline {
 
 
 
-
+.headline-lg,
+.headline-md{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  letter-spacing:.02em;
+}
 
 .headline-lg {
-
+ font-family:'Cormorant Garamond', serif;
   font-size: clamp(44px, 6vw, 120px);
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -637,15 +645,40 @@ h2, .headline {
 
 
 
-.footer-cta h2{ 
-
-font-size: 260px;
-  font-weight: 900;
-  line-height: .85;
-  letter-spacing: -8px;
+.cta-chat{
+  background:#f4f4f4;
+  padding:120px 40px;
 }
 
+.cta-container{
+  max-width:1200px;
+  margin:auto;
+}
 
+.cta-title{
+  font-size:180px;
+  font-weight:800;
+  line-height:0.9;
+  margin:0;
+  color:#000;
+}
+
+.cta-text{
+  margin-top:30px;
+  font-size:18px;
+  color:#333;
+}
+
+.cta-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:16px 40px;
+  background:linear-gradient(90deg,#9c27b0,#d43dd1);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:4px;
+}
 
 
 
@@ -839,6 +872,7 @@ font-family: 'Inter', sans-serif;
   flex-grow: 1;
   margin: 0 0 20px 0;
   line-height: 1.6;
+    max-width:640px;
 }
 
 .story-footer {
@@ -1112,55 +1146,33 @@ p.insight-excerpt {
    In the drafts STATS SECTION with big numbers
 =================================*/
 
-.stats {
-  padding: 60px 0;
-  background: #f5f3f1;
+
+
+.insight-stats{
+  display:flex;
+  gap:48px;
+  margin-top:50px;
 }
 
-.stats-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.insight-stat{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
-/* Each stat */
-.stat {
-  flex: 1;
-  padding: 0 60px;
-  position: relative;
+.stat-number{
+  font-family:'Inter',sans-serif;
+  font-size:46px;
+  font-weight:600;
+  letter-spacing:-0.03em;
 }
 
-/* Vertical separators */
-.stat:not(:first-child)::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10%;
-  bottom: 10%;
-  width: 1px;
-  background: rgba(0,0,0,0.2);
+.stat-text{
+  font-size:13px;
+  color:#777;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
 }
-
-/* Label */
-.stat-label {
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* Value */
-.stat-value {
- font-family: 'Inter', sans-serif;
-  letter-spacing: -0.03em;
-  font-size: 42px;
-  font-weight: 500;
-
-  display: inline-block;
-}
-
-
 
 /* ===============================
    STATS SECTION with big numbers --end
@@ -1357,47 +1369,60 @@ SECTION HEADER
 
 
 
+.slides-explained{
+display:flex;
+flex-direction:column;
+gap:60px;
+ max-width:420px;
 
-/* ===============================
-PHONE / STORY VISUAL
-=============================== */
-
-.story-visual{
-
-   max-width: 280px;
-  margin:auto;
-
-
-
-  border-radius:28px;
-
-
-  overflow:hidden;
 }
 
-.profile-carousel{
-  border-radius:18px;
-  overflow:hidden;
+.slide-row{
+display:flex;
+gap:40px;
+align-items:flex-start;
 }
-
-.profile-slide{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.case-steps{
+display:flex;
+flex-direction:column;
+gap:36px;
+margin-top:80px;
+  border-left:1px solid rgba(0,0,0,0.08);
+  padding-left:24px;
 }
 
 
 
+.case-step{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:24px;
+  align-items:start;
+  padding-bottom:30px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
 
+.case-step-number{
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#999;
+}
 
+.case-step h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  margin-bottom:6px;
+}
 
-
-
-
-
-
-
-
+.case-step p{
+ font-size:16px;
+  line-height:1.6;
+  color:#555;
+  max-width:320px;
+}
 
 
 
@@ -1592,7 +1617,7 @@ letter-spacing:-8px;
 color:#e8e1d4;
 margin:0;
 position:absolute;
-
+letter-spacing: -0.04em;
   left: 370px;
 }
 
@@ -1682,10 +1707,255 @@ z-index:4;
 
 
 
+/* STORY-CTA SECTION */
+
+
+.story-circles-row{
+display:flex;
+gap:32px;
+overflow-x:auto;
+padding:20px 0;
+}
+
+.story-item{
+width:120px;
+text-align:center;
+flex-shrink:0;
+}
+
+.story-ring{
+border-radius:50%;
+padding:3px;
+
+}
+
+
+.story-ring.insta {
+  background:conic-gradient(
+#ff0066,
+#ff7a00,
+#ffd500,
+#00c3ff,
+#7a00ff,
+#ff0066
+);
+}
+
+.story-ring amp-img img{
+border-radius:50%;
+object-fit:cover;
+}
+
+.story-label{
+display:block;
+margin-top:10px;
+font-size:13px;
+color:#333;
+}
+
+.story-item.featured{
+width:140px;
+}
+
+.story-item.featured .story-ring{
+padding:4px;
+
+background:conic-gradient(
+#000,
+#333,
+#000
+);
+
+box-shadow:
+0 8px 20px rgba(0,0,0,0.15);
+}
+
+.story-item.featured .story-label{
+font-weight:600;
+color:#000;
+}
+
+.story-item.featured .story-ring{
+animation:featurePulse 3s ease-in-out infinite;
+}
+
+@keyframes featurePulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+
+
+
+.story-item{
+position:relative;
+width:120px;
+text-align:center;
+}
+
+/* green background circle */
+.garage-style .garage-bg{
+position:absolute;
+width:140px;
+height:140px;
+border-radius:50%;
+
+background:#4ab0ad;
+opacity:0.35;
+
+top:-10px;
+left:-10px;
+
+z-index:1;
+}
+
+/* main story image */
+.story-ring{
+position:relative;
+z-index:2;
+
+border-radius:50%;
+overflow:hidden;
+}
+
+.story-ring amp-img img{
+border-radius:50%;
+object-fit:cover;
+}
+
+/* label */
+.story-label{
+display:block;
+margin-top:10px;
+font-size:13px;
+}
+
+.garage-style .garage-bg::after{
+content:"";
+position:absolute;
+width:100px;
+height:100px;
+border-radius:50%;
+
+background:#1f8f8b;
+top:20px;
+left:20px;
+
+opacity:.5;
+}
+
+/* STORY-CTA SECTION--end */
 
 
 
 
+
+.animated-bg{
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+#circle{
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:#1f8f8b;
+  border-radius:50%;
+  top:20px;
+  left:20px;
+  opacity:.5;
+  will-change: transform, border-radius;
+}
+
+
+
+
+
+
+.animated-bg{
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: floatMorph linear infinite;
+  will-change: transform, border-radius;
+}
+
+/* Circle variations */
+.c1{
+  width: 140px;
+  height: 140px;
+  background: #1f8f8b;
+  top: 20px;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.c2{
+  width: 100px;
+  height: 100px;
+  background: #6dd5ed;
+  top: 80px;
+  left: 60%;
+  animation-duration: 10s;
+}
+
+.c3{
+  width: 180px;
+  height: 180px;
+  background: #3a7bd5;
+  top: 50px;
+  left: 35%;
+  animation-duration: 14s;
+}
+
+.c4{
+  width: 90px;
+  height: 90px;
+  background: #00c6ff;
+  top: 150px;
+  left: 20%;
+  animation-duration: 11s;
+}
+
+.c5{
+  width: 130px;
+  height: 130px;
+  background: #008080;
+  top: 120px;
+  left: 70%;
+  animation-duration: 13s;
+}
+
+/* Morph + float animation */
+@keyframes floatMorph {
+  0%{
+    transform: translateY(0px) scale(1);
+    border-radius: 50%;
+  }
+  25%{
+    transform: translateY(-30px) scale(1.1);
+    border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  }
+  50%{
+    transform: translateY(20px) scale(0.9);
+    border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
+  }
+  75%{
+    transform: translateY(-15px) scale(1.05);
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+  }
+  100%{
+    transform: translateY(0px) scale(1);
+    border-radius: 50%;
+  }
+}
     </style>
 </head>
 

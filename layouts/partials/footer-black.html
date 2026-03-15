@@ -1,0 +1,92 @@
+<footer class="site-footer">
+
+
+
+  <div class="footer-inner container">
+
+    <!-- LEFT COLUMN -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="smiley">☺</div>
+        <div class="logo-text">
+          TELL<br>ME<br>SOMETHING
+        </div>
+      </div>
+
+      <p class="footer-description">
+        Founded in 2015, Enjoy The Work is a San Francisco–based
+        startup advisory firm serving startup founders and CEOs worldwide.
+      </p>
+
+      <a href="#" class="footer-btn">Contact us</a>
+
+
+
+      <div class="footer-legal">
+        © 2026 Tell Me Something
+        
+      </div>
+    </div>
+
+    <!-- MIDDLE COLUMN -->
+    <div class="footer-nav">
+      <a href="#">Home</a>
+      <a href="#">Video</a>
+      <a href="#">Audio</a>
+      <a href="#">PulseFrames</a>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="footer-nav">
+      <a href="#">About</a>
+      <a href="#">Case Studies</a>
+      <a href="#">The Lab</a>
+      
+    </div>
+
+  </div>
+</footer>
+    <!-- End Footer -->
+    {{if ne .Site.Params.googleanalytics nil}}
+    <amp-analytics type="googleanalytics" id="analytics">
+        <script type="application/json">
+        {
+            "vars": {
+                "account": "{{ .Site.Params.googleanalytics }}"
+            },
+            "triggers": {
+                "default pageview": {
+                    "on": "visible",
+                    "request": "pageview",
+                    "vars": {
+                        "title": "{{ .Title }}"
+                    }
+                }
+            }
+        }
+        </script>
+    </amp-analytics>
+    {{end}}
+    <!-- <amp-install-serviceworker src="/sw.js" data-iframe-src="https://ampbyexample.com/sw.html" layout="nodisplay"></amp-install-serviceworker> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>   </div>
