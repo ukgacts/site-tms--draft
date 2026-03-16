@@ -265,6 +265,13 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
   <header class="section-header">
     <span class="section-label">07 — Story System</span>
     <h2 class="headline-md">How the Pulseframe Story Works</h2>
+
+
+    
+<div class="note">
+<span class="note-label">Feedback</span>
+This storytelling format was presented to the Finnish Tech Committee and received highly positive feedback.
+</div>
   </header>
 
   <div class=" story-wrapper">
@@ -363,143 +370,55 @@ The result is a clearer, more engaging introduction to Pori Jazz, designed to in
 
 
 
-
 </div>
+
+
 </section>
 
 
 
-<div class="animated-bg">
-  <!-- Floating Morphing Circles -->
-  <span class="circle c1"></span>
-  <span class="circle c2"></span>
-  <span class="circle c3"></span>
-  <span class="circle c4"></span>
-  <span class="circle c5"></span>
-</div>
 
 
 
-<section class="story-cta section">
+<section class="orbit-single">
 
+<div class="orbit-wrap">
 
+<!-- optional left space -->
+<div class="orbit-space"></div>
 
-
-<div class="container">
-
-
-
-<div class="animated-bg">
-  <div id="circle"></div>
-
-  <amp-position-observer
-    on="scroll:circleAnim.seekTo(percent=event.percent)"
-    layout="nodisplay">
-  </amp-position-observer>
-
-
-
-</div>
- <!-- AMP ANIMATION -->
-<amp-animation id="circleAnim" layout="nodisplay">
-<script type="application/json">
-{
-  "duration": "1",
-  "fill": "both",
-  "animations": [{
-    "selector": "#circle",
-   "keyframes": [
-  {
-    "transform":"translateY(0px) scale(1)",
-    "border-radius":"50%"
-  },
-  {
-    "transform":"translateY(80px) scale(1.4)",
-    "border-radius":"60% 40% 70% 30% / 40% 60% 30% 70%"
-  }
-]
-  }]
-}
-</script>
-</amp-animation>
-
-<div class="story-circles-row">
-
-<!-- Story 1 -->
-<div class="story-item garage-style">
+<!-- right story -->
+<div class="orbit-item">
 
 <a on="tap:storyLightbox2.open" role="button">
-<div class="garage-bg"></div>
-<div class="story-ring ">
+
+<div class="orbit-story orbit-story--featured">
 
 <amp-img
 src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-width="120"
-height="120"
+width="240"
+height="240"
 layout="responsive"
-alt="Story">
+alt="Featured">
 </amp-img>
 
 </div>
 
-</a>
-
-<span class="story-label">UKG DJs</span>
-
-</div>
-
-
-<!-- Story 2 -->
-<div class="story-item">
-
-<a on="tap:storyLightbox2.open" role="button">
-
-<div class="story-ring insta">
-
-<amp-img
-src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-width="120"
-height="120"
-layout="responsive"
-alt="Story">
-</amp-img>
-
-</div>
+<span class="orbit-label">Featured</span>
 
 </a>
 
-<span class="story-label">Garage Clubs</span>
+</div>
 
 </div>
 
-
-<!-- Story 3 -->
-<div class="story-item featured">
-
-<a on="tap:storyLightbox2.open" role="button">
-
-<div class="story-ring">
-
-<amp-img
-src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-width="140"
-height="140"
-layout="responsive"
-alt="Garage Clubs">
-</amp-img>
-
-</div>
-
-</a>
-
-<span class="story-label">Garage Clubs</span>
-
-</div>
-
-
-</div>
-</div>
 </section>
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
 ---
 title: "Video"
-layout: "audio"
+layout: "video"
 ---
