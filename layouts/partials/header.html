@@ -34,34 +34,90 @@ TMS
 
 
     <!-- Start Sidebar -->
-    <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" layout="nodisplay">
-        <div class="flex justify-start items-center ampstart-sidebar-header"><a href="#" on="tap:header-sidebar.toggle" class="ampstart-navbar-trigger items-start">✕</a></div>
-        <nav class="ampstart-sidebar-nav ampstart-nav">
-          {{ $currentPage := . }}
-          {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-            <ul class="list-reset m0 p0 caps h5">
-                <li class="ampstart-nav-item ampstart-nav-dropdown relative">
-                    <!-- Start Dropdown-inline -->
-                    <amp-accordion layout="container" disable-session-states class="ampstart-dropdown">
-                        <section>
-                            <header>{{ .Name }}</header>
-                            <ul class="ampstart-dropdown-items list-reset m0 p0">
-                            {{ range .Children }}
-                                <li class="ampstart-dropdown-item"><a href="{{.URL}}" class="text-decoration-none">{{ .Name }}</a></li>
-                            {{end}}
-                            <li>sskdjhfsk</li>
-                            </ul>
-                        </section>
-                    </amp-accordion>
-                    <!-- End Dropdown-inline -->
-                </li>
-            </ul>
-            {{else}}
-                <a href="{{.URL}}" class="block caps h5 py1 abe-primary">{{ .Name }}</a>
-            {{end}}
-          {{end}}
-        </nav>
-    </amp-sidebar>
+<amp-sidebar 
+  id="header-sidebar" 
+  class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" 
+  layout="nodisplay">
+
+
+ <div class="sidebar-top">
+
+  <div class="sidebar-art">
+    <amp-img
+      src="/img/barcode.png"
+      width="210"
+      height="113"
+      layout="responsive"
+      alt="barcode">
+    </amp-img>
+  </div>
+
+  <div class="ampstart-sidebar-header">
+    <a href="#"
+       on="tap:header-sidebar.toggle"
+       class="ampstart-navbar-trigger">
+       ✕
+    </a>
+  </div>
+
+</div>
+
+  <!-- NAVIGATION -->
+  <nav class="ampstart-sidebar-nav ampstart-nav">
+
+    {{ $currentPage := . }}
+
+    {{ range .Site.Menus.main }}
+
+      {{ if .HasChildren }}
+
+        <ul class="list-reset m0 p0">
+          <li class="ampstart-nav-item ampstart-nav-dropdown">
+
+            <amp-accordion 
+              layout="container" 
+              disable-session-states 
+              class="ampstart-dropdown">
+
+              <section>
+                <header>{{ .Name }}</header>
+
+                <ul class="ampstart-dropdown-items list-reset m0 p0">
+                  {{ range .Children }}
+                    <li class="ampstart-dropdown-item">
+                      <a href="{{ .URL }}">
+                        {{ .Name }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+
+              </section>
+
+            </amp-accordion>
+
+          </li>
+        </ul>
+
+      {{ else }}
+
+        <!-- SINGLE LINK -->
+        <a href="{{ .URL }}" 
+           class="block caps h5 py1 abe-primary">
+          {{ .Name }}
+        </a>
+
+      {{ end }}
+
+    {{ end }}
+
+    <!-- OPTIONAL CTA (SAFE ADDITION) -->
+
+
+
+
+  </nav>
+
+</amp-sidebar>
     <!-- End Sidebar -->
     <!-- End Navbar -->
