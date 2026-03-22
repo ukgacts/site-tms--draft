@@ -1,35 +1,33 @@
   <!-- Start Navbar -->
 <header class="ampstart-headerbar">
+  <!-- Logo left -->
+  <a href="/" class="logo">
+    TMS
+    <!-- optional amp-img for logo -->
+  </a>
 
+  <!-- Nav + CTA wrapper -->
+  <div class="header-right xs-hide sm-hide">
+    <nav class="ampstart-headerbar-nav">
+      <ul>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="/blog">The Lab</a>
+    </div>
+  </div>
+
+  <!-- Mobile hamburger -->
   <div role="button"
        on="tap:header-sidebar.toggle"
        tabindex="0"
        class="ampstart-navbar-trigger md-hide lg-hide">
     ☰
   </div>
-
-  <a href="/" class="logo">
-TMS
-    <!--
-    <amp-img src="/img/logo-tms.webp" media="(max-width: 980px)" width="64" height="39" layout="fixed" alt="{{ .Title }}"></amp-img> 
-        <amp-img src="/img/logo-tms.webp" media="(min-width: 980px)" width="100" height="61" layout="fixed" alt="{{ .Title }}"></amp-img> 
-    -->
-  </a>
-
-
-
-  <nav class="ampstart-headerbar-nav xs-hide sm-hide">
-    <ul>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
-  </nav>
-
-  <div class="header-cta xs-hide sm-hide">
-    <a href="/blog">The Lab</a>
-  </div>
-
 </header>
 
 
@@ -42,16 +40,23 @@ TMS
 
  <div class="sidebar-top">
 
-  <div class="sidebar-art">
-    <amp-img
-      src="/img/barcode.png"
-      width="210"
-      height="113"
-      layout="responsive"
-      alt="barcode">
-    </amp-img>
-  </div>
-
+<div class="sidebar-art">
+    <a href="/">
+    <div class="barcode-wrapper">
+      <amp-img
+        src="/img/barcode.png"
+        width="210"
+        height="113"
+        layout="responsive"
+        alt="barcode">
+      </amp-img>
+    </div>
+  </a>
+  
+  
+  
+  <span class="text-label caps-tight">Home </span>
+</div>
   <div class="ampstart-sidebar-header">
     <a href="#"
        on="tap:header-sidebar.toggle"
@@ -103,7 +108,7 @@ TMS
 
         <!-- SINGLE LINK -->
         <a href="{{ .URL }}" 
-           class="block caps h5 py1 abe-primary">
+           class="block h5  ">
           {{ .Name }}
         </a>
 
