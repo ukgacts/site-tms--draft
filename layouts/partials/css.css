@@ -152,6 +152,7 @@ letter-spacing:-0.02em;
 font-family:var(--font-serif);
 font-size:var(--display-sm);
 line-height:1.1;
+  margin-bottom: var(--space-4);
 }
 
 /* HEADINGS */
@@ -229,19 +230,26 @@ line-height:1.5;
 .tracking-wide{letter-spacing:.18em}
 
 /* ===============================
-   LAYOUT
+    SECTION RHYTHM
 =============================== */
 
-.section{
-padding:var(--space-9) 0;
+.section {
+  padding: var(--space-9) 0;
 }
 
-.section-sm{
-padding:var(--space-8) 0;
+.section-sm {
+  padding: var(--space-8) 0;
 }
 
-.section-lg{
-padding:var(--space-10) 0;
+.section-lg {
+  padding: var(--space-10) 0;
+}
+
+/* tighter mobile rhythm */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-7) 0;
+  }
 }
 
 @media (max-width: 768px){

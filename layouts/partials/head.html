@@ -1369,12 +1369,11 @@ transform:scale(.95);
 
 
 .hr {
-  width: 60px;
+  width: 40px;
   height: 1px;
-  border: none;
-  background: #000;
-  opacity: .2;
-  margin: 24px 0 32px;
+  background: #111;
+  opacity: 0.2;
+  margin: var(--space-4) 0 var(--space-6);
 }
 
 
@@ -1695,13 +1694,209 @@ body {
 }
 
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 80px;
+
+
+
+
+.front-page-intro h1 {
+  margin-bottom: var(--space-5);
+}
+
+.front-page-intro .text-body {
+  max-width: 640px;
 }
 
 
+
+
+/* ===============================
+   SERVICES — ZIG ZAG LAYOUT
+=============================== */
+
+.services-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  margin-top: var(--space-7);
+}
+
+/* Row */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* Reverse layout */
+.service-row.reverse {
+  direction: rtl;
+}
+.service-row.reverse .service-text {
+  direction: ltr;
+}
+
+/* Text */
+.service-text {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.service-text h3 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+/* Media block (visual placeholder) */
+.service-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #f5f3f1;
+  border-radius: 16px;
+}
+
+/* subtle hover polish */
+.service-row:hover .service-media {
+  transform: translateY(-4px);
+  transition: 0.3s ease;
+}
+
+
+.service-media {
+  background: linear-gradient(135deg, #c7dedd, #0e4d4a);
+  opacity: 0.9;
+}
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 768px) {
+
+  .services-zigzag {
+    gap: var(--space-7);
+  }
+
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* remove zig-zag on mobile */
+  .service-row.reverse {
+    direction: ltr;
+  }
+
+  .service-text h3 {
+    font-size: 26px;
+  }
+
+  .service-media {
+    order: 2;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   TECHNOLOGY SECTION
+=============================== */
+.section-tech {
+  background: #f5f3f1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle brand accent */
+.section-tech::after {
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #c7dedd 0%, transparent 70%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* centered layout */
+.tech-centered {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* tighter rhythm */
+.tech-centered .text-body {
+  max-width: 58ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* improve hierarchy */
+.tech-centered .display-sm {
+  margin-bottom: var(--space-2);
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: -0.02em;
+}
+
+/* technology stack badges */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: var(--space-4);
+}
+
+.tech-stack span {
+  font-size: clamp(12px, 1vw, 14px); /* slightly responsive for mobile */
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .section-tech::after {
+    right: -30%;
+    width: 300px;
+    height: 300px;
+    opacity: 0.25;
+  }
+
+  .tech-centered {
+    gap: var(--space-4);
+  }
+}
 
     </style>
 </head>
