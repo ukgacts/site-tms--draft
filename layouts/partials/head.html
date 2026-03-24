@@ -1996,8 +1996,7 @@ body {
 /* TOP GREEN AREA */
 .hero-v2-top{
 
-
-    position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -2143,6 +2142,10 @@ body {
 
   .hero-v2-building{
     width:80%;
+
+      position: relative; /* 👈 important on mobile */
+  width: 120%;
+  margin-top: -40px;
   }
 
 
@@ -2154,7 +2157,9 @@ body {
 @media (max-width: 768px){
 
   .hero-v2{
-    min-height:auto;
+  
+     height: auto;      /* 🔥 key fix */
+    min-height: 100vh; 
   }
 
   .hero-v2-inner{
@@ -2189,7 +2194,7 @@ body {
   }
 
   .hero-v2-building{
-    position:absolute;
+    position: relative;
     width:120%;
     bottom:0;
   }
@@ -2268,6 +2273,72 @@ body {
     height: 26vw;
   }
 
+}
+
+
+
+
+
+
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;       /* allows multiple rows */
+  justify-content: center;
+  gap: 20px;             /* space between images */
+  position: relative;
+  max-width: 1200px;     /* optional: max width of row */
+  margin: 0 auto;        /* center container */
+}
+
+
+.image-wrapper {
+  flex: 0 0 calc(16.66% - 20px); /* 6 images per row (100/6 ≈ 16.66%) minus gap */
+  max-width: 180px;
+  transition: transform 0.3s ease;
+}
+
+
+/* Layering (depth) */
+/* Overlapping positions and z-index */
+#img1 { left: 10%; margin-top: 0; max-width: 180px; z-index: 3; }
+#img2 { left: auto; right: 10%; margin-top: -120px; max-width: 260px; z-index: 2; }
+#img3 { left: 20%; margin-top: -100px; max-width: 200px; z-index: 4; }
+#img4 { left: auto; right: 5%; margin-top: -140px; max-width: 240px; z-index: 1; }
+#img5 { left: 15%; margin-top: -110px; max-width: 190px; z-index: 3; }
+#img6 { left: auto; right: 15%; margin-top: -130px; max-width: 270px; z-index: 4; }
+#img7 { left: 5%; margin-top: -120px; max-width: 180px; z-index: 2; }
+#img8 { left: auto; right: 20%; margin-top: -150px; max-width: 230px; z-index: 3; }
+
+
+
+
+
+.black-section {
+  background: #000;
+  padding: 120px 20px;
+}
+.image-wrapper {
+ 
+  max-width: 220px;
+}
+
+/* Rounded images */
+#img1 amp-img,
+#img3 amp-img,
+#img5 amp-img,
+#img7 amp-img {
+  border-radius: 25px;   /* softly rounded corners */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* optional floating effect */
+}
+
+/* Fully squared images */
+#img2 amp-img,
+#img4 amp-img,
+#img6 amp-img,
+#img8 amp-img {
+  border-radius: 0;       /* sharp edges */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* optional */
 }
 
     </style>
