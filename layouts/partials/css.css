@@ -234,11 +234,12 @@ line-height:1.5;
 =============================== */
 
 .section {
-  padding: var(--space-9) 0;
+ 
+    padding: clamp(80px, 10vw, 140px) 0;
 }
 
 .section-sm {
-  padding: var(--space-8) 0;
+ padding: var(--space-8) 0;
 }
 
 .section-lg {
@@ -702,11 +703,7 @@ position:relative;
   margin-bottom:var(--space-8);
 }
 
-.note{
 
-  margin-top: var(--space-6);
-  max-width:220px;
-}
 
 @media (max-width: 768px){
 
@@ -938,6 +935,164 @@ margin-top:80px;
 
   
 
+
+/* ===============================
+   BASE SECTION SYSTEM
+=============================== */
+
+.section-block {
+  padding: clamp(80px, 10vw, 140px) 0;
+}
+
+.section-block--soft {
+  background: #faf9f7;
+}
+
+/* container rhythm */
+.section-head {
+  max-width: 640px;
+  margin-bottom: var(--space-8);
+}
+
+/* grid layout */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+/* ===============================
+   STYLE SECTION (Our Style)
+=============================== */
+
+.style-layout {
+  position: relative;
+}
+
+/* LEFT — NOTE */
+
+.style-note-wrap {
+  position: relative;
+}
+
+.style-note {
+  background: #ffffff;
+  padding: var(--space-5);
+  border-radius: 8px;
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* subtle vertical accent */
+.style-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: #c7dedd;
+}
+
+/* note label */
+.note-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,0.5);
+}
+
+/* RIGHT — APPROACH */
+
+.style-approach {
+  max-width: 520px;
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* text readability */
+.style-approach .text-body {
+  max-width: 60ch;
+}
+
+/* ===============================
+   TYPOGRAPHY REFINEMENT
+=============================== */
+
+.display-md {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.heading-lg {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  line-height: 1.7;
+  color: rgba(0,0,0,0.75);
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 768px) {
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .style-approach {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .style-note::before {
+    display: none;
+  }
+
+}
+
+
+.note {
+  position: relative;
+  padding: var(--space-5);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* accent variant */
+.note--accent::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: #c7dedd;
+}
+
+/* soft variant */
+.note--soft {
+  background: #f9fafb;
+}
 
 
 

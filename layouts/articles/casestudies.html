@@ -1,44 +1,58 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<section class="hero-base">
+<section class="hero-v2">
 
-<div class="hero-base-top"></div>
+  <div class="hero-v2-top">
 
-<div class="hero-base-inner ">
+<div class="hero-v2-circles">
+ <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
 
-  <div class="hero-base-heading">
-    <p class="hero-base-tag  caps-wide">Atmosphere by Design</p>
-    <h1 class="hero-base-title">BASE.</h1>
-  </div>
+  <!-- outer -->
+  <circle cx="1150" cy="-120" r="880" fill="#c7dedd" />
 
-  <p class=" hero-base-subtitle">
-    The Sound of the Brand
-  </p>
+  <!-- big -->
+  <circle cx="1150" cy="60" r="700" fill="#9fbfbe" />
 
-  <p class=" hero-base-side">
-    Artistry Meets<br>Architecture
-  </p>
+  <!-- mid -->
+  <circle cx="1150" cy="240" r="520" fill="#6fa7a4" />
 
+  <!-- inner -->
+  <circle cx="1150" cy="420" r="360" fill="#0e4d4a" />
+
+</svg>
 </div>
 
-<amp-img
+
+
+  </div>
+
+  <div class="hero-v2-inner container">
+
+    <div class="hero-v2-text">
+      <span class="hero-v2-tag">Atmosphere by Design</span>
+      <h1 class="hero-v2-title">BASE.</h1>
+      <p class="hero-v2-sub"> The Sound of the Brand</p>
+    </div>
+
+   
+
+  </div>
+
+  <amp-img
 src="/img/houses.png"
 width="1348"
 height="649"
 layout="responsive"
-class="hero-base-building"
+class="hero-v2-building"
 alt="Buildings">
 </amp-img>
 
-<div class="hero-base-circles">
-  <div class="hero-base-circle hero-base-circle-xl"></div>
-  <div class="hero-base-circle hero-base-circle-big"></div>
-  <div class="hero-base-circle hero-base-circle-mid"></div>
-  <div class="hero-base-circle hero-base-circle-small"></div>
-</div>
+ <div class="hero-v2-side">
+    Artistry Meets<br>Architecture
+    </div>
 
-<amp-img
+    <amp-img
 src="/img/barcode.png"
 width="210"
 height="113"
@@ -108,34 +122,64 @@ from curiosity to attendance.
 
 
 <div class="story-container">
-<div class="pulseframe-medgia">
 
-<amp-video
-width="270"
-height="480"
-layout="responsive"
-controls
-poster="/video/poster17.png">
 
-<source src="/video/phone-story.mp4" type="video/mp4">
+<div class="video-wrapper">
 
-</amp-video>
+  <amp-video
+    id="storyVideo"
+    width="270"
+    height="480"
+    layout="responsive"
+    autoplay
+    muted
+    playsinline
+    loop
+    noaudio
+    poster="/video/poster17.png">
+
+    <source src="/video/phone-story.mp4" type="video/mp4">
+
+  </amp-video>
+
+  <!-- PAUSE (visible first) -->
+  <button
+    class="video-btn pause"
+    on="tap:
+      storyVideo.pause,
+      AMP.setState({paused: true})"
+    [hidden]="paused">
+
+    ⏸
+  </button>
+
+    <span class="play-icon"></span>
+
+  <!-- PLAY (hidden underneath) -->
+  <button
+    class="video-btn play"
+    on="tap:
+      storyVideo.play,
+      AMP.setState({paused: false})"
+    [hidden]="!paused">
+
+    ▶
+  </button>
 
 </div>
 
 
-<div class="story-meta">
+  <div class="story-meta">
 
-<a href="#work" class="arrow-btn" on="tap:storyLightbox.open">
-See our work <span class="arrow">↗</span>
-</a>
+    <a href="#work" class="arrow-btn" on="tap:storyLightbox.open">
+      See our work <span class="arrow">↗</span>
+    </a>
 
-<p class="text-small">
-Swipe through the story or open it in a larger view
-</p>
+    <p class="text-small">
+      Swipe through the story or open it in a larger view
+    </p>
 
-</div>
-
+  </div>
 </div>
 
 </div>
