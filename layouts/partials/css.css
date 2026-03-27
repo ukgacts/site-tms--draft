@@ -229,43 +229,7 @@ line-height:1.5;
 .tracking-tight{letter-spacing:-.02em}
 .tracking-wide{letter-spacing:.18em}
 
-/* ===============================
-    SECTION RHYTHM
-=============================== */
 
-.section {
- 
-    padding: clamp(80px, 10vw, 140px) 0;
-}
-
-.section-sm {
- padding: var(--space-8) 0;
-}
-
-.section-lg {
-  padding: var(--space-10) 0;
-}
-
-/* tighter mobile rhythm */
-@media (max-width: 768px) {
-  .section {
-    padding: var(--space-7) 0;
-  }
-}
-
-@media (max-width: 768px){
-  .section-lg{
-    padding: 56px 16px;
-  }
-}
-
-.section > .container > *:first-child{
-margin-top:0;
-}
-
-.section > .container > *:last-child{
-margin-bottom:0;
-}
 
 /* ===============================
    HEADER — BASE LAYOUT
@@ -1100,7 +1064,22 @@ margin-top:80px;
 
 
 
+.decor-circles {
+  position: absolute;
+  bottom: -5vw;
+  left: -10vw;
+  width: 60vw;
+  height: 60vw;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(-180deg);
+}
 
+.decor-circles svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 
 

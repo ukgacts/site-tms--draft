@@ -173,9 +173,13 @@ from curiosity to attendance.
 
   <div class="story-meta">
 
-    <a href="#work" class="arrow-btn" on="tap:storyLightbox.open">
-      See our work <span class="arrow">↗</span>
-    </a>
+
+
+<a class="cta-text strong" on="tap:storyLightbox.open">
+  Watch the Story
+</a>
+
+
 
     <p class="text-small">
       Swipe through the story or open it in a larger view
@@ -187,6 +191,10 @@ from curiosity to attendance.
 </div>
 </div>
 </section>
+
+
+
+
 
 
 
@@ -501,6 +509,55 @@ The story can be sent directly in chat platforms.
 </div>
 
 </section>
+
+
+
+
+
+<!-- STORY POPUP -->
+<amp-lightbox id="storyPopup" layout="nodisplay">
+  <div class="popup-overlay">
+
+    <div class="popup-content">
+
+      <button class="close-btn" on="tap:storyPopup.close">✕</button>
+    <amp-iframe
+        width="100%"
+  height="100%"
+        layout="responsive"
+        sandbox="allow-scripts allow-same-origin"
+        src="https://bassscene.co.uk/porijazz/">
+      </amp-iframe>
+   
+
+    </div>
+
+  </div>
+</amp-lightbox>
+
+<amp-lightbox id="storyLightbox" layout="nodisplay">
+  <div class="modal-overlay">
+    <div class="modal-card">
+
+      <button class="close-btn"
+              on="tap:storyLightbox.close">
+        ✕
+      </button>
+
+      <amp-iframe
+     width="1"
+  height="1"
+  layout="fill"
+  
+        sandbox="allow-scripts allow-same-origin"
+        src="https://bassscene.co.uk/porijazz/">
+      </amp-iframe>
+
+    </div>
+  </div>
+</amp-lightbox>
+
+
 
 
 {{ partial "footer-cta.html" . }}
