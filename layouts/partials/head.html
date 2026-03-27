@@ -446,18 +446,25 @@ font-size: 14px;
   margin:0 auto;
 }
 
-.section {
- 
 
-  color: #111;
-}
 /* ===============================
     SECTION RHYTHM
 =============================== */
 
 .section {
  
-    padding: clamp(80px, 10vw, 140px) 0;
+  color: #111;
+
+     padding: var(--space-section) 20px;
+}
+
+.section-alt {
+  background: #f7f7f7;
+}
+
+.section-dark {
+  background: #0f172a;
+  color: white;
 }
 
 .section-sm {
@@ -730,24 +737,6 @@ align-items:flex-start;
 
 
 
-
-
-/* barcode */
-
-.hero-base-barcode{
-position:absolute;
-right:120px;
-bottom:40px;
-width:160px;
-z-index:4;
-}
-
-
-@media (max-width: 768px){
-  .hero-base-barcode{
-  display:none;
-  }
-}
 
 
 
@@ -1689,6 +1678,7 @@ body {
 .formats-section {
   position: relative;
   overflow: hidden;
+  background: #f3f4f6;
 }
 
 
@@ -2046,40 +2036,53 @@ justify-content: center;
 }
 
 .hero-v2-tag{
-  font-size:14px;
-  letter-spacing:2px;
-  color:#e8e1d4;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+
+
   margin-left: 9px;
 }
 
 .hero-v2-title{
-  font-size:clamp(90px,18vw,220px);
+  font-size:clamp(90px,18vw,520px);
   line-height:.85;
   font-weight:900;
   color:#e8e1d4;
-   margin: -16px 0 0 0; /* 👈 cleaner */
+   margin: -10px 0 0 0; /* 👈 cleaner */
 }
 
 .hero-v2-sub{
-  font-size:14px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-   margin-top: -6px;
+ 
+   margin-top: -10px;
+  margin-left: 18%;
+  font-weight: 600;
+
+
+    font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+ 
+  
 }
 
 .hero-v2-side{
   position: absolute;
 
-  right: 120px;     /* align with container padding */
+  right: 280px;     /* align with container padding */
   top: 420px;      /* place below green area */
 
-  max-width: 220px;
-  font-size: 22px;
+
+
   font-weight: 700;
   text-align: right;
   text-transform: uppercase;
 
   z-index: 4; /* above everything */
+
+  font-size: var(--text-md); line-height: 1.6; max-width: 600px; margin: 0 auto var(--space-5);
 }
 
 /* BUILDING IMAGE */
@@ -2091,6 +2094,25 @@ justify-content: center;
   width:min(850px,70vw);
   z-index:3;
   pointer-events:none;
+}
+
+
+
+/* barcode */
+
+.hero-base-barcode{
+position:absolute;
+right:280px;
+bottom:40px;
+width:160px;
+z-index:4;
+}
+
+
+@media (max-width: 768px){
+  .hero-base-barcode{
+  display:none;
+  }
 }
 
 
@@ -2202,11 +2224,12 @@ justify-content: center;
   }
 
   .hero-v2-side{
-    left: 30px;
+position: absolute;
+    right: 200px;
     top: 320px;
-    text-align: left;
-    font-size:16px;
-    max-width:100%;
+    text-align: right;
+    font-size: 16px;
+    max-width: 100%;
  
   }
 
@@ -2224,8 +2247,8 @@ justify-content: center;
     top: 0;
     right: -10vw;   /* push slightly off screen */
 
-    width: 80vw;    /* 🔥 bigger so arcs are visible */
-    height: 80vw;
+   width: 100vw;
+    height: 100vw;
 
     opacity: 0.6;   /* optional: softer look */
   }
@@ -2335,7 +2358,7 @@ justify-content: center;
 
 
 .black-section {
-background: #e8e1d4;
+background: #0f172a;
   padding: 120px 20px;
 }
 .image-wrapper {

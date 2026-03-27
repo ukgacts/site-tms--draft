@@ -38,11 +38,14 @@ color:inherit;
 --font-serif:'Cormorant Garamond',serif;
 
 /* TYPE SCALE */
---text-xs:12px;
---text-sm:14px;
---text-md:17px;
---text-lg:20px;
---text-xl:24px;
+--text-xs: 14px;
+--text-sm: 16px;
+--text-md: 18px;
+--text-lg: 24px;
+---text-xl: clamp(28px, 3vw, 36px);
+
+--text-2xl: clamp(36px, 4vw, 48px);
+--text-3xl: clamp(40px, 5vw, 64px);
 
 --display-sm:clamp(32px,4vw,48px);
 --display-md:clamp(44px,6vw,72px);
@@ -53,17 +56,46 @@ color:inherit;
 --leading-normal:1.6;
 
 /* SPACING */
---space-1:4px;
---space-2:8px;
---space-3:12px;
---space-4:16px;
---space-5:24px;
---space-6:32px;
---space-7:48px;
---space-8:64px;
---space-9:96px;
---space-10:140px;
+  /* Small spacing (keep yours if you want) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
 
+  /* NEW: layout + typography spacing */
+  --space-heading: 24px;
+  --space-heading-lg: 32px;
+
+  --space-section: 80px;
+  --space-section-lg: 120px;
+
+
+}
+
+.hero-title {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-heading);
+  text-align: center;
+}
+
+.section-subtext {
+  font-size: var(--text-md);
+  max-width: 600px;
+  margin: 0 auto var(--space-5);
+  text-align: center;
+}
+
+.body-text {
+  font-size: var(--text-sm);
+  line-height: 1.6;
 }
 
 @media (max-width: 768px){
