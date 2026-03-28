@@ -1662,63 +1662,173 @@ z-index:4;
 
 
 
+/* ===============================
+  ZIGZAG-SECTION 
+=============================== */
+/* ===============================
+   SERVICES — MATCH SCREENSHOT
+=============================== */
 
+.services-grid-advanced {
+  display: flex;
+  flex-direction: column;
+  gap: 70px; /* bigger vertical spacing like design */
+}
 
+.zigzag-section {
+  position: relative;
+  overflow: hidden; /* important so gradient doesn't spill */
+}
+.zigzag-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at -10% 110%,
+    #c7dedd 0px,
+    #c7dedd 220px,
+    #9fbfbe 220px,
+    #9fbfbe 360px,
+    #6fa7a4 360px,
+    #6fa7a4 500px,
+    #0e4d4a 500px,
+    #0e4d4a 640px,
+    transparent 640px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
 
 .service-card {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 220px; /* text + video */
   align-items: stretch;
+ position: relative;
+  z-index: 1;
+  background: #f1efec;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  gap: 20px;
+  width: 30vw;
+    position: relative;
 }
 
-/* alternate layout (zig-zag like your design) */
+/* ZIGZAG OFFSETS */
+.service-card:nth-child(1) {
+  margin-left: 40px;
+}
+
+.service-card:nth-child(2) {
+  margin-left: auto;
+  margin-right: 40px;
+  grid-template-columns: 220px 1fr;
+}
+
+.service-card:nth-child(3) {
+  margin-left: 80px;
+}
+
 .service-card:nth-child(even) {
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 220px 1fr;
 }
 
-/* TEXT SIDE */
+.service-card:nth-child(even) .service-card__media {
+  order: -1;
+}
+
+/* TEXT CARD */
 .service-card__text {
-  background: #fff;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px 10px 20px;
 }
 
+/* TITLE */
 .service-card__text h3 {
-  margin-top: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-/* YELLOW BLOCK */
+/* BODY */
+.service-card__text p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+.arrow-btn {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* YELLOW TILE */
 .service-card__media {
-  background: #f4a300; /* 🔥 your yellow */
-  border-radius: 12px;
+  background: #f4a300;
+  border-radius: 16px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  height: 100%;
+  min-height: 140px;
 }
 
-/* MOBILE */
+/* VIDEO LABEL */
+.service-card__media span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ===============================
+   HEADER (match style)
+=============================== */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-label {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  letter-spacing: 0.1em;
+}
+
+/* ===============================
+   MOBILE (important)
+=============================== */
+
 @media (max-width: 768px) {
+
   .service-card {
     grid-template-columns: 1fr;
+    margin: 0 !important;
+    gap: 20px;
   }
 
-  .service-card:nth-child(even) {
+  .service-card:nth-child(2) {
     grid-template-columns: 1fr;
   }
 
   .service-card__media {
-    min-height: 160px;
+    width: 100%;
+    height: 120px;
   }
 }
-
-
-
 
 
 
