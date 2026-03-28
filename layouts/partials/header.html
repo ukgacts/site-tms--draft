@@ -1,9 +1,17 @@
   <!-- Start Navbar -->
 <header class="ampstart-headerbar">
   <!-- Logo left -->
+
   <a href="/" class="logo">
-    TMS
-    <!-- optional amp-img for logo -->
+  
+    <amp-img
+src="/img/logo-tms.png"
+width="120"
+height="40"
+layout="fixed"
+class="lohgo"
+alt="logo">
+</amp-img>
   </a>
 
   <!-- Nav + CTA wrapper -->
@@ -11,14 +19,17 @@
     <nav class="ampstart-headerbar-nav">
       <ul>
         {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          <li><a href="{{ .URL }}">{{ .Name }}<span>.</span></a></li>
+         
         {{ end }}
+
+         <li>
+  <a href="/blog">the lab<span>.</span></a>
+</li>
       </ul>
     </nav>
 
-    <div class="header-cta">
-      <a href="/blog">The Lab</a>
-    </div>
+
   </div>
 
   <!-- Mobile hamburger -->
@@ -91,10 +102,17 @@
                   {{ range .Children }}
                     <li class="ampstart-dropdown-item">
                       <a href="{{ .URL }}">
-                        {{ .Name }}
+                        {{ .Name }}<span>.</span>
                       </a>
                     </li>
+
+
+
                   {{ end }}
+
+                  <li>
+  <a href="/blog">the lab<span>.</span></a>
+</li>
                 </ul>
 
               </section>
