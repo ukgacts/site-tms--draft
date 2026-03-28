@@ -60,6 +60,69 @@
 </section>
 
 
+<section class="black-section">
+  <div class="image-container">
+
+    <div class="image-wrapper" id="img1">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img2">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img3">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img4">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img5">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img6">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img7">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper" id="img8">
+      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+               width="400" height="500" layout="responsive"></amp-img>
+    </div>
+
+  </div>
+
+  <amp-position-observer
+    on="scroll:animDrift.seekTo(percent=event.percent)"
+    layout="nodisplay">
+  </amp-position-observer>
+</section>
+
+<amp-animation id="animDrift" layout="nodisplay">
+<script type="application/json">
+{
+  "animations": [
+    {
+      "selector": ".image-container",
+      "keyframes": [
+        { "transform": "translate(0,0)" },
+        { "transform": "translate(100px,100px)" }
+      ],
+      "duration": "3s",
+      "fill": "both",
+      "easing": "ease-out"
+    }
+  ]
+}
+</script>
+</amp-animation>
+
 <section class="section section-intro section-alt">
 
 
@@ -329,68 +392,7 @@ We create fast, high-performing websites using the latest tools and techniques. 
 
 
 
-<section class="black-section">
-  <div class="image-container">
 
-    <div class="image-wrapper" id="img1">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img2">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img3">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img4">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img5">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img6">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img7">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-    <div class="image-wrapper" id="img8">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
-    </div>
-
-  </div>
-
-  <amp-position-observer
-    on="scroll:animDrift.seekTo(percent=event.percent)"
-    layout="nodisplay">
-  </amp-position-observer>
-</section>
-
-<amp-animation id="animDrift" layout="nodisplay">
-<script type="application/json">
-{
-  "animations": [
-    {
-      "selector": ".image-container",
-      "keyframes": [
-        { "transform": "translate(0,0)" },
-        { "transform": "translate(100px,100px)" }
-      ],
-      "duration": "3s",
-      "fill": "both",
-      "easing": "ease-out"
-    }
-  ]
-}
-</script>
-</amp-animation>
 
 
 
