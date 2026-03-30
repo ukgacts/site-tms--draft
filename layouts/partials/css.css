@@ -272,7 +272,7 @@ line-height:1.5;
   left: 0;
   width: 100%;
   height: 64px;
-  background: #e8e1d4;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between; /* logo left, header-right right */
@@ -1096,10 +1096,10 @@ justify-content: center;
 .hero-v2-side{
 
   position: absolute;           /* absolute inside hero */
-  right: clamp(16px, 5vw, 80px); 
+  right: clamp(16px, 10vw, 2rem); 
   bottom: clamp(16px, 5vw, 80px);
   
-  padding-bottom: 40px;
+  
   max-width: 320px;
   text-align: center;
 }
@@ -1150,9 +1150,11 @@ margin-bottom: var(--space-4);
 /* barcode */
 
 .hero-base-barcode{
-position:absolute;
-left: 180px;
-  bottom: 30px;
+  position: absolute;
+  left: clamp(16px, 5vw, 2rem);
+  bottom: clamp(16px, 5vw, 80px);
+  max-width: 210px; /* same as your image width */
+  width: 100%;
 width:160px;
 z-index:4;
 }
@@ -1278,7 +1280,7 @@ z-index:4;
     right: auto;
     bottom: auto;
     margin: 20px auto 0;
-  
+  padding-bottom: 30px;
 
   }
 
@@ -1592,9 +1594,9 @@ z-index:4;
   position: absolute;
   bottom: -5vw;
   left: -10vw;
-  width: 60vw;
-  height: 60vw;
-  z-index: 1;
+  width: 50vw;
+  height: 100%;
+  z-index: 0;
   pointer-events: none;
   transform: rotate(-180deg);
 }
@@ -1605,152 +1607,10 @@ z-index:4;
   display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===============================
-  ZIGZAG-SECTION 
-=============================== */
-
-
-.services-grid-advanced {
-  display: flex;
-  flex-direction: column;
- 
-
-  align-items: center; /* 🔥 centers all cards */
-  gap: 70px;
-}
-
-.zigzag-section {
+.zigzag-section .container,
+.formats-section .container {
   position: relative;
-  overflow: hidden; /* important so gradient doesn't spill */
-    padding-top: var(--space-section);
-      padding-bottom: var(--space-section);
-}
-.zigzag-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at -10% 110%,
-    #c7dedd 0px,
-    #c7dedd 220px,
-    #9fbfbe 220px,
-    #9fbfbe 360px,
-    #6fa7a4 360px,
-    #6fa7a4 500px,
-    #0e4d4a 500px,
-    #0e4d4a 640px,
-    transparent 640px
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.service-card {
-  display: grid;
-  height: 220px;
-  align-items: stretch;
- position: relative;
-  z-index: 1;
-  background: #f1efec;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  gap: 20px;
-  width: 100%;
-  max-width: 720px; 
-    position: relative;
-     grid-template-columns: 1fr 260px;
+  z-index: 2;
 }
 
 
@@ -1758,91 +1618,221 @@ z-index:4;
 
 
 
-/* LEFT */
-.service-card:nth-child(odd) {
-  align-self: flex-start;
-  margin-left: clamp(0px, 5vw, 80px);
-}
-
-/* RIGHT */
-.service-card:nth-child(even) {
-  align-self: flex-end;
-  margin-right: clamp(0px, 5vw, 80px);
-}
 
 
 
-.service-card:nth-child(even) .service-card__media {
-  order: -1;
-}
 
-/* TEXT CARD */
-.service-card__text {
 
-  gap: 12px;
-    display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* spreads content nicely */
-  height: 100%;
-}
 
-/* TITLE */
-.service-card__text h3 {
-  font-family: var(--font-sans); /* or serif if you want more personality */
-  font-size: clamp(20px, 1.6vw, 26px);
-  line-height: 1.25;
 
-  font-weight: 600;
-  letter-spacing: -0.01em;
 
-  margin-bottom: 8px;
-}
 
-/* BODY */
-.service-card__text p {
-  font-size: var(--text-md); /* 18px */
-  line-height: 1.6;
-  color: rgba(0,0,0,0.7);
-  max-width: 42ch;
-  margin-bottom: 16px;
-}
 
-/* BUTTON */
-.arrow-btn {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-}
 
-/* YELLOW TILE */
-.service-card__media {
-  background: #f4a300;
-  border-radius: 16px;
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  height: 100%;
-  min-height: 140px;
-}
 
-/* VIDEO LABEL */
-.service-card__media span {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ===============================
    HEADER (match style)
 =============================== */
 
+
+
+/* =========================================
+   SERVICES ZIGZAG SECTION
+========================================= */
+.zigzag-section {
+
+position: relative;
+  overflow: hidden;
+}
+.services-zigzag {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px 60px;
+  align-items: start; /* prevents stretching */
+}
+
+/* Base card */
+.zigzag-card {
+  display: grid;
+  background: #f4f4f4;
+  border-radius: 24px;
+  padding: 20px;
+  gap: 20px;
+
+  width: 100%;
+}
+
+/* ODD → LEFT */
+.zigzag-card:nth-child(odd) {
+  grid-column: 1;
+  grid-template-columns: 1fr 260px; /* TEXT | MEDIA */
+}
+
+/* EVEN → RIGHT + LOWER */
+.zigzag-card:nth-child(even) {
+  grid-column: 2;
+  grid-template-columns: 260px 1fr; /* MEDIA | TEXT */
+  transform: translateY(120px); /* zigzag effect */
+}
+
+.zigzag-card:nth-child(even) .zigzag-card__visual {
+  border-radius: 24px 0 0 24px;
+}
+
+.zigzag-card:nth-child(odd) .zigzag-card__visual {
+
+  border-radius: 0 24px 24px 0;
+
+
+}
+
+/* content */
+.zigzag-card__content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zigzag-card__title {
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 1.6vw, 26px);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.zigzag-card__content .arrow-btn {
+  margin-top: auto;
+}
+
+/* media */
+.zigzag-card__visual {
+  background: #f2a100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+/* =========================================
+   MOBILE FIX
+========================================= */
+@media (max-width: 768px) {
+
+  .services-zigzag {
+    display: flex;              /* 🔥 switch from grid → flex */
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .zigzag-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 100%;
+
+    transform: none !important;   /* 🔥 kill zigzag offset */
+  }
+
+  .zigzag-card__content {
+    order: 1;
+  }
+
+  .zigzag-card__visual {
+    order: 2;
+    width: 100%;
+    min-height: 160px;
+  }
+
+}
+
+
+
+
+
+
 .zigzag-title {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-serif);
+  
   font-size: clamp(40px, 4vw, 64px);
   line-height: 1.1;
 }
@@ -1856,68 +1846,7 @@ z-index:4;
 }
 
 
-/* ===============================
-   MOBILE (important)
-=============================== */
-@media (max-width: 768px) {
 
-  .services-grid-advanced {
-    align-items: stretch;
-  }
-
-  .service-card {
-    margin: 0 !important;
-    max-width: 100%;
-    grid-template-columns: 1fr;
-  }
-
-  .service-card:nth-child(even) {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-
-@media (max-width: 768px) {
-  .section-label,
-  .section-header h2 {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================
+   SERVICES ZIGZAG SECTION END
+========================================= */
