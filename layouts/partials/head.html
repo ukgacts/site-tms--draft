@@ -1897,19 +1897,23 @@ body {
     flex-wrap: wrap;       /* allow wrap on small screens */
     justify-content: center;
     gap: 16px;
+     
   }
-}
 
-/* Image wrapper */
-.image-wrapper {
+  .image-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
+   width: 140vw;
     will-change: transform;
   transform: translateZ(0);
 
   
 }
+}
+
+/* Image wrapper */
+
 
 /* Image behavior */
 .image-wrapper amp-img {
@@ -2069,16 +2073,36 @@ body {
 }
 
 
-    @keyframes driftRight {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(40px); }
-      100% { transform: translateX(0); }
-    }
+  @keyframes driftTall {
+  0%   { transform: translate3d(0,0,0); }
+  50%  { transform: translate3d(70px,-12px,0); }
+  100% { transform: translate3d(0,0,0); }
+}
 
-    .tall, .wide, .square {
-      position: relative;   /* ensure transform works correctly */
-      animation: driftRight 5s ease-in-out infinite;
-    }
+@keyframes driftWide {
+  0%   { transform: translate3d(0,0,0); }
+  50%  { transform: translate3d(-45px,8px,0); }
+  100% { transform: translate3d(0,0,0); }
+}
+
+@keyframes driftSquare {
+  0%   { transform: translate3d(0,0,0); }
+  35%  { transform: translate3d(24px,-10px,0); }
+  70%  { transform: translate3d(40px,-18px,0); }
+  100% { transform: translate3d(0,0,0); }
+}
+
+.tall {
+  animation: driftTall 8s ease-in-out infinite;
+}
+
+.wide {
+  animation: driftWide 6.5s ease-in-out infinite;
+}
+
+.square {
+  animation: driftSquare 5.5s ease-in-out infinite;
+}
 
     </style>
 </head>
