@@ -113,72 +113,121 @@
 
   </div>
 </section>
+
+
 <section class="black-section">
 
   
   <div class="image-container">
 
-  
+  <amp-position-observer
+  on="scroll:animDrift.seekTo(percent=event.percent)"
+  intersection-ratios="1"
+  layout="nodisplay">
+</amp-position-observer>
 
-    <div class="image-wrapper ratio-9-16" id="img1" >
+<div class="image-pattern"> 
+    <div class="image-wrapper tall"id="img1" >
       <amp-img src="/img/illustrations/hall.png"
                width="3504" height="2336" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper ratio-16-9" id="img2">
+    <div class="image-wrapper wide" id="img2">
     <amp-img src="/img/illustrations/hall.png"
                width="3504" height="2336" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper  ratio-1-1" id="img3">
+    <div class="image-wrapper  square" id="img3">
       <amp-img src="/img/illustrations/hall.png"
                width="3504" height="2336" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper  ratio-1-1" id="img4">
+    <div class="image-wrapper  square" id="img4">
    <amp-img src="/img/illustrations/hall.png"
                width="3504" height="2336" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper" id="img5">
+
+</div>
+
+<div class="image-pattern"> 
+    <div class="image-wrapper tall"id="img1" >
+      <amp-img src="/img/illustrations/hall.png"
+               width="3504" height="2336" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper wide" id="img2">
+    <amp-img src="/img/illustrations/hall.png"
+               width="3504" height="2336" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper  square" id="img3">
+      <amp-img src="/img/illustrations/hall.png"
+               width="3504" height="2336" layout="responsive"></amp-img>
+    </div>
+    <div class="image-wrapper  square" id="img4">
+   <amp-img src="/img/illustrations/hall.png"
+               width="3504" height="2336" layout="responsive"></amp-img>
+    </div>
+
+</div>
+    <div class="image-pattern"> 
+    <div class="image-wrapper tall" id="img5">
       <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
                width="400" height="500" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper" id="img6">
+    <div class="image-wrapper wide" id="img6">
       <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
                width="400" height="500" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper" id="img7">
-      <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
-               width="400" height="500" layout="responsive"></amp-img>
+    <div class="image-wrapper square" id="img7">
+      <amp-img src="/img/illustrations/hall.png"
+               width="3504" height="2336" layout="responsive"></amp-img>
     </div>
-    <div class="image-wrapper" id="img8">
+    <div class="image-wrapper square" id="img8">
       <amp-img src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
                width="400" height="500" layout="responsive"></amp-img>
     </div>
 
   </div>
 
-  <amp-position-observer
-    on="scroll:animDrift.seekTo(percent=event.percent)"
-    layout="nodisplay">
-  </amp-position-observer>
+</div>
 </section>
+
+
 
 <amp-animation id="animDrift" layout="nodisplay">
 <script type="application/json">
 {
   "animations": [
     {
-      "selector": ".image-container",
+      "selector": ".tall",
+      "duration": "1",
       "keyframes": [
-        { "transform": "translate(0,0)" },
-        { "transform": "translate(100px,100px)" }
-      ],
-      "duration": "3s",
-      "fill": "both",
-      "easing": "ease-out"
+        { "transform": "translateX(0px)" },
+        { "transform": "translateX(80px)" }
+      ]
+    },
+    {
+      "selector": ".wide",
+      "duration": "1",
+      "keyframes": [
+        { "transform": "translateX(0px)" },
+        { "transform": "translateX(40px)" }
+      ]
+    },
+    {
+      "selector": ".square",
+      "duration": "1",
+      "keyframes": [
+        { "transform": "translateX(0px)" },
+        { "transform": "translateX(60px)" }
+      ]
     }
   ]
 }
 </script>
 </amp-animation>
+
+
+
+
+
+
 
 <section class="section section-intro section-alt">
 
