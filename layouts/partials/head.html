@@ -1841,6 +1841,9 @@ body {
   }
 }
 
+/* ===============================
+   TECHNOLOGY SECTION--end
+=============================== */
 
 
 
@@ -1860,167 +1863,118 @@ body {
 
 
 
+/* ===============================
+   PORTFOLIO SECTION
+=============================== */
 
-
-
-
-
-
-
+/* Container */
 .image-container {
-  display: flex;
-  flex-wrap: wrap;       /* allows multiple rows */
-  justify-content: center;
-  gap: 20px;             /* space between images */
-  position: relative;
-  max-width: 1200px;     /* optional: max width of row */
-  margin: 0 auto;        /* center container */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 120px;
+  gap: 20px;
 
-    will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
+/* Image wrapper */
 .image-wrapper {
-  flex: 0 0 calc(16.66% - 20px); /* 6 images per row (100/6 ≈ 16.66%) minus gap */
-  max-width: 180px;
-  transition: transform 0.3s ease;
-    will-change: transform;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-
-/* Layering (depth) */
-/* Overlapping positions and z-index */
-#img1 { 
-  margin-top: 0;
-  max-width: 180px;
-  z-index: 5;
-  transform: scale(2);
-  transform-origin: center;
-  
-
+/* Image behavior */
+.image-wrapper amp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-#img2 { left: auto; right: 10%; margin-top: -120px; max-width: 260px; z-index: 2; }
-#img3 { left: 20%; margin-top: -100px; max-width: 200px; z-index: 4; }
-#img4 { left: auto; right: 5%; margin-top: -140px; max-width: 240px; z-index: 1; }
-#img5 { left: 15%; margin-top: -110px; max-width: 190px; z-index: 3; }
-#img6 { left: auto; right: 15%; margin-top: -130px; max-width: 270px; z-index: 4; }
-#img7 { left: 5%; margin-top: -120px; max-width: 180px; z-index: 2; }
-#img8 { left: auto; right: 20%; margin-top: -150px; max-width: 230px; z-index: 3; }
 
+/* ===============================
+   PATTERN SYSTEM
+=============================== */
 
+/* 1 → 9:16 */
+.image-wrapper:nth-child(4n + 1) {
+  grid-row: span 4;
+}
 
+/* 2 → 16:9 */
+.image-wrapper:nth-child(4n + 2) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
 
+/* 3 & 4 → 1:1 */
+.image-wrapper:nth-child(4n + 3),
+.image-wrapper:nth-child(4n + 4) {
+  grid-row: span 2;
+}
+
+/* ===============================
+   IMAGE STYLE (rounded vs sharp)
+=============================== */
+
+/* Rounded */
+.image-wrapper:nth-child(odd) amp-img {
+  border-radius: 25px;
+}
+
+/* Sharp */
+.image-wrapper:nth-child(even) amp-img {
+  border-radius: 0;
+}
+
+/* ===============================
+   SECTION STYLING
+=============================== */
 
 .black-section {
-background: #0f172a;
+  background: #0f172a;
   padding: 120px 20px;
-    position: relative;
-  min-height: 600px; /* adjust */
-   overflow: visible;
-    contain: layout paint;
-}
-.image-wrapper {
- 
-  max-width: 220px;
+  min-height: 600px;
 }
 
-/* Rounded images */
-#img1 amp-img,
-#img3 amp-img,
-#img5 amp-img,
-#img7 amp-img {
-  border-radius: 25px;   /* softly rounded corners */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* optional floating effect */
-}
+/* ===============================
+   RESPONSIVE
+=============================== */
 
-/* Fully squared images */
-#img2 amp-img,
-#img4 amp-img,
-#img6 amp-img,
-#img8 amp-img {
-  border-radius: 0;       /* sharp edges */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* optional */
-}
-
-.image-wrapper {
-  flex: 0 0 calc(16.66% - 20px); /* desktop = 6 per row */
-  max-width: 220px;
-}
-
-/* tablet */
+/* Tablet */
 @media (max-width: 1024px) {
-  .image-wrapper {
-    flex: 0 0 calc(33.33% - 20px); /* 3 per row */
+  .image-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image-wrapper:nth-child(4n + 2) {
+    grid-column: span 2; /* keep wide layout */
   }
 }
 
-/* mobile */
+/* Mobile */
 @media (max-width: 768px) {
-
-
-  
-
-
-
-
+  .image-container {
+    grid-template-columns: 1fr;
+  }
 
   .image-wrapper {
-    flex: 0 0 calc(50% - 20px); /* 2 per row */
-    max-width: none;
-     transition: transform 0.2s ease, opacity 0.2s ease;
-    will-change: transform;
+    grid-column: span 1 !important;
+    grid-row: span 2 !important;
   }
 
-    #img2,
-  #img3,
-  #img4,
-  #img5,
-  #img6,
-  #img7,
-  #img8 {
-    margin-top: -30px;
-  }
-  #img5,
-  #img6,
-  #img7,
-  #img8 {
-    transform: none !important;
-  }
- 
-
-    #img1 {
-    transform: scale(1.2); /* instead of 2 */
-  }
-
-
-    .image-wrapper amp-img {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* lighter */
-  }
-  .image-wrapper {
-    transition: transform 0.2s ease; /* faster + lighter */
+  .image-wrapper amp-img {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   }
 }
 
-/* very small phones */
-@media (max-width: 480px) {
-  .image-wrapper {
-    flex: 0 0 100%; /* 1 per row */
-  }
-
-  #img1 {
-    transform: scale(1.1);
-  }
-}
-
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .image-wrapper {
     transition: none;
-    transform: none !important;
   }
 }
-
 
 
 
