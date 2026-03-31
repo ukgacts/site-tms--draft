@@ -1891,7 +1891,15 @@ body {
 
 /* Layering (depth) */
 /* Overlapping positions and z-index */
-#img1 { left: 10%; margin-top: 0; max-width: 180px; z-index: 3; }
+#img1 { 
+  margin-top: 0;
+  max-width: 180px;
+  z-index: 5;
+  transform: scale(2);
+  transform-origin: center;
+  
+
+}
 #img2 { left: auto; right: 10%; margin-top: -120px; max-width: 260px; z-index: 2; }
 #img3 { left: 20%; margin-top: -100px; max-width: 200px; z-index: 4; }
 #img4 { left: auto; right: 5%; margin-top: -140px; max-width: 240px; z-index: 1; }
@@ -1909,7 +1917,7 @@ background: #0f172a;
   padding: 120px 20px;
     position: relative;
   min-height: 600px; /* adjust */
-  overflow: hidden;
+   overflow: visible;
     contain: layout paint;
 }
 .image-wrapper {
@@ -1935,7 +1943,40 @@ background: #0f172a;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* optional */
 }
 
+.image-wrapper {
+  flex: 0 0 calc(16.66% - 20px); /* desktop = 6 per row */
+  max-width: 220px;
+}
 
+/* tablet */
+@media (max-width: 1024px) {
+  .image-wrapper {
+    flex: 0 0 calc(33.33% - 20px); /* 3 per row */
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .image-wrapper {
+    flex: 0 0 calc(50% - 20px); /* 2 per row */
+    max-width: none;
+  }
+
+  #img1 {
+    transform: scale(1.4); /* smaller scale than desktop */
+  }
+}
+
+/* very small phones */
+@media (max-width: 480px) {
+  .image-wrapper {
+    flex: 0 0 100%; /* 1 per row */
+  }
+
+  #img1 {
+    transform: scale(1.1);
+  }
+}
 
 
 
