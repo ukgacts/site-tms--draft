@@ -1971,3 +1971,144 @@ position: relative;
 /* =========================================
    SERVICES ZIGZAG SECTION END
 ========================================= */
+
+
+
+
+
+/* =========================================
+   PORTFOLIO SHOWCASE SECTION END
+========================================= */
+    
+
+.ticker {
+  overflow: hidden;
+
+  width: 100%;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 30px;
+  width: max-content; /* IMPORTANT */
+
+ 
+}
+
+.ticker.reverse .ticker-track {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+
+
+
+
+.ticker:nth-of-type(1) .ticker-track {
+  animation: scroll 180s linear infinite;
+}
+
+.ticker:nth-of-type(2) .ticker-track {
+  animation: scroll 260s linear infinite reverse;
+}
+
+.ticker:nth-of-type(3) .ticker-track {
+  animation: scroll 210s linear infinite;
+}
+
+
+
+
+
+
+/* =========================================
+   PORTFOLIO SHOWCASE SECTION
+========================================= */
+
+
+
+.portfolio-showcase{
+  
+  margin: 0 auto;
+
+  display: grid;
+  gap: 30px; 
+  margin-left: calc(-1.5rem);
+  margin-right: calc(-1.5rem);
+  
+}
+
+
+
+.portfolio-pattern {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 14px;
+  width: 900px;
+  flex-shrink: 0;
+
+}
+
+.portfolio-right {
+  display: grid;
+  gap: 20px;
+  grid-template-rows: 300px 306px;
+}
+
+.portfolio-small-row {
+ 
+
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.portfolio-tall amp-img {
+  aspect-ratio: 9 / 16;
+}
+
+.portfolio-wide amp-img {
+  aspect-ratio: 16 / 9;
+}
+
+.portfolio-small amp-img {
+  aspect-ratio: 1 / 1;
+}
+/* wrappers own size */
+.portfolio-tall {
+  height: 620px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-wide {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-small {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* AMP image forced to fill */
+.portfolio-tall amp-img,
+.portfolio-wide amp-img,
+.portfolio-small amp-img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* =========================================
+   PORTFOLIO SHOWCASE SECTION--END
+========================================= */
+    
