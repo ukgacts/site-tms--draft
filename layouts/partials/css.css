@@ -1876,6 +1876,10 @@ position: relative;
     transform: none !important;   /* 🔥 kill zigzag offset */
   }
 
+  .zigzag-card:nth-child(3) {
+  margin-top: 0;
+}
+
   .zigzag-card__content {
     order: 1;
   }
@@ -1977,7 +1981,7 @@ position: relative;
 
 
 /* =========================================
-   PORTFOLIO SHOWCASE SECTION END
+   PORTFOLIO SHOWCASE SECTION 
 ========================================= */
     
 
@@ -2107,6 +2111,87 @@ position: relative;
 }
 
 
+
+@media (max-width: 768px) {
+
+  .portfolio-pattern {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .portfolio-right {
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .portfolio-small-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+    .portfolio-tall,
+  .portfolio-wide,
+  .portfolio-small {
+    height: auto;
+  }
+
+   .portfolio-showcase {
+    gap: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 16px;
+  }
+
+  .portfolio-tall,
+.portfolio-wide,
+.portfolio-small {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-tall:active,
+.portfolio-wide:active,
+.portfolio-small:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+
+  .ticker-track {
+    animation: none;
+  }
+
+  .portfolio-showcase {
+    gap: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 16px;
+  }
+
+  .portfolio-pattern {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .portfolio-right {
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .portfolio-small-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .portfolio-tall,
+  .portfolio-wide,
+  .portfolio-small {
+    height: auto;
+  }
+
+}
+
+}
 
 /* =========================================
    PORTFOLIO SHOWCASE SECTION--END
