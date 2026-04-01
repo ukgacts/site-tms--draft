@@ -1787,7 +1787,24 @@ font-size: clamp(1.45rem, 1.8vw, 2rem);
 }
 
 
+.formats-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 5rem;
+  align-items: start;
+}
 
+.formats-sidebar {
+  position: sticky;
+  top: 120px;
+  padding-top: 2rem;
+}
+
+.formats-sidebar h3 {
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem);
+  line-height: 1.15;
+  margin: 0.75rem 0 1rem;
+}
 
 
 
