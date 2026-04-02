@@ -1721,6 +1721,29 @@ position: relative;
   overflow: hidden;
 }
 
+
+
+
+
+.zigzag-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+}
+
+.zigzag-heading__side {
+  max-width: 46ch;
+}
+
+.zigzag-heading__intro {
+  margin: 0;
+  line-height: 1.7;
+}
+
+
+
 .zigzag-section::before {
   content: "";
   position: absolute;
@@ -1832,28 +1855,19 @@ position: relative;
 
 }
 
-.zigzag-card__visual::before {
-  content: "";
-  width: 80%;
-  height: 70%;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+
+
+.zigzag-card__visual amp-img,
+.zigzag-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
 }
 
-.mockup-window {
-  width: 85%;
-  height: 75%;
-  border-radius: 18px;
-  background: #111;
-  overflow: hidden;
-}
 
-.mockup-bar {
-  height: 36px;
-  background: rgba(255,255,255,0.08);
-}
+
+
 
 /* =========================================
    MOBILE FIX
@@ -1983,20 +1997,47 @@ position: relative;
 /* =========================================
    PORTFOLIO SHOWCASE SECTION 
 ========================================= */
-    
+    .portfolio-stage {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  margin-top: 2rem;
+}
 
 .ticker {
   overflow: hidden;
-
+  margin-top: 2rem;
   width: 100%;
+    margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  
 }
 
 .ticker-track {
   display: flex;
   gap: 30px;
   width: max-content; /* IMPORTANT */
+  animation: marquee 40s linear infinite;
 
  
+}
+
+
+.ticker-group {
+  display: flex;
+  gap: 3rem;
+  padding-inline: 3rem;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .ticker.reverse .ticker-track {
@@ -2030,12 +2071,6 @@ position: relative;
 
 
 
-/* =========================================
-   PORTFOLIO SHOWCASE SECTION
-========================================= */
-
-
-
 .portfolio-showcase{
   
   margin: 0 auto;
@@ -2056,6 +2091,18 @@ position: relative;
   width: 900px;
   flex-shrink: 0;
 
+}
+
+.portfolio-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.portfolio-heading__side {
+  max-width: 46ch;
 }
 
 .portfolio-right {
