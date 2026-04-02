@@ -64,6 +64,9 @@ color:inherit;
   --space-3: 16px;
   --space-4: 24px;
   --space-5: 32px;
+  --space-10: 120px;
+  
+
 
   /* NEW: layout + typography spacing */
   --space-heading: 24px;
@@ -1589,39 +1592,33 @@ z-index:4;
 
 
 
-
-
-
+/* Make blurred circles visible in formats section & intro */
 .decor-circles {
   position: absolute;
-  bottom: -5vw;
-  left: -10vw;
-  width: 50vw;
-  height: 100%;
+  bottom: -10%;        /* relative to parent height */
+  left: -10%;
+  width: 60%;          /* adjust to fit screen */
+  height: 60%;         /* use percentage or fixed px */
   z-index: 0;
   pointer-events: none;
-  transform: rotate(-180deg);
-  opacity: 0.4;
+  opacity: 0.35;
   filter: blur(24px);
+  transform: rotate(-180deg);
 }
 
+/* Ensure the SVG scales properly */
 .decor-circles svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.zigzag-section .container,
-.formats-section .container {
-  position: relative;
-  z-index: 2;
+/* Parent container needs positioning */
+.formats-section,
+.intro-section {
+  position: relative;  /* 🔥 ensures absolute circles are contained */
+  overflow: visible;   /* 🔥 so blur is not clipped */
 }
-
-
-
-
-
-
 
 
 
@@ -1721,6 +1718,11 @@ position: relative;
   overflow: hidden;
 }
 
+.zigzag-section .container,
+.formats-section .container {
+  position: relative;
+  z-index: 2;
+}
 
 
 
@@ -1753,12 +1755,6 @@ position: relative;
   height: 70%;
   background: rgba(0,0,0,0.06);
 }
-.services-zigzag {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-   gap: 90px 70px;
-  align-items: start;
-}
 
 
 
@@ -1780,7 +1776,7 @@ position: relative;
 }
 
 /* EVEN → RIGHT + LOWER */
-.zigzag-card:nth-child(even) {
+ .zigzag-section .zigzag-card:nth-child(even) {
   grid-column: 2;
   grid-template-columns: 320px 1fr;
   transform: translateY(100px);
@@ -1865,6 +1861,13 @@ position: relative;
  
 }
 
+.zigzag-section .services-zigzag {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+   gap: 90px 70px;
+  align-items: start;
+}
+
 
 
 
@@ -1874,7 +1877,7 @@ position: relative;
 ========================================= */
 @media (max-width: 768px) {
 
-  .services-zigzag {
+ .zigzag-section .services-zigzag {
     display: flex;              /* 🔥 switch from grid → flex */
     flex-direction: column;
     gap: 40px;
@@ -1984,6 +1987,77 @@ position: relative;
   margin-bottom: 80px;
 }
 
+
+
+@media (max-width: 768px) {
+
+   .zigzag-intro-grid {
+display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom:2rem;
+  }
+
+  /* Zigzag heading container */
+  .zigzag-heading {
+    margin-bottom: 40px;        /* reduce huge desktop margin */
+    max-width: 100%;
+    padding: 0 20px;
+    z-index: 2;
+  }
+
+  
+
+  /* Eyebrow text */
+  .zigzag-heading__eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+
+  .zigzag-section::before {
+   content: "";
+  position: absolute;
+  left: 50%;     /* middle of section */
+  top: 80px;     /* starting a bit lower */
+  width: 3px;    /* thicker if you like */
+  height: 100%;  /* span entire section height */
+  background: rgba(0,0,0,0.06);
+}
+
+  /* Main title */
+  .zigzag-title {
+    font-size: clamp(28px, 8vw, 48px); /* smaller, fluid font size */
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  /* Adjust spacing for last span */
+  .zigzag-title span:last-child {
+    margin-left: clamp(10px, 4vw, 60px);
+  }
+
+  /* Intro text below heading */
+  .zigzag-heading__intro {
+    margin-top: 16px;
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.4;
+    max-width: 100%;
+    opacity: 0.85;
+  }
+
+
+
+  /* Optional: smaller variation for "small" titles */
+  .zigzag-title.small {
+    font-size: clamp(24px, 6vw, 40px);
+  }
+
+  .zigzag-title.small span:last-child {
+    margin-left: clamp(10px, 3vw, 40px);
+  }
+}
 
 
 /* =========================================
@@ -2244,3 +2318,172 @@ position: relative;
    PORTFOLIO SHOWCASE SECTION--END
 ========================================= */
     
+
+
+
+/* =========================================
+   FORMATS SECTION
+========================================= */
+
+/* =========================================
+   FORMATS SECTION
+========================================= */
+
+.formats-section {
+  position: relative;
+  background: #f3f4f6;
+  overflow: hidden;
+}
+
+.formats-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* keep your existing heading classes */
+.formats-heading {
+  max-width: 760px;
+  margin: 0 auto var(--space-section-lg);
+  text-align: center;
+}
+
+.formats-heading .display-sm {
+  max-width: 12ch;
+  margin-inline: auto;
+}
+
+.formats-heading .subtitle {
+  max-width: 58ch;
+  margin-inline: auto;
+}
+
+/* section layout */
+.formats-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: var(--space-section);
+  align-items: start;
+}
+
+.formats-main {
+  min-width: 0;
+}
+
+.formats-sidebar {
+  position: sticky;
+  top: 120px;
+  padding-top: var(--space-4);
+}
+
+/* ---------- inherit zigzag cards ---------- */
+.formats-section .services-zigzag {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 90px 70px;
+}
+
+/* text-only variant */
+.formats-section .zigzag-card {
+  display: block;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.formats-section .zigzag-card:nth-child(even) {
+  transform: translateY(100px);
+}
+
+.formats-section .zigzag-card__visual {
+  display: none;
+}
+
+/* THIS is your real text card */
+.formats-section .zigzag-card__content {
+  background: #f6f8f8;
+  border: 1px solid rgba(14, 77, 74, 0.08);
+  border-radius: 28px;
+  padding: clamp(2rem, 3vw, 3rem);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  max-width: 62ch;
+}
+
+.formats-section .zigzag-card__content p {
+  margin-top: 1rem;
+  line-height: 1.75;
+}
+
+.formats-section .zigzag-card__content p + p {
+  margin-top: 1.25rem;
+}
+
+/* use YOUR typography tokens */
+.formats-section .display-md {
+  font-family: var(--font-serif);
+  font-size: var(--display-sm);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 768px) {
+  .formats-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .formats-sidebar {
+    position: static;
+    padding-top: 0;
+  }
+
+  .formats-section .services-zigzag {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .formats-section .zigzag-card:nth-child(even) {
+    transform: none;
+  }
+
+  .formats-section .zigzag-card__content {
+    max-width: 100%;
+    padding: var(--space-4);
+  }
+}
+
+.formats-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: var(--space-section);
+}
+
+.formats-heading {
+  max-width: 14ch;
+}
+
+.formats-heading .display-sm {
+  margin-bottom: 0;
+}
+
+.formats-heading__side .subtitle {
+  max-width: 46ch;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.72);
+}
+
+
+
+
+.formats-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+}
+
+.formats-title span:last-child {
+  margin-left: clamp(24px, 6vw, 80px);
+}
