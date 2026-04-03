@@ -1,75 +1,23 @@
-
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
-<div class=" flex" > 
-    <aside class="col-1 xs-hide"></aside> 
-    <header class="www-header col-8  flex-auto list">
-       
 
-        </header>
-        <aside class="col-1 xs-hide"></aside> 
-        
+<div class="flex">
+  <aside class="col-1 xs-hide"></aside>
+  <article class="flex-auto col-8">
+    <h1 style="font-size: 48px; color: #232323; margin-bottom: 80px;">Lab</h1>
 
-          
-         
-    
-
-
+    <div class="flex flex-wrap">
+      {{ range .Pages }}
+        <div class="blog-post-preview" style="width:100%; margin-bottom: 40px;">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p>{{ .Summary }}</p>
+          <small>Published on {{ .Date.Format "Jan 2, 2006" }}</small>
         </div>
+      {{ end }}
+    </div>
 
-       
+  </article>
+  <aside class="col-1 xs-hide"></aside>
+</div>
 
-
-    <amp-selector layout="container">
-
-  
-        <main class="flex" style="padding-top: 60px; padding: 10px 1.6%;">
-
-          
-            
-<!--
-            <aside class="www-components-sec-nav col-2 xs-hide sm-hide relative">
-                <ul class="www-component-anchors list-reset m0 pt0 pb3 px1 caps">
-                    <li class="clearfix mb3"><a href="/#introduction" class="www-component-anchor text-decoration-none left" option="">Introduction</a></li>
-                    <li class="clearfix mb3"><a href="/#components" class="www-component-anchor text-decoration-none left" option="">Components</a></li>
-                    <li class="clearfix mb3"><a href="/#advanced" class="www-component-anchor text-decoration-none left" option="">Advanced</a></li>
-                    <li class="clearfix mb3"><a href="/#samples_templates" class="www-component-anchor text-decoration-none left" option="">Samples &amp; Templates</a></li>
-                </ul>
-            </aside>
--->
-
-<aside class="col-1 xs-hide"></aside>
-
-            <article class=" flex-auto col-8">
-            
-                <section class="" id="samples_templates">
-                    <h1 style="font-size: 48px;
-                    color: #232323;
-                    line-height: 1.4;
-                   
-                    margin-bottom: 80px;
-                  
-                    font-weight: 400;
-                    letter-spacing: -.5px;
-                    line-height: 1.1666666667;"> Blog</h1>
-<!--
-                    <h2 class="www-heading pb4 mb2 relative">Samples &amp; Templates</h2>
-                    <div class="mb4">
-                        <p>Templates and metadata samples for different kinds of AMPs.</p>
-                    </div>
--->
-                    <div class=" flex flex-wrap">
-                      {{- range .Data.Pages }}
-                        {{ .Render "li" }}
-                      {{- end }}
-                    </div>
-                </section>
-
-            </article>
-
-            <aside class="col-1 xs-hide"></aside>
-        </main>
-    </amp-selector>
-
-    <aside class="col-1 xs-hide"></aside> 
 {{ partial "footer.html" . }}
