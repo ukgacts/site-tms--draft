@@ -2187,14 +2187,11 @@ display: grid;
 }
 
 
-
 .portfolio-pattern {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 14px;
-  width: 900px;
-  flex-shrink: 0;
-
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 10px;
+  align-items: stretch;
 }
 
 .portfolio-intro-grid {
@@ -2204,6 +2201,40 @@ display: grid;
   align-items: end;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 768px) {
+  .portfolio-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 24px;
+  }
+
+  .portfolio-heading,
+  .portfolio-heading__side {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-heading .zigzag-title.small {
+    font-size: clamp(24px, 8vw, 38px);
+    line-height: 1.05;
+  }
+
+  .portfolio-heading .zigzag-title.small span:last-child {
+    margin-left: 8px !important;
+  }
+
+  .portfolio-heading__side .zigzag-heading__intro {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+
+
 
 .portfolio-heading__side p {
   color: #cccccc;
@@ -2275,17 +2306,18 @@ display: grid;
     width: 100%;
     margin: 0;
     transform: none;
-    overflow: hidden;
+       overflow: visible;
   }
 
   .ticker {
-    overflow-x: auto;
+        overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
     margin: 0;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    touch-action: pan-x;
   }
 
   .ticker::-webkit-scrollbar {
@@ -2299,22 +2331,22 @@ display: grid;
     width: max-content;
     animation: none;
     padding: 0 16px;
-    transform: translateX(0);
-  will-change: transform;
-  animation: marquee 60s linear infinite;
+  transform: none !important;
+    will-change: auto;
+  animation: none;
   }
 
-  @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-1 * 100% / 2)); } /* half of track */
-}
-
+ 
   .ticker-group {
     display: flex;
     flex-direction: row;
     gap: 16px;
     padding: 0;
     flex-shrink: 0;
+  }
+  
+  .ticker-group[aria-hidden="true"] {
+    display: none;
   }
 
   /* remove duplicate fake marquee copy */
