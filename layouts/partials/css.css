@@ -1290,8 +1290,8 @@ z-index:4;
     position: relative;
     right: auto;
     bottom: auto;
-    margin: 20px auto 0;
-  padding-bottom: 30px;
+    margin: 40px auto 0;
+  padding-bottom: 60px;
 
   }
 
@@ -2161,7 +2161,7 @@ position:relative;
 
 @keyframes scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-1000px); }
 }
 
 /* Pause on hover (nice UX) */
@@ -2442,7 +2442,49 @@ margin: 0;
   position: sticky;
   top: 120px;
   padding-top: var(--space-4);
+
+
+
+    position: sticky;
+  top: 120px;
+
+  padding: 48px;
+  border-radius: 28px;
+
+  background:
+    radial-gradient(circle at top right, rgba(111,167,164,0.22), transparent 45%),
+    linear-gradient(145deg, #0d1117, #121a22);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  overflow: hidden;
 }
+
+.formats-sidebar .text-label {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8db7b4;
+  margin-bottom: 16px;
+}
+
+.formats-sidebar h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #fff;
+}
+.formats-sidebar .text-body {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
 
 /* ---------- mobile ---------- */
 @media (max-width: 768px) {
