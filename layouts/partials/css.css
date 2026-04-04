@@ -2099,52 +2099,43 @@ display: grid;
 /* =========================================
    PORTFOLIO SHOWCASE SECTION 
 ========================================= */
-    .portfolio-stage {
+/* =========================================
+   PORTFOLIO SHOWCASE SECTION
+========================================= */
+
+/* ===== STAGE ===== */
+.portfolio-stage {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
-
-   margin-top: 1rem;
+  margin-top: 1rem;
 }
 
+/* ===== TICKER ===== */
 .ticker {
+  width: 100%;
   overflow: hidden;
   margin-top: 2rem;
-  width: 100%;
-    margin-left: calc(50% - 50vw);
+
+  /* full-bleed trick */
+  margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  
+
+  cursor: grab;
 }
 
+.ticker:active {
+  cursor: grabbing;
+}
+
+/* ===== TRACK (ANIMATION) ===== */
 .ticker-track {
   display: flex;
-    gap: 8px;
-  width: max-content; /* IMPORTANT */
-  animation: marquee 40s linear infinite;
-
- 
-}
-
-
-.ticker-group {
-  display: flex;
   gap: 8px;
-  padding-inline: 0;
-  flex-shrink: 0;
-}
+  width: max-content;
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.ticker.reverse .ticker-track {
-  animation-direction: reverse;
+  animation: scroll 60s linear infinite;
 }
 
 @keyframes scroll {
@@ -2152,41 +2143,55 @@ display: grid;
   to   { transform: translateX(-50%); }
 }
 
-
-
-
-
-
-.ticker:nth-of-type(1) .ticker-track {
-  animation: scroll 180s linear infinite;
+/* Pause on hover (nice UX) */
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
 }
 
-.ticker:nth-of-type(2) .ticker-track {
-  animation: scroll 260s linear infinite reverse;
+/* ===== GROUP ===== */
+.ticker-group {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-.ticker:nth-of-type(3) .ticker-track {
-  animation: scroll 210s linear infinite;
-}
+/* =========================================
+   PORTFOLIO LAYOUT
+========================================= */
 
-
-
-
-
-
-.portfolio-showcase{
-  
+.portfolio-showcase {
   margin: 0 auto;
-  background-color: #111111;
+  background-color: #111;
   color: #f5f5f5;
   display: grid;
-  gap: 30px; 
-  margin-left: calc(-1.5rem);
-  margin-right: calc(-1.5rem);
-  
+  gap: 30px;
+
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
 }
 
+/* ===== INTRO ===== */
+.portfolio-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
 
+.portfolio-heading__side {
+  max-width: 46ch;
+}
+
+.portfolio-heading__side p {
+  color: #ccc;
+}
+
+.portfolio-heading .zigzag-title span {
+  color: #ccc;
+}
+
+/* ===== PATTERN ===== */
 .portfolio-pattern {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -2194,26 +2199,139 @@ display: grid;
   align-items: stretch;
 }
 
-.portfolio-intro-grid {
-display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
-  align-items: end;
-  margin-bottom: 2rem;
+.portfolio-right {
+  display: grid;
+  gap: 10px;
 }
 
+.portfolio-small-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ===== IMAGE WRAPPERS ===== */
+.portfolio-tall,
+.portfolio-wide,
+.portfolio-small {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Desktop heights */
+.portfolio-tall {
+  height: 620px;
+}
+
+.portfolio-wide,
+.portfolio-small {
+  height: 100%;
+}
+
+/* Aspect ratios */
+.portfolio-tall amp-img { aspect-ratio: 9 / 16; }
+.portfolio-wide amp-img { aspect-ratio: 16 / 9; }
+.portfolio-small amp-img { aspect-ratio: 1 / 1; }
+
+/* Force fill */
+.portfolio-tall amp-img,
+.portfolio-wide amp-img,
+.portfolio-small amp-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   MOBILE (SWIPE MODE)
+========================================= */
+
 @media (max-width: 768px) {
+
+  /* Stage reset */
+  .portfolio-stage {
+    width: 100%;
+    margin: 0;
+    transform: none;
+    overflow: visible;
+  }
+
+  /* Enable swipe */
+  .ticker {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x;
+
+    scrollbar-width: none;
+  }
+
+  .ticker::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Disable animation */
+  .ticker-track {
+    animation: none;
+    transform: none !important;
+
+    padding: 0 16px;
+  }
+
+  /* Remove duplicate group (important) */
+  .ticker-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  /* Card sizing for swipe */
+  .portfolio-pattern {
+    min-width: 85vw;
+    width: 85vw;
+
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    scroll-snap-align: start;
+  }
+
+  /* Layout tweaks */
+  .portfolio-right {
+    gap: 12px;
+  }
+
+  .portfolio-small-row {
+    gap: 12px;
+  }
+
+  /* Reset heights */
+  .portfolio-tall,
+  .portfolio-wide,
+  .portfolio-small {
+    height: auto;
+  }
+
+  /* Mobile ratios */
+  .portfolio-tall amp-img { aspect-ratio: 4 / 5; }
+  .portfolio-wide amp-img { aspect-ratio: 16 / 10; }
+
+  .portfolio-tall {
+    max-height: 280px;
+  }
+
+  /* Spacing */
+  .ticker-track,
+  .ticker-group {
+    gap: 6px;
+  }
+
+  /* Intro responsive */
   .portfolio-intro-grid {
     grid-template-columns: 1fr;
     gap: 16px;
     align-items: start;
     margin-bottom: 24px;
-  }
-
-  .portfolio-heading,
-  .portfolio-heading__side {
-    width: 100%;
-    max-width: 100%;
   }
 
   .portfolio-heading .zigzag-title.small {
@@ -2226,184 +2344,11 @@ display: grid;
   }
 
   .portfolio-heading__side .zigzag-heading__intro {
-    max-width: 100%;
     font-size: 14px;
     line-height: 1.5;
   }
 }
 
-
-
-
-
-.portfolio-heading__side p {
-  color: #cccccc;
-}
-.portfolio-heading__side {
-  max-width: 46ch;
-}
-
-
-.portfolio-heading .zigzag-title span {
-  color: #ccc;
-}
-
-.portfolio-right {
-  display: grid;
-  gap: 10px;
-}
-
-.portfolio-small-row {
- 
-
-    display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.portfolio-tall amp-img {
-  aspect-ratio: 9 / 16;
-}
-
-.portfolio-wide amp-img {
-  aspect-ratio: 16 / 9;
-}
-
-.portfolio-small amp-img {
-  aspect-ratio: 1 / 1;
-}
-/* wrappers own size */
-.portfolio-tall {
-  height: 620px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.portfolio-wide {
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.portfolio-small {
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-/* AMP image forced to fill */
-.portfolio-tall amp-img,
-.portfolio-wide amp-img,
-.portfolio-small amp-img {
-  width: 100%;
-  height: 100%;
-}
-
-
-
-@media (max-width: 768px) {
-  .portfolio-stage {
-    width: 100%;
-    margin: 0;
-    transform: none;
-       overflow: visible;
-  }
-
-  .ticker {
-        overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    margin: 0;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    touch-action: pan-x;
-  }
-
-  .ticker::-webkit-scrollbar {
-    display: none;
-  }
-
-  .ticker-track {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    width: max-content;
-    animation: none;
-    padding: 0 16px;
-  transform: none !important;
-    will-change: auto;
-  animation: none;
-  }
-
- 
-  .ticker-group {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    padding: 0;
-    flex-shrink: 0;
-  }
-  
-  .ticker-group[aria-hidden="true"] {
-    display: none;
-  }
-
-  /* remove duplicate fake marquee copy */
-  .ticker-group[aria-hidden="true"] {
-    display: none;
-  }
-
-  .portfolio-pattern {
-    width: 85vw;
-    min-width: 85vw;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    scroll-snap-align: start;
-    flex-shrink: 0;
-  }
-
-  .portfolio-right {
-    grid-template-rows: auto;
-    gap: 12px;
-  }
-
-  .portfolio-small-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .portfolio-tall,
-  .portfolio-wide,
-  .portfolio-small {
-    height: auto;
-  }
-
-
-  .portfolio-tall amp-img {
-    aspect-ratio: 4 / 5;
-  }
-
-  .portfolio-wide amp-img {
-    aspect-ratio: 16 / 10;
-  }
-
-  .portfolio-small amp-img {
-    aspect-ratio: 1 / 1;
-  }
-
-    .portfolio-tall {
-    max-height: 280px;
-  }
-
-    .ticker-track,
-  .ticker-group {
-    gap: 6px;
-  }
-    .ticker-group[aria-hidden="true"] {
-    display: none;
-  }
-}
 
 
 /* =========================================
