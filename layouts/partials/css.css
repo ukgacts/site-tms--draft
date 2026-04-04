@@ -2121,7 +2121,7 @@ display: grid;
   /* full-bleed trick */
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-
+position:relative;
   cursor: grab;
 }
 
@@ -2129,12 +2129,24 @@ display: grid;
   cursor: grabbing;
 }
 
+.ticker::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+
+  background: linear-gradient(to right, transparent, #111);
+}
+
 /* ===== TRACK (ANIMATION) ===== */
 .ticker-track {
   display: flex;
   gap: 8px;
   width: max-content;
-
+ padding: 0 16px;
   animation: scroll 60s linear infinite;
 }
 
@@ -2257,28 +2269,24 @@ display: grid;
 
   /* Enable swipe */
   .ticker {
-    overflow-x: auto;
+  
+
+        overflow-x: auto;
     overflow-y: hidden;
-    margin: 0;
+margin: 0;
+    display: block;
 
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
 
-    scrollbar-width: none;
+    
   }
 
   .ticker::-webkit-scrollbar {
     display: none;
   }
 
-  /* Disable animation */
-  .ticker-track {
-    animation: none;
-    transform: none !important;
-
-    padding: 0 16px;
-  }
 
   /* Remove duplicate group (important) */
   .ticker-group[aria-hidden="true"] {
@@ -2287,11 +2295,9 @@ display: grid;
 
   /* Card sizing for swipe */
   .portfolio-pattern {
-    min-width: 85vw;
+    flex: 0 0 85vw;   /* 🔥 THIS FIXES SWIPE */
     width: 85vw;
-
-    grid-template-columns: 1fr;
-    gap: 12px;
+    min-width: 85vw;
 
     scroll-snap-align: start;
   }
@@ -2352,15 +2358,40 @@ display: grid;
 @media (max-width: 768px) {
 
   .ticker-track {
-    animation: mobileDrift 8s ease-in-out infinite;
+
+  
+        display: flex;
+         flex-direction: row;
+    gap: 12px;
+
+    width: max-content;
+    min-width: max-content; /* 🔥 CRITICAL FIX */
+
+    padding: 0 16px;
+  animation: scroll 120s linear infinite;
+    animation: mobileDrift 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+   
   }
 
-  @keyframes mobileDrift {
-    0%   { transform: translateX(0); }
-    50%  { transform: translateX(-40px); }
-    100% { transform: translateX(0); }
-  }
+@keyframes mobileDrift {
+  0%   { transform: translateX(0); }
 
+  35%  { transform: translateX(-48px); }
+  55%  { transform: translateX(-48px); } /* pause */
+
+  100% { transform: translateX(0); }
+}
+
+}
+.ticker:active .ticker-track,
+.ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+@keyframes mobileDrift {
+  0%   { transform: translateX(0); }
+  40%  { transform: translateX(-40px); }
+  60%  { transform: translateX(-40px); } /* pause */
+  100% { transform: translateX(0); }
 }
 
 /* =========================================
