@@ -70,126 +70,154 @@ alt="barcode">
 
 <section class="section section-lg case-study">
 
-<div class="container">
+  <div class="container">
 
-<span class="text-label">Case Study</span>
+    <!-- HEADER -->
+    <header class="section-header section-header--tight">
 
-<h2 class="display-md mb-4">
-Pori Jazz Festival
-</h2>
+      <span class="text-label caps-tight">Case Study</span>
 
-<p class="subtitle">
-Designing the Sound of the Brand
-</p>
+      <h1 class="display-md">
+        Pori Jazz Festival
+      </h1>
 
-<hr class="hr">
+      <p class="subtitle">
+        Designing the Sound of the Brand
+      </p>
 
-<div class="layout-split">
+      <!-- meta (no new CSS needed) -->
+      <p class="text-small mt-3">
+        Finland · Music Festival · Digital Campaign
+      </p>
 
-<div class="case-content">
-
-<p class="text-body">
-Pori Jazz is one of Europe's most respected music festivals,
-hosting world-class artists and attracting audiences from
-around the globe.
-</p>
-
-<h3 class="heading-sm  mb-4 mt-6">The Challenge</h3>
-
-<p class="text-body">
-Potential attendees often need more than schedules and ticket links — 
-they need to feel the atmosphere and clearly understand what the 
-experience will be like.
-</p>
-
-<h3 class="heading-sm  mb-4 mt-6">The Approach</h3>
-
-<p class="text-body">
-By combining storytelling with practical resources, the Pulseframe 
-creates a bridge between inspiration and action. Instead of simply 
-reading about the festival, visitors can explore the experience 
-visually, discover the destination, and easily access the information 
-they need to plan their visit.
-</p>
-
-<p class="text-body">
-The result is a clearer, more engaging introduction to Pori Jazz, 
-designed to inspire international audiences and guide them smoothly 
-from curiosity to attendance.
-</p>
-
-</div>
+    </header>
 
 
+    <!-- INTRO BLOCK (stronger entry) -->
+    <div class="section-head mb-6">
+      <p class="text-body">
+        One of Europe’s most respected jazz festivals, Pori Jazz blends
+        world-class performances with a uniquely intimate atmosphere —
+        attracting audiences from across the globe.
+      </p>
+    </div>
 
 
-<div class="story-container">
+    <!-- MAIN SPLIT -->
+    <div class="layout-split">
+
+      <!-- LEFT -->
+      <div class="case-content">
+
+        <!-- CHALLENGE -->
+        <div class="section-block">
+
+          <h3 class="heading-sm mb-3">The Challenge</h3>
+
+          <p class="text-body">
+            Potential attendees often need more than schedules and ticket links —
+            they need to feel the atmosphere and clearly understand what the
+            experience will be like.
+          </p>
+
+        </div>
 
 
-<div class="video-wrapper">
+        <!-- APPROACH -->
+        <div class="section-block">
 
-  <amp-video
-    id="storyVideo"
-    width="270"
-    height="480"
-    layout="responsive"
-    autoplay
-    muted
-    playsinline
-    loop
-    noaudio
-    poster="/video/poster17.png">
+          <h3 class="heading-sm mb-3">The Approach</h3>
 
-    <source src="/video/phone-story.mp4" type="video/mp4">
+          <p class="text-body">
+            By combining storytelling with practical resources, Pulseframe creates
+            a bridge between inspiration and action.
+          </p>
 
-  </amp-video>
+          <p class="text-body">
+            Instead of simply reading about the festival, visitors explore the
+            experience visually, discover the destination, and access the
+            information they need to plan their visit.
+          </p>
 
-  <!-- PAUSE (visible first) -->
-  <button
-    class="video-btn pause"
-    on="tap:
-      storyVideo.pause,
-      AMP.setState({paused: true})"
-    [hidden]="paused">
-
-    ⏸
-  </button>
-
-    <span class="play-icon"></span>
-
-  <!-- PLAY (hidden underneath) -->
-  <button
-    class="video-btn play"
-    on="tap:
-      storyVideo.play,
-      AMP.setState({paused: false})"
-    [hidden]="!paused">
-
-    ▶
-  </button>
-
-</div>
+        </div>
 
 
-  <div class="story-meta">
+        <!-- RESULT -->
+        <div class="section-block">
+
+          <h3 class="heading-sm mb-3">The Outcome</h3>
+
+          <p class="text-body">
+            The result is a clearer, more engaging introduction to Pori Jazz —
+            designed to inspire international audiences and guide them smoothly
+            from curiosity to attendance.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT (STORY / VIDEO) -->
+      <div class="story-container">
+
+        <div class="video-wrapper">
+
+          <amp-video
+            id="storyVideo"
+            width="270"
+            height="480"
+            layout="responsive"
+            autoplay
+            muted
+            playsinline
+            loop
+            noaudio
+            poster="/video/poster17.png">
+
+            <source src="/video/phone-story.mp4" type="video/mp4">
+
+          </amp-video>
+
+          <!-- PAUSE -->
+          <button
+            class="video-btn pause"
+            on="tap:storyVideo.pause, AMP.setState({paused: true})"
+            [hidden]="paused">
+            ⏸
+          </button>
+
+          <span class="play-icon"></span>
+
+          <!-- PLAY -->
+          <button
+            class="video-btn play"
+            on="tap:storyVideo.play, AMP.setState({paused: false})"
+            [hidden]="!paused">
+            ▶
+          </button>
+
+        </div>
 
 
 
-<a class="cta-text strong" on="tap:storyLightbox.open">
-  Watch the Story
-</a>
+        <div class="story-meta">
 
+          <a class="cta-text strong" on="tap:storyLightbox.open">
+            Watch the Story
+          </a>
 
+          <p class="text-small">
+            Swipe through the story or open it in a larger view
+          </p>
 
-    <p class="text-small">
-      Swipe through the story or open it in a larger view
-    </p>
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
-</div>
-
-</div>
-</div>
 </section>
 
 
@@ -202,311 +230,358 @@ from curiosity to attendance.
 
 <section class="section section-lg pulseframe-section">
 
-<div class="container">
+  <div class="container">
 
-<div class="pulseframe-intro">
+    <!-- INTRO -->
+    <header class="pulseframe-intro">
 
-<h2 class="headline-md caps mb-8">
-Inside PulseFrame
-</h2>
+      <h2 class="headline-md caps mb-4">
+        Inside PulseFrame
+      </h2>
 
-<p class="subtitle">
-How storytelling, music, and visual rhythm translate the festival
-experience into a digital campaign.
-</p>
+      <p class="subtitle">
+        A structured storytelling system translating atmosphere,
+        legacy, and experience into a digital journey.
+      </p>
 
-</div>
-
-
-<!-- BLOCK -->
-
-<div class="pulseframe-block">
-
-<div class="pulseframe-text">
-
-<span class="text-label mb-3">01 — Atmosphere</span>
-
-<h3 class="heading-lg mb-5">
-Feel the Festival Before You Arrive
-</h3>
-
-<p class="text-body">
-The campaign opens with high-impact vertical video designed
-to immerse viewers immediately.
-</p>
-
-<p class="text-body">
-The soundtrack plays a critical role — emotion, rhythm, and
-movement work together to translate the live experience digitally.
-</p>
-
-</div>
-
-<div class="pulseframe-media">
-
-<amp-video
-width="270"
-height="480"
-layout="responsive"
-controls
-poster="/video/poster1.png">
-
-<source src="/video/vid1--story.mp4" type="video/mp4">
-
-</amp-video>
-
-</div>
-
-</div>
+    </header>
 
 
+    <!-- 01 — ATMOSPHERE -->
+    <div class="pulseframe-block">
 
-<div class="pulseframe-block reverse">
+      <div class="pulseframe-text">
 
-<div class="pulseframe-text">
+        <span class="text-label mb-3">01 — Atmosphere</span>
 
-<span class="text-label">02 — Legacy</span>
+        <h3 class="heading-lg mb-4">
+          Feel the Festival Before You Arrive
+        </h3>
 
-<h3 class="heading-lg mb-5">
-Positioning Through History
-</h3>
+        <p class="text-body">
+          The campaign opens with high-impact vertical video designed
+          to immerse viewers instantly.
+        </p>
 
-<p class="text-body">
-Archival material and iconic references were used
-to reinforce credibility and generational appeal.
-</p>
+        <p class="text-body">
+          Sound, motion, and rhythm work together to recreate the
+          emotional intensity of a live performance.
+        </p>
 
-<p class="text-body">
-Tradition meets modern performance —
-bridging timeless influence with contemporary energy.
-</p>
+      </div>
 
-</div>
+      <div class="pulseframe-media">
 
-<div class="pulseframe-media">
+        <amp-video
+          width="270"
+          height="480"
+          layout="responsive"
+          controls
+          poster="/video/poster1.png">
 
-<amp-video
-width="270"
-height="480"
-layout="responsive"
-controls
-poster="/video/poster2.png">
+          <source src="/video/vid1--story.mp4" type="video/mp4">
 
-<source src="/video/vid4--story.mp4" type="video/mp4">
+        </amp-video>
 
-</amp-video>
+      </div>
 
-</div>
-
-</div>
+    </div>
 
 
+    <!-- 02 — LEGACY -->
+    <div class="pulseframe-block reverse">
 
-<div class="pulseframe-block">
+      <div class="pulseframe-text">
 
-<div class="pulseframe-text">
+        <span class="text-label mb-3">02 — Legacy</span>
 
-<span class="text-label mb-3">01 — Atmosphere</span>
+        <h3 class="heading-lg mb-4">
+          Positioning Through History
+        </h3>
 
-<h3 class="heading-lg mb-5">
-Feel the Festival Before You Arrive
-</h3>
+        <p class="text-body">
+          Archival material and iconic references reinforce the
+          festival’s credibility and cultural significance.
+        </p>
 
-<p class="text-body">
-The campaign opens with high-impact vertical video designed
-to immerse viewers immediately.
-</p>
+        <p class="text-body">
+          Tradition meets modern performance — bridging timeless
+          influence with contemporary energy.
+        </p>
 
-<p class="text-body">
-The soundtrack plays a critical role — emotion, rhythm, and
-movement work together to translate the live experience digitally.
-</p>
+      </div>
 
-</div>
+      <div class="pulseframe-media">
 
-<div class="pulseframe-media">
+        <amp-video
+          width="270"
+          height="480"
+          layout="responsive"
+          controls
+          poster="/video/poster2.png">
 
-<amp-video
-width="270"
-height="480"
-layout="responsive"
-controls
-poster="/video/poster3.png">
+          <source src="/video/vid4--story.mp4" type="video/mp4">
 
-<source src="/video/vid2--story.mp4" type="video/mp4">
+        </amp-video>
 
-</amp-video>
+      </div>
 
-</div>
+    </div>
 
-</div>
 
-</div>
+    <!-- 03 — EXPERIENCE -->
+    <div class="pulseframe-block">
+
+      <div class="pulseframe-text">
+
+        <span class="text-label mb-3">03 — Experience</span>
+
+        <h3 class="heading-lg mb-4">
+          From Discovery to Action
+        </h3>
+
+        <p class="text-body">
+          The final stage connects inspiration with practical planning,
+          guiding users from exploration to ticket purchase.
+        </p>
+
+        <p class="text-body">
+          Travel details, local highlights, and clear calls-to-action
+          transform interest into real-world attendance.
+        </p>
+
+      </div>
+
+      <div class="pulseframe-media">
+
+        <amp-video
+          width="270"
+          height="480"
+          layout="responsive"
+          controls
+          poster="/video/poster3.png">
+
+          <source src="/video/vid2--story.mp4" type="video/mp4">
+
+        </amp-video>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 
 
 <!-- ================= STORY SYSTEM ================= -->
-
 <section class="story-system section">
 
-<div class="container">
+  <div class="container">
 
-<header class="section-header">
+    <!-- HEADER -->
+    <header class="section-header">
 
-<span class="text-label">
-Story System
-</span>
+      <span class="text-label">
+        Story System
+      </span>
 
-<h2 class="display-md">
-How the Pulseframe Story Works
-</h2>
+      <h2 class="display-md">
+        How the PulseFrame Story Works
+      </h2>
+
+   
+
+    </header>
 
 
-</header>
+    <!-- INTRO (adds clarity immediately) -->
+    <div class="section-head mb-6">
 
+      <p class="text-body">
+        The PulseFrame story is structured as a sequence of short,
+        high-impact moments — combining atmosphere, information,
+        and guidance into a seamless narrative experience.
+      </p>
 
-
-
-<div class="story-main">
-
-<div class="slides-explained">
-
-      <div class="note note-modern">
-      <span class="note-label">Feedback</span>
-Prizztech is a key player in the world of innovation environments working to improve business performance and competitiveness. 
-      Prizztech  is a not-profit business development company owned by municipalities  on the West Coast of Finland.
-      It has more than ten years of experience in the development of  technological innovations in the health and social sectors.
-      This pulseframe  was presented to the  Committee and received highly positive feedback.
     </div>
 
-<div class="case-steps">
 
-<div class="case-step">
+    <!-- MAIN LAYOUT -->
+    <div class="story-main">
 
-<span class="text-label">Slides 1–3</span>
+      <!-- LEFT: STRUCTURE -->
+      <div class="slides-explained">
 
-<div>
+        <!-- FEEDBACK (fixed + relevant) -->
+        <div class="note note-modern">
 
-<h3 class="heading-sm">
-Problem framing
-</h3>
+          <span class="note-label">Feedback</span>
 
-<p class="text-small">
-Buildings generate operational data that is rarely used
-for performance improvement.
-</p>
+          <p>
+            The concept was presented to stakeholders and received
+            highly positive feedback for its clarity, emotional impact,
+            and ability to communicate the festival experience
+            to international audiences.
+          </p>
 
-</div>
-
-</div>
-
-<div class="case-step">
-
-<span class="text-label">Slides 4–6</span>
-
-<div>
-
-<h3 class="heading-sm">
-Data aggregation
-</h3>
-
-<p class="text-small">
-Energy, occupancy and system metrics are combined
-into a unified dataset.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="story-content">
+        <!-- STORY STEPS -->
+        <div class="case-steps">
 
-<div class="story-text">
+          <div class="case-step">
 
-<h3 class="heading-lg  mb-4">
-Designing the Story Experience
-</h3>
+            <span class="text-label">Slides 1–3</span>
 
-<p class="text-body">
-Pulseframe transforms practical information into a visual journey
-that helps visitors imagine their festival experience before arriving.
-</p>
+            <div>
 
-<p class="text-body">
-The story combines short video moments, travel guidance and
-local highlights to guide users from discovery to ticket purchase.
-</p>
+              <h3 class="heading-sm">
+                Capture Attention
+              </h3>
 
-</div>
+              <p class="text-small">
+                High-impact visuals and sound establish atmosphere
+                and immediately draw the viewer into the experience.
+              </p>
 
+            </div>
 
-<div class="story-cards">
-
-<div class="card">
-
-<p class="text-label">Sharing</p>
-
-<h4 class="heading-sm">
-Social Distribution
-</h4>
-
-<p class="text-small">
-Stories can be shared across Instagram, Facebook
-and messaging apps.
-</p>
-
-</div>
+          </div>
 
 
-<div class="card">
+          <div class="case-step">
 
-<p class="text-label">Messaging</p>
+            <span class="text-label">Slides 4–7</span>
 
-<h4 class="heading-sm">
-Messenger Preview
-</h4>
+            <div>
 
-<p class="text-small">
-The story can be sent directly in chat platforms.
-</p>
+              <h3 class="heading-sm">
+                Build Context
+              </h3>
 
-</div>
+              <p class="text-small">
+                The story introduces the festival, location, and
+                cultural significance — adding depth and credibility.
+              </p>
 
-</div>
+            </div>
 
-
-<div class="insight-stats">
-
-<div class="insight-stat">
-<span class="stat-number">14</span>
-<span class="stat-text">Presentation slides</span>
-</div>
-
-<div class="insight-stat">
-<span class="stat-number">7</span>
-<span class="stat-text">Key observations</span>
-</div>
-
-<div class="insight-stat">
-<span class="stat-number">7</span>
-<span class="stat-text">Integrated platforms</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
+          </div>
 
 
+          <div class="case-step">
 
-</div>
+            <span class="text-label">Slides 8–14</span>
+
+            <div>
+
+              <h3 class="heading-sm">
+                Guide to Action
+              </h3>
+
+              <p class="text-small">
+                Practical details and highlights help users plan
+                their visit and move toward ticket purchase.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT: EXPLANATION -->
+      <div class="story-content">
+
+        <!-- TEXT -->
+        <div class="story-text">
+
+          <h3 class="heading-lg mb-4">
+            Designing the Story Experience
+          </h3>
+
+          <p class="text-body">
+            PulseFrame transforms practical information into a visual
+            journey — helping visitors imagine their festival
+            experience before arriving.
+          </p>
+
+          <p class="text-body">
+            Each segment is designed to balance inspiration with clarity,
+            guiding users smoothly from discovery to decision.
+          </p>
+
+        </div>
+
+
+        <!-- CARDS -->
+        <div class="story-cards">
+
+          <div class="card">
+
+            <p class="text-label">Sharing</p>
+
+            <h4 class="heading-sm">
+              Social Distribution
+            </h4>
+
+            <p class="text-small">
+              Stories are optimised for platforms like Instagram,
+              Facebook, and messaging apps.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <p class="text-label">Messaging</p>
+
+            <h4 class="heading-sm">
+              Direct Engagement
+            </h4>
+
+            <p class="text-small">
+              The format allows easy sharing in private messages,
+              increasing reach and personal relevance.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- STATS -->
+        <div class="insight-stats">
+
+          <div class="insight-stat">
+            <span class="stat-number">14</span>
+            <span class="stat-text">Story slides</span>
+          </div>
+
+          <div class="insight-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-text">Narrative stages</span>
+          </div>
+
+          <div class="insight-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-text">Distribution channels</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -515,47 +590,32 @@ The story can be sent directly in chat platforms.
 
 
 <!-- STORY POPUP -->
-<amp-lightbox id="storyPopup" layout="nodisplay">
-  <div class="popup-overlay">
-
-    <div class="popup-content">
-
-      <button class="close-btn" on="tap:storyPopup.close">✕</button>
-    <amp-iframe
-        width="100%"
-  height="100%"
-        layout="responsive"
-        sandbox="allow-scripts allow-same-origin"
-        src="https://bassscene.co.uk/porijazz/">
-      </amp-iframe>
-   
-
-    </div>
-
-  </div>
-</amp-lightbox>
-
+<!-- LIGHTBOX -->
 <amp-lightbox id="storyLightbox" layout="nodisplay">
-  <div class="modal-overlay">
-    <div class="modal-card">
+  <div class="story-modal">
 
-      <button class="close-btn"
-              on="tap:storyLightbox.close">
-        ✕
-      </button>
+    <!-- CLOSE BUTTON -->
+    <button class="story-close" on="tap:storyLightbox.close">
+      ✕
+    </button>
 
+    <!-- CENTERED IFRAME -->
+    <div class="story-frame">
       <amp-iframe
-     width="1"
-  height="1"
-  layout="fill"
-  
+        layout="responsive"
+        width="360"
+        height="640"
         sandbox="allow-scripts allow-same-origin"
         src="https://bassscene.co.uk/porijazz/">
       </amp-iframe>
-
     </div>
+
   </div>
 </amp-lightbox>
+
+
+
+
 
 
 
