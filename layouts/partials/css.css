@@ -19,7 +19,10 @@ line-height:var(--leading-normal);
 color:#111;
 background:#fff;
 }
-
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
 h1,h2,h3,h4,p{
 margin:0;
 font-weight:inherit;
@@ -205,12 +208,20 @@ line-height:1.1;
 }
 
 /* HEADINGS */
+.heading-xl {
+  font-family: var(--font-serif);
+  font-size: var(--display-md);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
 
 .heading-lg{
-font-size:var(--text-xl);
-font-weight:600;
-line-height:1.2;
-  font-family: var(--font-serif); 
+   font-family: var(--font-sans);
+  font-size: var(--text-2xl);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
 }
 
 .heading-md{
@@ -1788,22 +1799,58 @@ position: relative;
   display: grid;
   background: #f4f4f4;
  
-  gap: 20px;
+
   border-radius: 28px;
   padding: 18px;
   width: 100%;
+
+
+
+  align-items: center;
+
+    display: grid;
+  grid-template-columns: 1.5fr 1fr; /* 👈 more aggressive */
+  gap: 3rem;
+
 }
 
-/* ODD → LEFT */
-.zigzag-card:nth-child(odd) {
-  grid-column: 1;
-  grid-template-columns: 1fr 260px; /* TEXT | MEDIA */
+.zigzag-card.left .zigzag-card__content {
+  order: 1;
 }
+
+.zigzag-card.left .zigzag-card__visual {
+  order: 2;
+}
+
+.zigzag-card.right .zigzag-card__content {
+  order: 2;
+}
+
+.zigzag-card.right .zigzag-card__visual {
+  order: 1;
+}
+
+.zigzag-card.right {
+  direction: rtl;
+}
+
+.zigzag-card.right * {
+  direction: ltr;
+}
+.zigzag-card.right {
+  direction: rtl;
+}
+
+.zigzag-card.right * {
+  direction: ltr;
+}
+
+
 
 /* EVEN → RIGHT + LOWER */
  .zigzag-section .zigzag-card:nth-child(even) {
   grid-column: 2;
-  grid-template-columns: 320px 1fr;
+
   transform: translateY(100px);
 }
 
@@ -1822,14 +1869,19 @@ position: relative;
 
 }
 
+.zigzag-card:nth-child(even) {
+  margin-top: 4rem;
+}
+
 /* content */
 .zigzag-card__content {
  
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 18px;
+  padding: 20px 12px 18px;
   gap: 6px;
-
+  max-width: none;
+  width: 100%;
     position: relative;
  
 }
@@ -1882,7 +1934,8 @@ position: relative;
   );
   min-height: 260px;
   position: relative;
-
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -1972,12 +2025,10 @@ padding: 12px;
 
 
 
-  font-family: var(--font-serif);
-   font-size: clamp(30px, 3.2vw, 44px); /* slightly stronger */
-  
-  line-height: 0.96;
-  letter-spacing: -0.03em;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 
 }
 
