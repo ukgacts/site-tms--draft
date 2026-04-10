@@ -1996,7 +1996,7 @@ padding: 12px;
 }
 
 .zigzag-title span:last-child {
-  margin-left: clamp(40px, 8vw, 140px);
+  margin-left: clamp(18px, 4vw, 64px);
   color: rgba(0,0,0,0.92);
   
 }
@@ -2142,7 +2142,7 @@ padding: 12px;
 
 /* ===== STAGE ===== */
 .portfolio-stage {
-  width: 100vw;
+   width: min(92vw, 1400px);
   margin-left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
@@ -2214,7 +2214,7 @@ position:relative;
   color: #f5f5f5;
   display: grid;
   gap: 30px;
-
+   padding: 40px 0 28px;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
 }
@@ -2223,21 +2223,32 @@ position:relative;
 
 
 .portfolio-intro-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
-  align-items: end;
-  margin-bottom: 2rem;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:48px;
+
+  max-width:1100px;
+  margin:0 auto 40px;
 }
 
 .portfolio-heading__side {
-  max-width: 46ch;
+  max-width: 34ch;
 }
 
 .portfolio-heading__side p {
   color: #ccc;
 }
 
+.portfolio-heading::before {
+  display: none;
+}
+
+.portfolio-heading .zigzag-title {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+}
 .portfolio-heading .zigzag-title span {
   color: #ccc;
 }
@@ -2248,6 +2259,8 @@ position:relative;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 10px;
   align-items: stretch;
+    width: 640px;
+  min-width: 640px;
 }
 
 .portfolio-right {
@@ -2271,8 +2284,10 @@ position:relative;
 
 /* Desktop heights */
 .portfolio-tall {
-  height: 620px;
+  height: 360px;
 }
+.portfolio-wide { height: 180px; }
+.portfolio-small { height: 120px; }
 
 .portfolio-wide,
 .portfolio-small {
@@ -2292,6 +2307,16 @@ position:relative;
   height: 100%;
 }
 
+
+.portfolio-heading__side .zigzag-heading__intro {
+  font-size: 15px;
+  max-width: 34ch;
+}
+
+.portfolio-heading .zigzag-title.small{
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 0.95;
+}
 /* =========================================
    MOBILE (SWIPE MODE)
 ========================================= */
@@ -2429,6 +2454,118 @@ margin: 0;
 }
 }
 
+
+
+
+
+
+.portfolio-wide {
+  height: 180px;
+}
+
+.portfolio-small {
+  height: 120px;
+}
+
+
+
+
+
+
+
+/* ===============================
+   PORTFOLIO SIZE VARIATIONS
+=============================== */
+
+/* Base image fill */
+.portfolio-tall amp-img,
+.portfolio-wide amp-img,
+.portfolio-small amp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Layout A ---------- */
+.portfolio-pattern.layout-a {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.portfolio-pattern.layout-a .portfolio-tall {
+  height: 400px;
+}
+
+.portfolio-pattern.layout-a .portfolio-wide {
+  height: 200px;
+}
+
+.portfolio-pattern.layout-a .portfolio-small {
+  height: 140px;
+}
+
+/* ---------- Layout B ---------- */
+.portfolio-pattern.layout-b {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.portfolio-pattern.layout-b .portfolio-tall {
+  height: 340px;
+}
+
+.portfolio-pattern.layout-b .portfolio-wide {
+  height: 260px;
+}
+
+.portfolio-pattern.layout-b .portfolio-small:first-child {
+  height: 140px;
+}
+
+.portfolio-pattern.layout-b .portfolio-small:last-child {
+  height: 220px;
+}
+
+/* ---------- Layout C ---------- */
+.portfolio-pattern.layout-c {
+  grid-template-columns: 0.7fr 1.3fr;
+}
+
+.portfolio-pattern.layout-c .portfolio-tall {
+  height: 420px;
+}
+
+.portfolio-pattern.layout-c .portfolio-wide {
+  height: 220px;
+}
+
+.portfolio-pattern.layout-c .portfolio-small {
+  height: 200px;
+}
+
+.portfolio-tall,
+.portfolio-wide,
+.portfolio-small {
+  position: relative; /* REQUIRED for layout=fill */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-tall amp-img,
+.portfolio-wide amp-img,
+.portfolio-small amp-img {
+  object-fit: cover;
+}
+
+
+
+
+.portfolio-tall amp-img img,
+.portfolio-wide amp-img img,
+.portfolio-small amp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* =========================================
    PORTFOLIO SHOWCASE SECTION--END
 ========================================= */
@@ -2531,6 +2668,7 @@ margin: 0;
   }
 
 }
+
 
 
 
