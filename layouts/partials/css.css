@@ -2290,13 +2290,23 @@ padding: 12px;
 
 .portfolio-right {
   display: grid;
+   row-gap: 0;
+  column-gap: 10px;
+}
+
+.portfolio-left {
+  display: grid;
   gap: 10px;
+}
+
+.portfolio-pattern.layout-b {
+  grid-template-columns: 0.9fr 1.1fr;
 }
 
 .portfolio-small-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px; 
 }
 
 /* =========================================
@@ -2311,9 +2321,12 @@ padding: 12px;
   border-radius: 10px;
 }
 
-.portfolio-tall { height: 360px; }
-.portfolio-wide { height: 180px; }
-.portfolio-small { height: 120px; }
+.portfolio-small {
+  aspect-ratio: 1 / 1;
+  height: auto; /* override fixed heights */
+}
+
+
 
 /* fill */
 .portfolio-tall amp-img,
@@ -2342,7 +2355,7 @@ padding: 12px;
 
 .portfolio-pattern.layout-a .portfolio-tall { height: 400px; }
 .portfolio-pattern.layout-a .portfolio-wide { height: 200px; }
-.portfolio-pattern.layout-a .portfolio-small { height: 140px; }
+
 
 /* B */
 .portfolio-pattern.layout-b {
@@ -2351,17 +2364,17 @@ padding: 12px;
 
 .portfolio-pattern.layout-b .portfolio-tall { height: 340px; }
 .portfolio-pattern.layout-b .portfolio-wide { height: 260px; }
-.portfolio-pattern.layout-b .portfolio-small:first-child { height: 140px; }
-.portfolio-pattern.layout-b .portfolio-small:last-child { height: 220px; }
+
 
 /* C */
 .portfolio-pattern.layout-c {
   grid-template-columns: 0.7fr 1.3fr;
 }
 
-.portfolio-pattern.layout-c .portfolio-tall { height: 420px; }
-.portfolio-pattern.layout-c .portfolio-wide { height: 220px; }
-.portfolio-pattern.layout-c .portfolio-small { height: 200px; }
+.portfolio-pattern.layout-c .portfolio-tall { height: 445px; }
+.portfolio-pattern.layout-c .portfolio-wide { height: 230px; }
+
+
 
 /* =========================================
    MOBILE (SWIPE)
@@ -2412,6 +2425,18 @@ padding: 12px;
     height: auto;
   }
 
+  .portfolio-tall {
+  aspect-ratio: 4 / 5;
+}
+
+.portfolio-wide {
+  aspect-ratio: 16 / 10;
+}
+
+.portfolio-small {
+  aspect-ratio: 1 / 1;
+}
+
   /* ratios */
   .portfolio-tall amp-img { aspect-ratio: 4 / 5; }
   .portfolio-wide amp-img { aspect-ratio: 16 / 10; }
@@ -2419,6 +2444,26 @@ padding: 12px;
   .portfolio-tall {
     max-height: 280px;
   }
+}
+
+
+
+
+.portfolio-item {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+
+  font-size: 13px;
+  color: #fff;
+
+  background: rgba(0,0,0,0.5);
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
 
