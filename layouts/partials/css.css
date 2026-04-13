@@ -1736,15 +1736,12 @@ z-index:4;
 
 
 
-
-
-
 /* =========================================
    SERVICES ZIGZAG SECTION
 ========================================= */
-.zigzag-section {
 
-position: relative;
+.zigzag-section {
+  position: relative;
   overflow: hidden;
 }
 
@@ -1754,20 +1751,20 @@ position: relative;
   z-index: 2;
 }
 
+/* =========================================
+   INTRO GRID
+========================================= */
+
 .zigzag-intro-grid,
 .portfolio-intro-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-
   align-items: end;
+  gap: 2.5rem;
 }
 
-
 .zigzag-intro-grid {
-
-  align-items: end;
-  gap: 2.5rem;      /* was 4rem */
-   margin-bottom: 48px;
+  margin-bottom: 48px;
 }
 
 .zigzag-heading__side {
@@ -1776,288 +1773,70 @@ position: relative;
 
 .zigzag-heading__intro {
   margin: 0;
-  line-height: 1.7;
-    max-width: 42ch;
+  margin-top: 16px;
+  max-width: 42ch;
+  line-height: 1.6;
+  opacity: 0.75;
 }
-
-
-
-.zigzag-section::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 120px;
-  width: 2px;
-  height: 70%;
-  background: rgba(0,0,0,0.06);
-}
-
-
-
-/* Base card */
-.zigzag-card {
-  display: grid;
-  background: #f4f4f4;
- 
-
-  border-radius: 28px;
-  padding: 18px;
-  width: 100%;
-
-
-
-  align-items: center;
-
-    display: grid;
-  grid-template-columns: 1.5fr 1fr; /* 👈 more aggressive */
-  gap: 3rem;
-
-}
-
-.zigzag-card.left .zigzag-card__content {
-  order: 1;
-}
-
-.zigzag-card.left .zigzag-card__visual {
-  order: 2;
-}
-
-.zigzag-card.right .zigzag-card__content {
-  order: 2;
-}
-
-.zigzag-card.right .zigzag-card__visual {
-  order: 1;
-}
-
-.zigzag-card.right {
-  direction: rtl;
-}
-
-.zigzag-card.right * {
-  direction: ltr;
-}
-.zigzag-card.right {
-  direction: rtl;
-}
-
-.zigzag-card.right * {
-  direction: ltr;
-}
-
-
-
-/* EVEN → RIGHT + LOWER */
- .zigzag-section .zigzag-card:nth-child(even) {
-  grid-column: 2;
-
-  transform: translateY(100px);
-}
-
-.zigzag-card:nth-child(3) {
-  margin-top: -60px;
-}
-
-.zigzag-card:nth-child(even) .zigzag-card__visual {
-  border-radius: 24px 0 0 24px;
-}
-
-.zigzag-card:nth-child(odd) .zigzag-card__visual {
-
-  border-radius: 0 24px 24px 0;
-
-
-}
-
-.zigzag-card:nth-child(even) {
-  margin-top: 4rem;
-}
-
-/* content */
-.zigzag-card__content {
- 
-  display: flex;
-  flex-direction: column;
-  padding: 20px 12px 18px;
-  gap: 6px;
-  max-width: none;
-  width: 100%;
-    position: relative;
- 
-}
-
-.zigzag-card__content p {
-
-  font-size: 16px;
-  line-height: 1.7;
-  color: rgba(0,0,0,0.72);
-  max-width: 36ch
-
-}
-.service-number {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-    font-family: var(--font-serif);
-  font-size: clamp(56px, 5vw, 90px);
-  font-weight: 600;
-  opacity: 0.06;
-  letter-spacing: -0.04em;
-}
-
-.zigzag-card__title {
-    font-family: var(--font-sans);
-  font-size: clamp(20px, 1.4vw, 24px);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.zigzag-card__content .arrow-btn {
-  margin-top: auto;
-}
-
-/* media */
-.zigzag-card__visual {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
-    background: linear-gradient(
-    135deg,
-    #f2a100 0%,
-    #f6b733 60%,
-    #ffd76a 100%
-  );
-  min-height: 260px;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-
-
-.zigzag-card__visual amp-img,
-.zigzag-card__visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
- 
-}
-
-.zigzag-section .services-zigzag {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 64px;
-  align-items: start;
-}
-
-
-
-
 
 /* =========================================
-   MOBILE FIX
+   HEADING (HERO-STYLE)
 ========================================= */
-@media (max-width: 768px) {
-
- .zigzag-section .services-zigzag {
-    display: flex;              /* 🔥 switch from grid → flex */
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .zigzag-card {
-    display: flex;
-    flex-direction: column;
-padding: 12px;
-    width: 100%;
-    max-width: 100%;
-
-    transform: none !important;   /* 🔥 kill zigzag offset */
-  }
-
-  .zigzag-card:nth-child(3) {
-  margin-top: 0;
-}
-
-  .zigzag-card__content {
-    order: 1;
-    padding: 0;
-  }
-
-  .zigzag-card__visual {
-    order: 2;
-    width: 100%;
-    min-height: 160px;
-  }
-
-}
-
 
 .zigzag-heading {
-  margin-bottom: 64px;
-  max-width: 760px;
   position: relative;
-  z-index: 2;
-   
-  padding-left: 24px;
+  padding-left: 16px;
+  margin-bottom: 48px;
+  max-width: 760px;
+}
+
+.zigzag-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 3px;
+  border-radius: 999px;
+  background: #f2a100;
 }
 
 .zigzag-heading__eyebrow {
-  display: inline-block;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  opacity: 0.55;
-   margin-bottom: 0.3rem; 
+  opacity: 0.6;
+  margin-bottom: 0.3rem;
 }
 
-
-
 .zigzag-title {
-   display: flex;
+  display: flex;
   flex-direction: column;
-
   margin: 0;
 
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 0.9;
   letter-spacing: -0.02em;
   font-weight: 600;
-  
-
 }
 
 .zigzag-title span {
   display: block;
-    transform: translateY(40px);
+  transform: translateY(40px);
   opacity: 0;
   animation: rise 0.8s ease forwards;
 }
 
 .zigzag-title span:first-child {
-  margin-left: 0;
-    color: rgba(0,0,0,0.5);
-        opacity: 0.55;
-          font-weight: 400;
-  opacity: 0.7;
+  font-weight: 400;
+  opacity: 0.6;
 }
 
 .zigzag-title span:last-child {
-  margin-left: 12px;
+  margin-left: 1.5rem;
+  font-weight: 700;
   color: rgba(0,0,0,0.92);
-    font-weight: 700;
-  
-}
-
-.zigzag-title span:last-child {
-  margin-left: 2rem; /* subtle offset like hero style */
 }
 
 .zigzag-title span:nth-child(2) {
@@ -2071,121 +1850,205 @@ padding: 12px;
   }
 }
 
-.zigzag-heading__intro {
-  margin-top: 24px;
-  max-width: 560px;
- font-size: var(--text-sm);
-  line-height: 1.5;
-  opacity: 0.75;
+/* =========================================
+   SERVICES GRID
+========================================= */
+
+.services-zigzag {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
+  align-items: start;
 }
 
-.zigzag-heading::before {
-  content: "";
+/* =========================================
+   CARD
+========================================= */
+
+.zigzag-card {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+
+  background: #f4f4f4;
+  border-radius: 28px;
+  padding: 18px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Direction handling */
+.zigzag-card.right {
+  direction: rtl;
+}
+.zigzag-card.right * {
+  direction: ltr;
+}
+
+/* Zigzag layout offsets */
+.zigzag-card:nth-child(even) {
+  grid-column: 2;
+  transform: translateY(100px);
+  margin-top: 4rem;
+}
+
+.zigzag-card:nth-child(3) {
+  margin-top: -60px;
+}
+
+/* Content */
+.zigzag-card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px 18px;
+  gap: 6px;
+  position: relative;
+}
+
+.zigzag-card__content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.72);
+  max-width: 36ch;
+}
+
+.zigzag-card__title {
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 1.4vw, 24px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.zigzag-card__content .arrow-btn {
+  margin-top: auto;
+}
+
+/* Background number */
+.service-number {
   position: absolute;
-  left: 0;
-  top: 0.2em;              /* aligns visually with first line */
-  bottom: 0.2em;           /* aligns with last line */
-  width: 3px;
-  border-radius: 999px;
-  background: #f2a100;
+  top: 8px;
+  right: 16px;
+
+  font-family: var(--font-serif);
+  font-size: clamp(56px, 5vw, 90px);
+  font-weight: 600;
+  opacity: 0.06;
+  letter-spacing: -0.04em;
 }
 
+/* Visual */
+.zigzag-card__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: scale(1.03);
+    min-height: 320px;
+  background: linear-gradient(
+    135deg,
+    #f2a100 0%,
+    #f6b733 60%,
+    #ffd76a 100%
+  );
+
+  min-height: 260px;
 
 
-
-
-.zigzag-title.small {
-  font-size: clamp(36px, 5vw, 64px);
+ 
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.zigzag-title.small span:last-child {
-  margin-left: clamp(20px, 6vw, 100px);
+.zigzag-card__visual img,
+.zigzag-card__visual amp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
-
-.statement-heading {
-  font-size: clamp(56px, 8vw, 120px);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
-  margin-bottom: 80px;
+.zigzag-card__visual amp-img > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
+.zigzag-card:nth-child(odd) .zigzag-card__visual {
+    border-radius: 0 24px 24px 0;
+}
 
+.zigzag-card:nth-child(even) .zigzag-card__visual {
+ 
+     border-radius: 0 24px 24px 0;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
 
-    .zigzag-intro-grid,
+  /* Intro layout */
+  .zigzag-intro-grid,
   .portfolio-intro-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.25rem;
   }
 
-   .zigzag-intro-grid {
-
-  align-items: end;
-  margin-bottom:2rem;
+  .zigzag-heading__side,
+  .portfolio-intro {
+    margin-top: 0.5rem;
   }
 
-  /* Zigzag heading container */
+  /* Heading */
   .zigzag-heading {
-    margin-bottom: 60px;        /* reduce huge desktop margin */
-    max-width: 100%;
-    padding: 0 20px;
-    z-index: 2;
-    
+    margin-bottom: 24px;
+    padding-left: 12px;
   }
 
-    .zigzag-section .zigzag-heading {
-   padding: 0;
-
-  }
-
-  /* Eyebrow text */
   .zigzag-heading__eyebrow {
     font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  opacity: 0.6;
-    margin-bottom: 12px;
+    letter-spacing: 0.15em;
   }
 
-.zigzag-intro-grid::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  bottom: 20px;
-  width: 1px;
-  background: rgba(0,0,0,0.08);
-  left: 45%;
-}
-
-  /* Main title */
   .zigzag-title {
-    font-size: clamp(28px, 8vw, 48px); /* smaller, fluid font size */
+    font-size: clamp(28px, 8vw, 48px);
     line-height: 1.05;
-    letter-spacing: -0.03em;
   }
 
-  /* Adjust spacing for last span */
   .zigzag-title span:last-child {
-    margin-left: clamp(10px, 4vw, 60px);
+    margin-left: 0.75rem;
   }
 
- 
-
-
-
-  /* Optional: smaller variation for "small" titles */
-  .zigzag-title.small {
-    font-size: clamp(24px, 6vw, 40px);
+  /* Cards */
+  .services-zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
-  .zigzag-title.small span:last-child {
-    margin-left: clamp(10px, 3vw, 40px);
+  .zigzag-card {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    transform: none !important;
+  }
+
+  .zigzag-card:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .zigzag-card__content {
+    padding: 0;
+  }
+
+  .zigzag-card__visual {
+    min-height: 160px;
+    width: 100%;
   }
 }
-
-
 /* =========================================
    SERVICES ZIGZAG SECTION END
 ========================================= */
