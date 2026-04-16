@@ -415,32 +415,30 @@ font-size: 14px;
   background: #0f172a;
   color: white;
 }
-
 .section-sm {
- padding: var(--space-8) 0;
+  padding: var(--space-7) 0; /* 40px */
+}
+
+.section-md {
+  padding: var(--space-8) 0; /* 56px */
 }
 
 .section-lg {
-  padding: var(--space-10) 0;
+  padding: var(--space-section-lg) 0; /* 72px */
 }
 
-/* tighter mobile rhythm */
 @media (max-width: 768px) {
-  .section {
-    padding: var(--space-7) 0;
+  .section-sm {
+    padding: var(--space-6) 0; /* 32px */
   }
-}
 
-@media (max-width: 768px){
-  .section-lg{
-    padding: 56px 16px;
+  .section-md {
+    padding: var(--space-7) 0; /* 40px */
   }
-}
 
-
-
-.section > .container > *:last-child{
-margin-bottom:0;
+  .section-lg {
+    padding: var(--space-8) 0; /* 56px */
+  }
 }
 
 /* ===============================
