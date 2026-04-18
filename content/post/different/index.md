@@ -10,9 +10,7 @@ lead:  By leveraging Google
  elevate their online presence.
 heroImage:
   - images/hero.png
-_build:
- list: false
- render: true
+
 layout: twocolumns-header
 ---
 
