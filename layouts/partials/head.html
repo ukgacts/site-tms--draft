@@ -1542,6 +1542,132 @@ body {
 ========================================= */
 
 
+
+
+
+.article {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.article-container {
+  max-width: 760px;
+  width: 100%;
+}
+
+/* Hero image */
+.article-hero img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+/* Header */
+.article-header h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+
+/* Content */
+.article-content {
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.article-content p {
+  margin-bottom: 1.5em;
+}
+
+.article-content h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  font-size: 1.6rem;
+}
+
+/* Optional: nicer images inside content */
+.article-content img {
+  width: 100%;
+  margin: 30px 0;
+  border-radius: 6px;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.article-main {
+  max-width: 100%;
+}
+
+.article-sidebar {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.tags span {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.article-hero-split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+ background: #faf9f7;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 80px 50vw;
+}
+
+
+
+
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.article-content p {
+  max-width: 65ch; /* more readable */
+}
+
+@media (max-width: 768px) {
+  .article-hero-split {
+    grid-template-columns: 1fr;
+  }
+}
+
     </style>
 </head>
 

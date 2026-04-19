@@ -11,7 +11,7 @@ lead:  By leveraging Google
 heroImage:
   - images/hero.png
 
-layout: twocolumns-header
+layout: single
 ---
 
 

@@ -1,12 +1,41 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<main style="padding: 20px;">
-  <article>
-    <h1>{{ .Title }}</h1>
-    <p><small>Published on {{ .Date.Format "Jan 2, 2006" }}</small></p>
-    {{ .Content }}
+<main class="article">
+
+
+  <article class="article-container">
+
+    <!-- HERO SPLIT -->
+    <div class="article-hero-split">
+
+      <div class="hero-text">
+        <h1>{{ .Title }}</h1>
+
+        {{ with .Params.subtitle }}
+          <p class="subtitle">{{ . }}</p>
+        {{ end }}
+
+        <p class="meta">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </p>
+      </div>
+
+      <div class="hero-image">
+        {{ with .Resources.GetMatch .Params.image }}
+          <img src="{{ .RelPermalink }}" alt="">
+        {{ end }}
+      </div>
+
+    </div>
+
+    <!-- ✅ THIS WAS MISSING -->
+    <section class="article-content">
+      {{ .Content }}
+    </section>
+
   </article>
+
 </main>
 
 {{ partial "footer.html" . }}

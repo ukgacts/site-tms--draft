@@ -5,10 +5,9 @@ date: "2016-09-01"
 tags: ["design"]
 categories: ["web stories","design" ]
 lead: The challenge we’re addressing here is known as "Lockup Design." We believe that combining the art of lockup design with code can elevate web stories to the next level.
-heroImage:
-  - images/3.png
+image: "images/hero.png"
 references: ["design", "lockup", "youtube"]
-layout: single-centered
+layout: single
 ---
 
 Photoshop has long been the go-to software for creating visually stunning cover images. While these images are often trendy and eye-catching, one major limitation is that search engines can't read text embedded within them. As a result, any important information or keywords in the text aren't indexed or searchable.
