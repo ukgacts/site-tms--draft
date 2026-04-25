@@ -89,32 +89,7 @@ background: #f5f3f1;
   overflow: hidden;
 }
   /* BACKGROUND ARCS */
-.section-bg-light::after{
-  content: "";
-  position: absolute;
-  inset: 0;
 
-  background:
-    radial-gradient(
-      circle at 110% -10%,   /* 🔥 pushes center outside */
-      #c7dedd 0px,
-      #c7dedd 220px,
-
-      #9fbfbe 220px,
-      #9fbfbe 360px,
-
-      #6fa7a4 360px,
-      #6fa7a4 500px,
-
-      #0e4d4a 500px,
-      #0e4d4a 640px,
-
-      transparent 640px
-    );
-
-  pointer-events: none;
-  z-index: 0;
-}
 
 
 
@@ -404,7 +379,7 @@ font-size: 14px;
  
   color: #111;
 
-     padding: var(--space-section) 20px;
+  
 }
 
 .section-alt {
@@ -423,9 +398,7 @@ font-size: 14px;
   padding: var(--space-8) 0; /* 56px */
 }
 
-.section-lg {
-  padding: var(--space-section-lg) 0; /* 72px */
-}
+
 
 @media (max-width: 768px) {
   .section-sm {
