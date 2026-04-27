@@ -850,29 +850,31 @@ border:1px solid rgba(0,0,0,0.08);
 }
 
 .section-header__inner {
-  max-width: 640px; /* 🔥 THIS gives the editorial feel */
+ max-width: 800px;
 }
 
 /* label */
 .section-header--editorial .text-label {
-  display: inline-block;
-  margin-bottom: var(--space-3);
-
-  font-size: var(--text-xs);
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
-  opacity: 0.5;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
 /* title */
 .section-header--editorial .section-header__title {
-  font-size: clamp(36px, 6vw, 72px); /* same scale system */
+  font-size: clamp(40px, 7vw, 88px);
   line-height: 0.95;                 /* same tight feel */
   letter-spacing: -0.03em;           /* same tracking */
   font-weight: 900;                  /* match hero weight */
 
   margin-bottom: var(--space-4);
+}
+
+.section-header .container {
+  max-width: 900px; /* or whatever your hero text width is */
 }
 
 /* intro */
@@ -900,15 +902,18 @@ border:1px solid rgba(0,0,0,0.08);
 }
 .section-header__title {
 
-  font-size: clamp(36px, 6vw, 72px);
-  line-height: 0.95;
+
+    line-height: 0.95;
   letter-spacing: -0.03em;
+  margin-bottom: 1.2rem;
 }
 .section-header__intro {
-  font-size: var(--text-md);
+
   line-height: var(--leading-normal);
   opacity: 0.75;
-  max-width: 540px;
+ 
+    font-size: clamp(16px, 1.2vw, 18px);
+  max-width: 60ch;
 
  
 }
