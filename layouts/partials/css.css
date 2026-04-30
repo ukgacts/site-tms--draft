@@ -219,6 +219,10 @@ padding-top:var(--space-6);
 padding-bottom:var(--space-6);
 }
 
+.pb-10 {
+  padding-bottom:var(--space-10);
+}
+
 /* GAP */
 
 .gap-4{gap:var(--space-4)}
@@ -865,10 +869,10 @@ border:1px solid rgba(0,0,0,0.08);
 
 /* title */
 .section-header--editorial .section-header__title {
-  font-size: clamp(40px, 7vw, 88px);
-  line-height: 0.95;                 /* same tight feel */
-  letter-spacing: -0.03em;           /* same tracking */
-  font-weight: 900;                  /* match hero weight */
+ font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 100px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
 
   margin-bottom: var(--space-4);
 }

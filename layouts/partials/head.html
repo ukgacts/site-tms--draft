@@ -166,8 +166,13 @@ background: #f5f3f1;
 .cta-chat {
   background: #f0ece7;
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding: 80px 20px;
-  position:relative;
+
+  padding: clamp(80px, 10vw, 140px) 20px;
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cta-chat .container {
@@ -177,10 +182,9 @@ background: #f5f3f1;
 
 
 .cta-copyright {
-  margin-top: var(--space-7);
+  margin-top: auto;
   text-align: right;
   opacity: 0.6;
- letter-spacing: 0.02em;
 }
 
 
@@ -200,30 +204,31 @@ font-size: 14px;
 .cta-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-   gap: var(--space-9);
-  align-items: start;
+  gap: var(--space-9);
+  align-items: center;
 }
 
 /* LEFT */
 .cta-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(100px, 12vw, 180px);
-   line-height: 0.9;
-  letter-spacing: -0.03em;
+   font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(56px, 7vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
-/* RIGHT */
-.cta-right {
-  padding-top: 40px;
-}
+
 
 .cta-intro {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #444;
-  max-width: 480px;
-  margin-bottom: 36px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.5;
+  color: #555;
+
+  max-width: 360px;
+  margin-bottom: 28px;
+
+   
 }
 
 /* LINKS */
@@ -289,6 +294,11 @@ font-size: 14px;
   font-size: 14px;
   color: #777;
   margin: 0;
+}
+
+.cta-left {
+  display: flex;
+  align-items: flex-end;
 }
 
 /* ---------- RESPONSIVE ---------- */
