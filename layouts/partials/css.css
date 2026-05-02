@@ -3325,3 +3325,183 @@ margin: -10px auto 0;
   line-height: 0.95;
   letter-spacing: -0.03em;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Orbit Position ===== */
+.orbit--casestudy {
+
+  animation-duration: 14s;
+}
+
+/* ===== Container ===== */
+.orbit {
+  width: 100%;
+
+  margin: auto;
+}
+
+/* ===== Link Wrapper (no hover effects here) ===== */
+.orbit-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.6rem;
+    cursor: pointer;
+}
+
+.orbit-story-preview {
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.orbit-link:hover .orbit-story-preview {
+  filter: brightness(1.1);
+  transform: translateY(-2px); /* very subtle */
+}
+
+/* ===== Story Circle ===== */
+.orbit-story-preview {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image fill */
+.orbit-story-preview amp-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ✅ ONLY circle reacts on hover */
+.orbit-story-preview:hover {
+  transform: scale(1.08);
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Info Row (Barcode + Text) ===== */
+.orbit-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Barcode */
+.story-barcode {
+  width: 60px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* ===== Text ===== */
+.orbit-label {
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  line-height: 1.3;
+  text-align: left;
+ 
+}
+
+.orbit-label small {
+  font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+
+}
+
+/* ===== Mobile Tweaks ===== */
+@media (max-width: 480px) {
+  .orbit-story-preview {
+    max-width: 120px;
+  }
+
+  .orbit-info {
+    gap: 8px;
+  }
+
+  .story-barcode {
+    width: 50px;
+  }
+}
+
+.orbit-story-preview {
+  transition: 
+    transform 0.8s ease,
+    border 0.6s ease,
+    box-shadow 0.8s ease;
+}
+
+.orbit-story-preview:hover {
+  transform: scale(1.06); /* slightly less aggressive */
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.35);
+}
+
+@keyframes orbitFloat {
+  0%   { transform: translateY(0px) scale(1); }
+  50%  { transform: translateY(-6px) scale(1.01); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+.orbit-story-preview {
+  animation: orbitFloat 6s ease-in-out infinite;
+}
+
+.orbit-story-preview:hover {
+  animation-play-state: paused;
+  transform: scale(1.06);
+}
+
+/* Outer circle */
+.orbit-story-preview {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Animated gradient ring */
+.story-ring {
+  width: 100%;
+  height: 100%;
+  padding: 3px; /* ring thickness */
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5,
+    #feda75
+  );
+  background-size: 300% 300%;
+  animation: instaRing 8s linear infinite;
+}
+
+/* Inner image */
+.story-ring amp-img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Smooth slow animation */
+@keyframes instaRing {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
