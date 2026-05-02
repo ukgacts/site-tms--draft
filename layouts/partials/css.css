@@ -2128,6 +2128,19 @@ margin: -10px auto 0;
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================
    PORTFOLIO SHOWCASE
 ========================================= */
@@ -2193,6 +2206,7 @@ margin: -10px auto 0;
   overflow: hidden;
     overflow-x: auto;
   padding-bottom: 2rem;
+
 }
 
 .ticker {
@@ -2256,10 +2270,35 @@ margin: -10px auto 0;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 10px;
-  width: 640px;
-  min-width: 640px;
-  align-items: start;
-    min-width: 70vw;
+ aspect-ratio: 4 / 3;
+min-width: clamp(480px, 55vw, 620px);
+
+ align-items: stretch;
+}
+
+.portfolio-tall,
+.portfolio-wide,
+.portfolio-right,
+.portfolio-left {
+  height: 100%;
+}
+
+
+
+.portfolio-pattern.layout-b .portfolio-left {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.portfolio-pattern.layout-c .portfolio-left {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+
+.portfolio-right,
+.portfolio-left {
+  height: 100%;
 }
 
 .portfolio-pattern.layout-a { grid-template-columns: 0.8fr 1.2fr; }
@@ -2272,15 +2311,43 @@ margin: -10px auto 0;
   gap: 10px;
 }
 
+.portfolio-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
 .portfolio-small-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+  height: 100%; 
 }
+
+.portfolio-pattern {
+  aspect-ratio: 4 / 3;
+}
+
+.ticker-track {
+  align-items: stretch;
+}
+
+.portfolio-left,
+.portfolio-right {
+  min-height: 0;
+}
+
+  .portfolio-small {   height: 100%;   aspect-ratio: 1 / 1;   min-height: 0;}
 
 /* =========================================
    IMAGE SYSTEM
 ========================================= */
+
+.portfolio-item {
+  background: #0d0d0d; /* matches your dark theme */
+}
+
+
 .portfolio-tall,
 .portfolio-wide,
 .portfolio-small {
@@ -2290,7 +2357,7 @@ margin: -10px auto 0;
   width: 100%;
 }
 
-.portfolio-small { aspect-ratio: 1 / 1; }
+
 
 .portfolio-item {
   position: relative;
@@ -2312,19 +2379,12 @@ margin: -10px auto 0;
   object-fit: cover;
 }
 
-/* =========================================
-   DESKTOP HEIGHTS
-========================================= */
-@media (min-width: 769px) {
-  .portfolio-pattern.layout-a .portfolio-tall { height: 400px; }
-  .portfolio-pattern.layout-a .portfolio-wide { height: 200px; }
 
-  .portfolio-pattern.layout-b .portfolio-tall { height: 340px; }
-  .portfolio-pattern.layout-b .portfolio-wide { height: 260px; }
 
-  .portfolio-pattern.layout-c .portfolio-tall { height: 445px; }
-  .portfolio-pattern.layout-c .portfolio-wide { height: 230px; }
-}
+
+
+
+
 
 /* =========================================
    CAPTIONS
@@ -2436,6 +2496,7 @@ margin: -10px auto 0;
 
   .portfolio-small-row {
     gap: 6px;
+      height: 100%;
   }
 
   .portfolio-tall,
@@ -2444,9 +2505,9 @@ margin: -10px auto 0;
     height: auto;
   }
 
-  .portfolio-tall { aspect-ratio: 9 / 15; }
-  .portfolio-wide { aspect-ratio: 16 / 10; }
-  .portfolio-small { aspect-ratio: 1 / 1; }
+  .portfolio-tall { aspect-ratio: 9 / 16; }
+  .portfolio-wide { aspect-ratio: 16 / 9; }
+
 
   .caption,
   .caption-right,
@@ -3335,7 +3396,9 @@ margin: -10px auto 0;
 
 
 
-
+/* ===============================
+   ORBIT-STORY
+=============================== */
 
 
 
@@ -3505,3 +3568,10 @@ margin: -10px auto 0;
   0%   { background-position: 0% 50%; }
   100% { background-position: 300% 50%; }
 }
+
+
+
+
+/* ===============================
+   ORBIT-STORY--END
+=============================== */
